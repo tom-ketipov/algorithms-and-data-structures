@@ -1,0 +1,58 @@
+# IntelliJ IDEA files
+.idea/
+
+# Compiled class files
+*.class
+
+# Compiled Java source
+*.jar
+
+# Maven
+target/
+
+# Gradle
+build/
+
+# Gradle Wrapper
+gradle/wrapper/gradle-wrapper.properties
+gradle/wrapper/gradle-wrapper.jar
+
+# Local configuration file (if you are using the "java" plugin)
+.settings/
+
+# Logs
+*.log
+
+# .DS_Store files on macOS
+.DS_Store
+
+# User-specific files
+*.iml
+*.iws
+*.ipr
+
+# Eclipse workspace
+.classpath
+.project
+.settings/
+.metadata/
+
+# macOS
+.DS_Store
+
+# User-specific files
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/vcs.xml
+
+# Crashlytics config (for Firebase)
+google-services.json
+
+# Build file (for Maven)
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+
+# Python virtual environment
+.venv/
