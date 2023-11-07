@@ -7,7 +7,7 @@ public class Fibonacci {
     public static List<Long> generateFibonacciSequence(int indexes) {
         List<Long> sequence = new ArrayList<>();
 
-        while (sequence.size() < indexes) {
+        for (long i = 1; i <= indexes; i++) {
             if (sequence.size() >= 2) {
                 sequence.add(sequence.get(sequence.size() - 2) + sequence.get(sequence.size() - 1));
             } else {
