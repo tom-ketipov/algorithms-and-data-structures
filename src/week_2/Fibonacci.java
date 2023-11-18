@@ -2,9 +2,12 @@ package week_2;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Fibonacci {
-    public static List<Long> generateFibonacciSequence(int indexes) {
+    private static long getFibonacciIndex(int indexes) {
+        if (indexes <= 1) return indexes;
+
         List<Long> sequence = new ArrayList<>();
 
         for (long i = 1; i <= indexes; i++) {
@@ -14,16 +17,13 @@ public class Fibonacci {
                 sequence.add(1L);
             }
         }
-
-        return sequence;
+        return sequence.get(sequence.size() - 1);
     }
 
-    public static void main(String[] args) {
-        long timePriorExecution = System.currentTimeMillis();
+    public static void main(String args[]) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
 
-        System.out.println(generateFibonacciSequence(100));
-
-        long timeAfterExecution = System.currentTimeMillis();
-        System.out.println("The sequence was generated in: " + Math.subtractExact(timeAfterExecution, timePriorExecution) / (double) 1000 + " sec.");
+        System.out.println(getFibonacciIndex(n));
     }
 }
