@@ -23,4 +23,6 @@ public class MaximumAdvertiserRevenueTest {
         int[] clicks = {39};
         Assert.assertEquals(897, dotProductsSolver.maxDotProduct(prices, clicks));
     }
+
+    // TODO: Add input validation @Test
 }

@@ -41,4 +41,6 @@ public class CollectingSignaturesTest {
         Assert.assertTrue(coveringSegmentsSolver.optimalPoints(segments)[0] >= 0);
         Assert.assertTrue(coveringSegmentsSolver.optimalPoints(segments)[0] <= 3);
     }
+
+    // TODO: Add input validation @Tests
 }
