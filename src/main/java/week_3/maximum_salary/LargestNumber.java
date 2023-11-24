@@ -7,7 +7,6 @@ import java.util.Scanner;
 public class LargestNumber {
     public static String largestNumber(String[] numbers) {
         Arrays.sort(numbers, new LargerNumberComparator());
-        System.out.println(Arrays.toString(numbers));
         return String.join("", numbers);
     }
 
