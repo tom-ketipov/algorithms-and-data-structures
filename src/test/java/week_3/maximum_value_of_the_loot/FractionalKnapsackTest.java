@@ -1,10 +1,9 @@
 package week_3.maximum_value_of_the_loot;
 
-import core.BaseTest;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class FractionalKnapsackTest extends BaseTest {
+public class FractionalKnapsackTest {
     private FractionalKnapsack fractionalKnapsackSolver;
 
     @Test
