@@ -79,7 +79,7 @@ public class CarFuelingTest {
         try {
             carFuelingSolver.computeMinRefills(distance, tank, stops);
         } catch (InvalidParameterException e) {
-            Assert.assertEquals(e.getMessage(), "Total distance/tank capacity cannot be less than 1.");
+            Assert.assertEquals("Total distance/tank capacity cannot be less than 1.", e.getMessage());
         }
     }
 
@@ -94,7 +94,7 @@ public class CarFuelingTest {
         try {
             carFuelingSolver.computeMinRefills(distance, tank, stops);
         } catch (InvalidParameterException e) {
-            Assert.assertEquals(e.getMessage(), "Total distance/tank capacity cannot be less than 1.");
+            Assert.assertEquals("Total distance/tank capacity cannot be less than 1.", e.getMessage());
         }
     }
 
@@ -109,7 +109,7 @@ public class CarFuelingTest {
         try {
             carFuelingSolver.computeMinRefills(distance, tank, stops);
         } catch (InvalidParameterException e) {
-            Assert.assertEquals(e.getMessage(), "Total distance/tank capacity cannot be less than 1.");
+            Assert.assertEquals("Total distance/tank capacity cannot be less than 1.", e.getMessage());
         }
     }
 
@@ -124,7 +124,7 @@ public class CarFuelingTest {
         try {
             carFuelingSolver.computeMinRefills(distance, tank, stops);
         } catch (InvalidParameterException e) {
-            Assert.assertEquals(e.getMessage(), "Total distance/tank capacity cannot be less than 1.");
+            Assert.assertEquals("Total distance/tank capacity cannot be less than 1.", e.getMessage());
         }
     }
 
@@ -139,7 +139,7 @@ public class CarFuelingTest {
         try {
             carFuelingSolver.computeMinRefills(distance, tank, stops);
         } catch (InvalidParameterException e) {
-            Assert.assertEquals(e.getMessage(), "Refill stations cannot be less than 1.");
+            Assert.assertEquals("Refill stations cannot be less than 1.", e.getMessage());
         }
     }
 
@@ -153,7 +153,7 @@ public class CarFuelingTest {
         try {
             carFuelingSolver.computeMinRefills(distance, tank, null);
         } catch (InvalidParameterException e) {
-            Assert.assertEquals(e.getMessage(), "Refill stations cannot be null.");
+            Assert.assertEquals("Refill stations cannot be null.", e.getMessage());
         }
     }
 }

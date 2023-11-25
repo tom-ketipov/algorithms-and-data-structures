@@ -3,6 +3,8 @@ package week_3.money_change;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.security.InvalidParameterException;
+
 public class MoneyChangeTest {
     private Change changeSolver;
 
@@ -29,5 +31,28 @@ public class MoneyChangeTest {
         int m = Integer.MAX_VALUE;
         Assert.assertEquals(214748367, changeSolver.getChange(m));
     }
-    // TODO: Add input validation @Tests
+
+    @Test
+    public void throws_exception_for_zero_input_parameters() {
+        changeSolver = new Change();
+
+        int m = 0;
+        try {
+            changeSolver.getChange(m);
+        } catch (InvalidParameterException e) {
+            Assert.assertEquals("Input cannot be less than 1.", e.getMessage());
+        }
+    }
+
+    @Test
+    public void throws_exception_for_negative_input_parameters() {
+        changeSolver = new Change();
+
+        int m = -19;
+        try {
+            changeSolver.getChange(m);
+        } catch (InvalidParameterException e) {
+            Assert.assertEquals("Input cannot be less than 1.", e.getMessage());
+        }
+    }
 }

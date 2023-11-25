@@ -3,6 +3,8 @@ package week_3.maximum_advertisement_revenue;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.security.InvalidParameterException;
+
 public class MaximumAdvertiserRevenueTest {
     private DotProducts dotProductsSolver;
 
@@ -24,5 +26,53 @@ public class MaximumAdvertiserRevenueTest {
         Assert.assertEquals(897, dotProductsSolver.maxDotProduct(prices, clicks));
     }
 
-    // TODO: Add input validation @Test
+    @Test
+    public void throws_exception_for_null_prices_input_parameter() {
+        dotProductsSolver = new DotProducts();
+
+        int[] clicks = {39};
+        try {
+            dotProductsSolver.maxDotProduct(null, clicks);
+        } catch (InvalidParameterException e) {
+            Assert.assertEquals("Input array parameters cannot be null.", e.getMessage());
+        }
+    }
+
+    @Test
+    public void throws_exception_for_null_clicks_input_parameter() {
+        dotProductsSolver = new DotProducts();
+
+        int[] prices = {23};
+        try {
+            dotProductsSolver.maxDotProduct(prices, null);
+        } catch (InvalidParameterException e) {
+            Assert.assertEquals("Input array parameters cannot be null.", e.getMessage());
+        }
+    }
+
+    @Test
+    public void throws_exception_for_empty_prices_input_parameter() {
+        dotProductsSolver = new DotProducts();
+
+        int[] prices = {};
+        int[] clicks = {39};
+        try {
+            dotProductsSolver.maxDotProduct(prices, clicks);
+        } catch (InvalidParameterException e) {
+            Assert.assertEquals("Input array parameters cannot be empty.", e.getMessage());
+        }
+    }
+
+    @Test
+    public void throws_exception_for_empty_clicks_input_parameter() {
+        dotProductsSolver = new DotProducts();
+
+        int[] prices = {23};
+        int[] clicks = {};
+        try {
+            dotProductsSolver.maxDotProduct(prices, clicks);
+        } catch (InvalidParameterException e) {
+            Assert.assertEquals("Input array parameters cannot be empty.", e.getMessage());
+        }
+    }
 }

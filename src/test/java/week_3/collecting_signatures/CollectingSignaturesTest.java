@@ -3,6 +3,8 @@ package week_3.collecting_signatures;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.security.InvalidParameterException;
+
 public class CollectingSignaturesTest {
     private CoveringSegments coveringSegmentsSolver;
 
@@ -42,5 +44,25 @@ public class CollectingSignaturesTest {
         Assert.assertTrue(coveringSegmentsSolver.optimalPoints(segments)[0] <= 3);
     }
 
-    // TODO: Add input validation @Tests
+    @Test
+    public void throws_exception_for_null_parameter_input() {
+        coveringSegmentsSolver = new CoveringSegments();
+
+        try {
+            coveringSegmentsSolver.optimalPoints(null);
+        } catch (InvalidParameterException e) {
+            Assert.assertEquals("Segments cannot be null.", e.getMessage());
+        }
+    }
+
+    @Test
+    public void throws_exception_for_empty_segment_array_input() {
+        coveringSegmentsSolver = new CoveringSegments();
+
+        try {
+            coveringSegmentsSolver.optimalPoints(new CoveringSegments.Segment[]{});
+        } catch (InvalidParameterException e) {
+            Assert.assertEquals("Segments cannot be less than 1.", e.getMessage());
+        }
+    }
 }

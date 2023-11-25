@@ -1,11 +1,16 @@
 package week_3.maximum_salary;
 
+import java.security.InvalidParameterException;
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.Scanner;
 
 public class LargestNumber {
-    public static String largestNumber(String[] numbers) {
+    public String largestNumber(String[] numbers) {
+        // Validate input parameters
+        if (numbers == null) {
+            throw new InvalidParameterException("Numbers array cannot be null.");
+        }
+
         Arrays.sort(numbers, new LargerNumberComparator());
         return String.join("", numbers);
     }
@@ -17,15 +22,5 @@ public class LargestNumber {
             String order2 = b + a;
             return order2.compareTo(order1);
         }
-    }
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        String[] a = new String[n];
-        for (int i = 0; i < n; i++) {
-            a[i] = scanner.next();
-        }
-        System.out.println(largestNumber(a));
     }
 }

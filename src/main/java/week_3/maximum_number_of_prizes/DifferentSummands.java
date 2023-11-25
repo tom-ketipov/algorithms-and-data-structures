@@ -3,7 +3,6 @@ package week_3.maximum_number_of_prizes;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /*
     Distinct Summands Problem

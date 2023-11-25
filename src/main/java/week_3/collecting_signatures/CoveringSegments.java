@@ -1,9 +1,9 @@
 package week_3.collecting_signatures;
 
+import java.security.InvalidParameterException;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.LinkedList;
-import java.util.Scanner;
 
 public class CoveringSegments {
     /*
@@ -15,7 +15,7 @@ public class CoveringSegments {
 
             In other words, we have a bunch of line segments that may or may not overlap. We want to minimize the number of segments
             =========================================================================================================================
-            0(n log n)
+            Time complexity: 0(n log n)
      */
 
     public static class Segment {
@@ -27,7 +27,16 @@ public class CoveringSegments {
         }
     }
 
-    public static int[] optimalPoints(Segment[] segments) {
+    public int[] optimalPoints(Segment[] segments) {
+        // Validate input parameters
+        if (segments == null) {
+            throw new InvalidParameterException("Segments cannot be null.");
+        }
+
+        if (segments.length == 0) {
+            throw new InvalidParameterException("Segments cannot be less than 1.");
+        }
+
         Arrays.sort(segments, Comparator.comparing(segment -> segment.end));
 
         LinkedList<Integer> overlappingPointsList = new LinkedList<>();
@@ -44,22 +53,5 @@ public class CoveringSegments {
         return overlappingPointsList.stream()
                 .mapToInt(Integer::intValue)
                 .toArray();
-    }
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        Segment[] segments = new Segment[n];
-        for (int i = 0; i < n; i++) {
-            int start, end;
-            start = scanner.nextInt();
-            end = scanner.nextInt();
-            segments[i] = new Segment(start, end);
-        }
-        int[] points = optimalPoints(segments);
-        System.out.println(points.length);
-        for (int point : points) {
-            System.out.print(point + " ");
-        }
     }
 }

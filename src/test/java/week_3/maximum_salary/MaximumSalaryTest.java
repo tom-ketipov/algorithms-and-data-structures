@@ -34,7 +34,6 @@ public class MaximumSalaryTest extends BaseTest {
         Assert.assertEquals("", largestNumberSolver.largestNumber(a));
     }
 
-    @Ignore
     @Test
     public void throws_exception_for_null_input_parameters() {
         largestNumberSolver = new LargestNumber();
@@ -42,8 +41,7 @@ public class MaximumSalaryTest extends BaseTest {
         try {
             largestNumberSolver.largestNumber(null);
         } catch (InvalidParameterException e) {
-            Assert.assertEquals(e.getMessage(), "Array cannot be null.");
+            Assert.assertEquals("Numbers array cannot be null.", e.getMessage());
         }
     }
-
 }

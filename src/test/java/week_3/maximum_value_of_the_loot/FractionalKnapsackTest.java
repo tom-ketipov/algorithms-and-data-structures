@@ -3,6 +3,8 @@ package week_3.maximum_value_of_the_loot;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.security.InvalidParameterException;
+
 public class FractionalKnapsackTest {
     private FractionalKnapsack fractionalKnapsackSolver;
 
@@ -46,5 +48,76 @@ public class FractionalKnapsackTest {
         Assert.assertEquals(2695.4545454545455, fractionalKnapsackSolver.getOptimalValue(capacity, values, weights), 0);
     }
 
-    // TODO: Add input validation @Tests
+    @Test
+    public void throws_exception_for_invalid_capacity_input_parameter() {
+        fractionalKnapsackSolver = new FractionalKnapsack();
+
+        int capacity = 0;
+        int[] values = {24, 15, 114, 3500, 5, 500};
+        int[] weights = {6, 5, 28, 110, 1, 2, 18, 55, 123, 100, 234, 10};
+
+        try {
+            fractionalKnapsackSolver.getOptimalValue(capacity, values, weights);
+        } catch (InvalidParameterException e) {
+            Assert.assertEquals("Capacity cannot be equal to 0.", e.getMessage());
+        }
+    }
+
+    @Test
+    public void throws_exception_for_null_values_input_parameter() {
+        fractionalKnapsackSolver = new FractionalKnapsack();
+
+        int capacity = 71;
+        int[] weights = {6, 5, 28, 110, 1, 2, 18, 55, 123, 100, 234, 10};
+
+        try {
+            fractionalKnapsackSolver.getOptimalValue(capacity, null, weights);
+        } catch (InvalidParameterException e) {
+            Assert.assertEquals("Values/weights cannot be null.", e.getMessage());
+        }
+    }
+
+    @Test
+    public void throws_exception_for_null_weights_input_parameter() {
+        fractionalKnapsackSolver = new FractionalKnapsack();
+
+        int capacity = 71;
+        int[] values = {24, 15, 114, 3500, 5, 500};
+
+        try {
+            fractionalKnapsackSolver.getOptimalValue(capacity, values, null);
+        } catch (InvalidParameterException e) {
+            Assert.assertEquals("Values/weights cannot be null.", e.getMessage());
+        }
+    }
+
+    @Test
+    public void throws_exception_for_empty_values_input_parameter() {
+        fractionalKnapsackSolver = new FractionalKnapsack();
+
+        int capacity = 71;
+        int[] values = {};
+        int[] weights = {6, 5, 28, 110, 1, 2, 18, 55, 123, 100, 234, 10};
+
+        try {
+            fractionalKnapsackSolver.getOptimalValue(capacity, values, weights);
+        } catch (InvalidParameterException e) {
+            Assert.assertEquals("Values/weights cannot be empty.", e.getMessage());
+        }
+    }
+
+    @Test
+    public void throws_exception_for_empty_weights_input_parameter() {
+        fractionalKnapsackSolver = new FractionalKnapsack();
+
+        int capacity = 71;
+        int[] values = {24, 15, 114, 3500, 5, 500};
+        int[] weights = {};
+
+        try {
+            fractionalKnapsackSolver.getOptimalValue(capacity, values, weights);
+        } catch (InvalidParameterException e) {
+            Assert.assertEquals("Values/weights cannot be empty.", e.getMessage());
+        }
+    }
 }

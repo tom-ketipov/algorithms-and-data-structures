@@ -1,7 +1,7 @@
 package week_3.maximum_advertisement_revenue;
 
+import java.security.InvalidParameterException;
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class DotProducts {
     /*
@@ -16,29 +16,23 @@ public class DotProducts {
             ================================================================================================
             Time complexity: O(n log n)
      */
-    public static long maxDotProduct(int[] a, int[] b) {
-        //write your code here
-        Arrays.sort(a);
-        Arrays.sort(b);
-
-        long result = 0;
-        for (int i = 0; i < a.length; i++) {
-            result += (long) a[i] * (long) b[i];
+    public long maxDotProduct(int[] prices, int[] clicks) {
+        // Validate input parameters
+        if (prices == null || clicks == null) {
+            throw new InvalidParameterException("Input array parameters cannot be null.");
         }
-        return result;
+
+        if (prices.length == 0 || clicks.length == 0) {
+            throw new InvalidParameterException("Input array parameters cannot be empty.");
     }
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        int[] a = new int[n];
-        for (int i = 0; i < n; i++) {
-            a[i] = scanner.nextInt();
+        Arrays.sort(prices);
+        Arrays.sort(clicks);
+
+        long result = 0;
+        for (int i = 0; i < prices.length; i++) {
+            result += (long) prices[i] * (long) clicks[i];
         }
-        int[] b = new int[n];
-        for (int i = 0; i < n; i++) {
-            b[i] = scanner.nextInt();
-        }
-        System.out.println(maxDotProduct(a, b));
+        return result;
     }
 }

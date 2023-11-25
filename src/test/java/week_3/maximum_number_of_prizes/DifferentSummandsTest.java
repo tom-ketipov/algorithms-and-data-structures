@@ -44,7 +44,7 @@ public class DifferentSummandsTest {
         try {
             differentSummandsSolver.optimalSummands(max);
         } catch (InvalidParameterException e) {
-            Assert.assertEquals(e.getMessage(), "'N' cannot be less or equal to 0.");
+            Assert.assertEquals("'N' cannot be less or equal to 0.", e.getMessage());
         }
     }
 
@@ -57,7 +57,7 @@ public class DifferentSummandsTest {
         try {
             differentSummandsSolver.optimalSummands(max);
         } catch (InvalidParameterException e) {
-            Assert.assertEquals(e.getMessage(), "'N' cannot be less or equal to 0.");
+            Assert.assertEquals("'N' cannot be less or equal to 0.", e.getMessage());
         }
     }
 }

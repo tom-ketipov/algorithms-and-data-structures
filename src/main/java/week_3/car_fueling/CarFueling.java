@@ -1,8 +1,6 @@
 package week_3.car_fueling;
 
 import java.security.InvalidParameterException;
-import java.util.Scanner;
-
 public class CarFueling {
     /*
             Car Fueling Problem
@@ -10,7 +8,7 @@ public class CarFueling {
 
             Resources: https://discrete-math-puzzles.github.io/puzzles/car-fueling/
             ================================================================================
-            0(n)
+            Time complexity: 0(n)
      */
     public int computeMinRefills(int totalDistance, int tankCapacity, int[] refillStations) {
         // Validate input parameters

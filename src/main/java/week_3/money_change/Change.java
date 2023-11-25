@@ -1,6 +1,6 @@
 package week_3.money_change;
 
-import java.util.Scanner;
+import java.security.InvalidParameterException;
 
 public class Change {
     /*
@@ -13,7 +13,12 @@ public class Change {
         ======================================================================================
         Time Complexity: O(1)
      */
-    public static int getChange(int m) {
+    public int getChange(int m) {
+        // Validate input parameters
+        if (m <= 0) {
+            throw new InvalidParameterException("Input cannot be less than 1.");
+        }
+
         // Calculate the number of 10-coins and update m
         int count = m / 10;
         m %= 10;
@@ -25,12 +30,5 @@ public class Change {
         // The remaining m is the number of 1-coins
         count += m;
         return count;
-    }
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int m = scanner.nextInt();
-        System.out.println(getChange(m));
-
     }
 }
