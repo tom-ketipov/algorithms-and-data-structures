@@ -1,7 +1,7 @@
 package week_3.maximum_number_of_prizes;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.security.InvalidParameterException;
 import java.util.List;
@@ -16,10 +16,10 @@ public class DifferentSummandsTest {
         int max = 6;
 
         List<Integer> summands = differentSummandsSolver.optimalSummands(max);
-        Assert.assertEquals(3, summands.size());
-        Assert.assertEquals(1, summands.get(0).intValue());
-        Assert.assertEquals(2, summands.get(1).intValue());
-        Assert.assertEquals(3, summands.get(2).intValue());
+        Assertions.assertEquals(3, summands.size());
+        Assertions.assertEquals(1, summands.get(0).intValue());
+        Assertions.assertEquals(2, summands.get(1).intValue());
+        Assertions.assertEquals(3, summands.get(2).intValue());
     }
 
     @Test
@@ -29,10 +29,10 @@ public class DifferentSummandsTest {
         int max = 8;
 
         List<Integer> summands = differentSummandsSolver.optimalSummands(max);
-        Assert.assertEquals(3, summands.size());
-        Assert.assertEquals(1, summands.get(0).intValue());
-        Assert.assertEquals(2, summands.get(1).intValue());
-        Assert.assertEquals(5, summands.get(2).intValue());
+        Assertions.assertEquals(3, summands.size());
+        Assertions.assertEquals(1, summands.get(0).intValue());
+        Assertions.assertEquals(2, summands.get(1).intValue());
+        Assertions.assertEquals(5, summands.get(2).intValue());
     }
 
     @Test
@@ -44,7 +44,7 @@ public class DifferentSummandsTest {
         try {
             differentSummandsSolver.optimalSummands(max);
         } catch (InvalidParameterException e) {
-            Assert.assertEquals("'N' cannot be less or equal to 0.", e.getMessage());
+            Assertions.assertEquals("'N' cannot be less or equal to 0.", e.getMessage());
         }
     }
 
@@ -57,7 +57,7 @@ public class DifferentSummandsTest {
         try {
             differentSummandsSolver.optimalSummands(max);
         } catch (InvalidParameterException e) {
-            Assert.assertEquals("'N' cannot be less or equal to 0.", e.getMessage());
+            Assertions.assertEquals("'N' cannot be less or equal to 0.", e.getMessage());
         }
     }
 }

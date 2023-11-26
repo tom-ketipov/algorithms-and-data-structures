@@ -1,7 +1,7 @@
 package week_3.maximum_value_of_the_loot;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.security.InvalidParameterException;
 
@@ -15,7 +15,7 @@ public class FractionalKnapsackTest {
         int capacity = 10;
         int[] values = {48, 125, 14, 22};
         int[] weights = {6, 25, 2, 12};
-        Assert.assertEquals(72, fractionalKnapsackSolver.getOptimalValue(capacity, values, weights), 0);
+        Assertions.assertEquals(72, fractionalKnapsackSolver.getOptimalValue(capacity, values, weights), 0);
     }
 
     @Test
@@ -25,7 +25,7 @@ public class FractionalKnapsackTest {
         int capacity = 1;
         int[] values = {48, 125, 14, 22};
         int[] weights = {6, 25, 2, 12};
-        Assert.assertEquals(8, fractionalKnapsackSolver.getOptimalValue(capacity, values, weights), 0);
+        Assertions.assertEquals(8, fractionalKnapsackSolver.getOptimalValue(capacity, values, weights), 0);
     }
 
     @Test
@@ -35,7 +35,7 @@ public class FractionalKnapsackTest {
         int capacity = 71;
         int[] values = {24, 15, 114, 3500, 5, 500};
         int[] weights = {6, 5, 28, 110, 1, 2};
-        Assert.assertEquals(2695.4545454545455, fractionalKnapsackSolver.getOptimalValue(capacity, values, weights), 0);
+        Assertions.assertEquals(2695.4545454545455, fractionalKnapsackSolver.getOptimalValue(capacity, values, weights), 0);
     }
 
     @Test
@@ -45,7 +45,7 @@ public class FractionalKnapsackTest {
         int capacity = 71;
         int[] values = {24, 15, 114, 3500, 5, 500};
         int[] weights = {6, 5, 28, 110, 1, 2, 18, 55, 123, 100, 234, 10};
-        Assert.assertEquals(2695.4545454545455, fractionalKnapsackSolver.getOptimalValue(capacity, values, weights), 0);
+        Assertions.assertEquals(2695.4545454545455, fractionalKnapsackSolver.getOptimalValue(capacity, values, weights), 0);
     }
 
     @Test
@@ -59,7 +59,7 @@ public class FractionalKnapsackTest {
         try {
             fractionalKnapsackSolver.getOptimalValue(capacity, values, weights);
         } catch (InvalidParameterException e) {
-            Assert.assertEquals("Capacity cannot be equal to 0.", e.getMessage());
+            Assertions.assertEquals("Capacity cannot be equal to 0.", e.getMessage());
         }
     }
 
@@ -73,7 +73,7 @@ public class FractionalKnapsackTest {
         try {
             fractionalKnapsackSolver.getOptimalValue(capacity, null, weights);
         } catch (InvalidParameterException e) {
-            Assert.assertEquals("Values/weights cannot be null.", e.getMessage());
+            Assertions.assertEquals("Values/weights cannot be null.", e.getMessage());
         }
     }
 
@@ -87,7 +87,7 @@ public class FractionalKnapsackTest {
         try {
             fractionalKnapsackSolver.getOptimalValue(capacity, values, null);
         } catch (InvalidParameterException e) {
-            Assert.assertEquals("Values/weights cannot be null.", e.getMessage());
+            Assertions.assertEquals("Values/weights cannot be null.", e.getMessage());
         }
     }
 
@@ -102,7 +102,7 @@ public class FractionalKnapsackTest {
         try {
             fractionalKnapsackSolver.getOptimalValue(capacity, values, weights);
         } catch (InvalidParameterException e) {
-            Assert.assertEquals("Values/weights cannot be empty.", e.getMessage());
+            Assertions.assertEquals("Values/weights cannot be empty.", e.getMessage());
         }
     }
 
@@ -117,7 +117,7 @@ public class FractionalKnapsackTest {
         try {
             fractionalKnapsackSolver.getOptimalValue(capacity, values, weights);
         } catch (InvalidParameterException e) {
-            Assert.assertEquals("Values/weights cannot be empty.", e.getMessage());
+            Assertions.assertEquals("Values/weights cannot be empty.", e.getMessage());
         }
     }
 }

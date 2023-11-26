@@ -1,7 +1,7 @@
 package week_3.maximum_advertisement_revenue;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.security.InvalidParameterException;
 
@@ -14,7 +14,7 @@ public class MaximumAdvertiserRevenueTest {
 
         int[] prices = {2, 3, 9};
         int[] clicks = {7, 4, 2};
-        Assert.assertEquals(79, dotProductsSolver.maxDotProduct(prices, clicks));
+        Assertions.assertEquals(79, dotProductsSolver.maxDotProduct(prices, clicks));
     }
 
     @Test
@@ -23,7 +23,7 @@ public class MaximumAdvertiserRevenueTest {
 
         int[] prices = {23};
         int[] clicks = {39};
-        Assert.assertEquals(897, dotProductsSolver.maxDotProduct(prices, clicks));
+        Assertions.assertEquals(897, dotProductsSolver.maxDotProduct(prices, clicks));
     }
 
     @Test
@@ -34,7 +34,7 @@ public class MaximumAdvertiserRevenueTest {
         try {
             dotProductsSolver.maxDotProduct(null, clicks);
         } catch (InvalidParameterException e) {
-            Assert.assertEquals("Input array parameters cannot be null.", e.getMessage());
+            Assertions.assertEquals("Input array parameters cannot be null.", e.getMessage());
         }
     }
 
@@ -46,7 +46,7 @@ public class MaximumAdvertiserRevenueTest {
         try {
             dotProductsSolver.maxDotProduct(prices, null);
         } catch (InvalidParameterException e) {
-            Assert.assertEquals("Input array parameters cannot be null.", e.getMessage());
+            Assertions.assertEquals("Input array parameters cannot be null.", e.getMessage());
         }
     }
 
@@ -59,7 +59,7 @@ public class MaximumAdvertiserRevenueTest {
         try {
             dotProductsSolver.maxDotProduct(prices, clicks);
         } catch (InvalidParameterException e) {
-            Assert.assertEquals("Input array parameters cannot be empty.", e.getMessage());
+            Assertions.assertEquals("Input array parameters cannot be empty.", e.getMessage());
         }
     }
 
@@ -72,7 +72,7 @@ public class MaximumAdvertiserRevenueTest {
         try {
             dotProductsSolver.maxDotProduct(prices, clicks);
         } catch (InvalidParameterException e) {
-            Assert.assertEquals("Input array parameters cannot be empty.", e.getMessage());
+            Assertions.assertEquals("Input array parameters cannot be empty.", e.getMessage());
         }
     }
 }

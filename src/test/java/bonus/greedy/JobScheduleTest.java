@@ -1,12 +1,7 @@
 package bonus.greedy;
 
-import org.junit.Assert;
-import org.junit.Test;
-
-import java.lang.management.ManagementFactory;
-import java.lang.management.MemoryPoolMXBean;
-import java.lang.management.MemoryUsage;
-import java.lang.management.ThreadMXBean;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class JobScheduleTest {
     private JobSchedule jobScheduleSolver;
@@ -17,7 +12,7 @@ public class JobScheduleTest {
         try {
             JobSchedule.Job job = new JobSchedule.Job(-1, 2);
         } catch (IllegalArgumentException e) {
-            Assert.assertEquals("Profit and deadline must be non-negative values.", e.getMessage());
+            Assertions.assertEquals("Profit and deadline must be non-negative values.", e.getMessage());
         }
     }
 
@@ -26,30 +21,30 @@ public class JobScheduleTest {
         try {
             JobSchedule.Job job = new JobSchedule.Job(1, -32);
         } catch (IllegalArgumentException e) {
-            Assert.assertEquals("Profit and deadline must be non-negative values.", e.getMessage());
+            Assertions.assertEquals("Profit and deadline must be non-negative values.", e.getMessage());
         }
     }
 
     @Test
     public void can_construct_job_object_with_zero_values() {
         JobSchedule.Job job = new JobSchedule.Job(0, 0);
-        Assert.assertEquals(0, job.getProfit());
-        Assert.assertEquals(0, job.getDeadline());
+        Assertions.assertEquals(0, job.getProfit());
+        Assertions.assertEquals(0, job.getDeadline());
     }
 
     @Test
     public void can_construct_job_object_with_max_integer_deadline() {
         JobSchedule.Job job = new JobSchedule.Job(Integer.MAX_VALUE, 0);
-        Assert.assertEquals(0, job.getProfit());
-        Assert.assertEquals(Integer.MAX_VALUE, job.getDeadline());
+        Assertions.assertEquals(0, job.getProfit());
+        Assertions.assertEquals(Integer.MAX_VALUE, job.getDeadline());
     }
 
     @Test
     public void can_construct_job_object_with_max_integer_profit() {
         JobSchedule.Job job = new JobSchedule.Job(3, Integer.MAX_VALUE);
 
-        Assert.assertEquals(Integer.MAX_VALUE, job.getProfit());
-        Assert.assertEquals(3, job.getDeadline());
+        Assertions.assertEquals(Integer.MAX_VALUE, job.getProfit());
+        Assertions.assertEquals(3, job.getDeadline());
     }
 
     // Job Scheduler
@@ -64,11 +59,11 @@ public class JobScheduleTest {
         jobs[3] = new JobSchedule.Job(2, 30);
 
         JobSchedule.Job[] schedule = jobScheduleSolver.scheduleJobs(jobs);
-        Assert.assertEquals(2, schedule.length);
-        Assert.assertEquals(1, schedule[0].getDeadline());
-        Assert.assertEquals(40, schedule[0].getProfit());
-        Assert.assertEquals(2, schedule[1].getDeadline());
-        Assert.assertEquals(30, schedule[1].getProfit());
+        Assertions.assertEquals(2, schedule.length);
+        Assertions.assertEquals(1, schedule[0].getDeadline());
+        Assertions.assertEquals(40, schedule[0].getProfit());
+        Assertions.assertEquals(2, schedule[1].getDeadline());
+        Assertions.assertEquals(30, schedule[1].getProfit());
     }
 
     @Test
@@ -82,11 +77,11 @@ public class JobScheduleTest {
         jobs[3] = new JobSchedule.Job(5, 30);
 
         JobSchedule.Job[] schedule = jobScheduleSolver.scheduleJobs(jobs);
-        Assert.assertEquals(4, schedule.length);
-        Assert.assertEquals(1, schedule[0].getDeadline());
-        Assert.assertEquals(2, schedule[1].getDeadline());
-        Assert.assertEquals(3, schedule[2].getDeadline());
-        Assert.assertEquals(5, schedule[3].getDeadline());
+        Assertions.assertEquals(4, schedule.length);
+        Assertions.assertEquals(1, schedule[0].getDeadline());
+        Assertions.assertEquals(2, schedule[1].getDeadline());
+        Assertions.assertEquals(3, schedule[2].getDeadline());
+        Assertions.assertEquals(5, schedule[3].getDeadline());
     }
 
     @Test
@@ -97,9 +92,9 @@ public class JobScheduleTest {
         jobs[0] = new JobSchedule.Job(1, 20);
 
         JobSchedule.Job[] schedule = jobScheduleSolver.scheduleJobs(jobs);
-        Assert.assertEquals(1, schedule.length);
-        Assert.assertEquals(1, schedule[0].getDeadline());
-        Assert.assertEquals(20, schedule[0].getProfit());
+        Assertions.assertEquals(1, schedule.length);
+        Assertions.assertEquals(1, schedule[0].getDeadline());
+        Assertions.assertEquals(20, schedule[0].getProfit());
     }
 
     @Test
@@ -109,7 +104,7 @@ public class JobScheduleTest {
         try {
             jobScheduleSolver.scheduleJobs(null);
         } catch (IllegalArgumentException e) {
-            Assert.assertEquals("Jobs cannot be null.", e.getMessage());
+            Assertions.assertEquals("Jobs cannot be null.", e.getMessage());
         }
     }
 
@@ -120,7 +115,7 @@ public class JobScheduleTest {
         try {
             jobScheduleSolver.scheduleJobs(new JobSchedule.Job[0]);
         } catch (IllegalArgumentException e) {
-            Assert.assertEquals("Jobs cannot be empty.", e.getMessage());
+            Assertions.assertEquals("Jobs cannot be empty.", e.getMessage());
         }
     }
 
@@ -134,7 +129,7 @@ public class JobScheduleTest {
         try {
             jobScheduleSolver.scheduleJobs(jobs);
         } catch (IllegalArgumentException e) {
-            Assert.assertEquals("Jobs must have deadline/profit data.", e.getMessage());
+            Assertions.assertEquals("Jobs must have deadline/profit data.", e.getMessage());
         }
     }
 }
