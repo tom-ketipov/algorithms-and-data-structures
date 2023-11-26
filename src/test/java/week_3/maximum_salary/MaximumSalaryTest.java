@@ -1,9 +1,10 @@
 package week_3.maximum_salary;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.security.InvalidParameterException;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MaximumSalaryTest {
     private LargestNumber largestNumberSolver;
@@ -13,7 +14,7 @@ public class MaximumSalaryTest {
         largestNumberSolver = new LargestNumber();
 
         String[] a = {"9", "21", "19", "3", "7"};
-        Assertions.assertEquals("9732119", largestNumberSolver.largestNumber(a));
+        assertEquals("9732119", largestNumberSolver.largestNumber(a));
     }
 
     @Test
@@ -21,7 +22,7 @@ public class MaximumSalaryTest {
         largestNumberSolver = new LargestNumber();
 
         String[] a = {"3", "30", "34", "5", "9"};
-        Assertions.assertEquals("9534330", largestNumberSolver.largestNumber(a));
+        assertEquals("9534330", largestNumberSolver.largestNumber(a));
     }
 
     @Test
@@ -29,7 +30,7 @@ public class MaximumSalaryTest {
         largestNumberSolver = new LargestNumber();
 
         String[] a = {};
-        Assertions.assertEquals("", largestNumberSolver.largestNumber(a));
+        assertEquals("", largestNumberSolver.largestNumber(a));
     }
 
     @Test
@@ -39,7 +40,7 @@ public class MaximumSalaryTest {
         try {
             largestNumberSolver.largestNumber(null);
         } catch (InvalidParameterException e) {
-            Assertions.assertEquals("Numbers array cannot be null.", e.getMessage());
+            assertEquals("Numbers array cannot be null.", e.getMessage());
         }
     }
 }

@@ -1,9 +1,10 @@
 package week_3.money_change;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.security.InvalidParameterException;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MoneyChangeTest {
     private Change changeSolver;
@@ -13,7 +14,7 @@ public class MoneyChangeTest {
         changeSolver = new Change();
 
         int m = 3;
-        Assertions.assertEquals(3, changeSolver.getChange(m));
+        assertEquals(3, changeSolver.getChange(m));
     }
 
     @Test
@@ -21,7 +22,7 @@ public class MoneyChangeTest {
         changeSolver = new Change();
 
         int m = 1;
-        Assertions.assertEquals(1, changeSolver.getChange(m));
+        assertEquals(1, changeSolver.getChange(m));
     }
 
     @Test
@@ -29,7 +30,7 @@ public class MoneyChangeTest {
         changeSolver = new Change();
 
         int m = Integer.MAX_VALUE;
-        Assertions.assertEquals(214748367, changeSolver.getChange(m));
+        assertEquals(214748367, changeSolver.getChange(m));
     }
 
     @Test
@@ -40,7 +41,7 @@ public class MoneyChangeTest {
         try {
             changeSolver.getChange(m);
         } catch (InvalidParameterException e) {
-            Assertions.assertEquals("Input cannot be less than 1.", e.getMessage());
+            assertEquals("Input cannot be less than 1.", e.getMessage());
         }
     }
 
@@ -52,7 +53,7 @@ public class MoneyChangeTest {
         try {
             changeSolver.getChange(m);
         } catch (InvalidParameterException e) {
-            Assertions.assertEquals("Input cannot be less than 1.", e.getMessage());
+            assertEquals("Input cannot be less than 1.", e.getMessage());
         }
     }
 }

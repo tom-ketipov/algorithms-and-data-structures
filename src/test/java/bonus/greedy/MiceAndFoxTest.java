@@ -1,7 +1,8 @@
 package bonus.greedy;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MiceAndFoxTest {
     private MiceAndFox miceAndFoxSolver;
@@ -12,7 +13,7 @@ public class MiceAndFoxTest {
 
         int[] micePositions = {0, 2, 4};
         int[] holesPositions = {0, 4, 5};
-        Assertions.assertEquals(2, miceAndFoxSolver.hide(micePositions, holesPositions));
+        assertEquals(2, miceAndFoxSolver.hide(micePositions, holesPositions));
     }
 
     @Test
@@ -21,6 +22,6 @@ public class MiceAndFoxTest {
 
         int[] micePositions = {-94, -85, -79, -79, -28, -10, 67, 93};
         int[] holesPositions = {-31, -2, 9, 23, 25, 50, 69, 78};
-        Assertions.assertEquals(102, miceAndFoxSolver.hide(micePositions, holesPositions));
+        assertEquals(102, miceAndFoxSolver.hide(micePositions, holesPositions));
     }
 }
