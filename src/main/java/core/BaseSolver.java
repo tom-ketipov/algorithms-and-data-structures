@@ -15,7 +15,7 @@ public class BaseSolver {
     }
 
     /**
-     * Validates an array input to ensure it is not null or empty.
+     * Validates int[] array input to ensure it is not null or empty.
      *
      * @param arr the array to be validated
      * @throws IllegalArgumentException if the array is null or empty
@@ -27,7 +27,19 @@ public class BaseSolver {
     }
 
     /**
-     * Validates an array input to ensure it is not null or empty.
+     * Validates long[] array input to ensure it is not null or empty.
+     *
+     * @param arr the array to be validated
+     * @throws IllegalArgumentException if the array is null or empty
+     */
+    protected void validate(long[] arr) {
+        if (arr == null || arr.length == 0) {
+            throw new IllegalArgumentException(getInvalidArrayInputError());
+        }
+    }
+
+    /**
+     * Validates String[] array input to ensure it is not null or empty.
      *
      * @param arr the array to be validated
      * @throws IllegalArgumentException if the array is null or empty
@@ -40,7 +52,7 @@ public class BaseSolver {
 
 
     /**
-     * Validates an array input to ensure it is not null or empty.
+     * Validates char[] array input to ensure it is not null or empty.
      *
      * @param arr the array to be validated
      * @throws IllegalArgumentException if the array is null or empty
@@ -52,7 +64,7 @@ public class BaseSolver {
     }
 
     /**
-     * Validates an array to ensure that all elements are non-negative.
+     * Validates int[] array to ensure that all elements are non-negative.
      *
      * @param arr the array to be validated for non-negativity
      * @throws IllegalArgumentException if the array is null or empty, or if any element in the array is negative
