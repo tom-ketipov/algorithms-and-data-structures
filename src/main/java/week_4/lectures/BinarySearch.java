@@ -1,4 +1,4 @@
-package bonus.divide_and_conquer;
+package week_4.lectures;
 
 public class BinarySearch {
     public int binarySearch(int[] numbers, int number) {

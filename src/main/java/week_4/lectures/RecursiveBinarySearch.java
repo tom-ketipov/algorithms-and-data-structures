@@ -1,4 +1,4 @@
-package bonus.divide_and_conquer;
+package week_4.lectures;
 
 public class RecursiveBinarySearch {
     public int recursiveBinarySearch(int[] numbers, int number, int low, int high) {

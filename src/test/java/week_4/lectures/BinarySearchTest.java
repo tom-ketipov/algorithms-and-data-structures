@@ -1,6 +1,8 @@
-package bonus.divide_and_conquer;
+package week_4.lectures;
 
 import org.junit.jupiter.api.Test;
+import week_4.lectures.BinarySearch;
+import week_4.lectures.RecursiveBinarySearch;
 
 import static org.junit.jupiter.api.Assertions.*;
 
