@@ -61,7 +61,7 @@ public class PolynomialMultiplication {
         int[] product = new int[degree];
 
         // Base case: If the polynomial has only one term
-        if (coefficientsA.length == 1) {
+        if (degree == 1) {
             product[0] = coefficientsA[0] * coefficientsB[0];
             return product;
         }
@@ -79,16 +79,17 @@ public class PolynomialMultiplication {
         int[] b1 = Arrays.stream(coefficientsB, halfLength, maxDegree).toArray();
 
         // Construct the new coefficient arrays by multiplying the halves
-        int[] a1b1 = multiplyPolynomialsNaive(a1, b1);
-        int[] a1b0 = multiplyPolynomialsNaive(a1, b0);
-        int[] a0b1 = multiplyPolynomialsNaive(a0, b1);
-        int[] a0b0 = multiplyPolynomialsNaive(a0, b0);
+        int[] a1b1 = multiplyPolynomialsDivideAndConquer(a1, b1);
+        int[] a1b0 = multiplyPolynomialsDivideAndConquer(a1, b0);
+        int[] a0b1 = multiplyPolynomialsDivideAndConquer(a0, b1);
+        int[] a0b0 = multiplyPolynomialsDivideAndConquer(a0, b0);
+
 
         // Construct the middle array by adding (A1B0 + A0B1)
         int[] middle = addArrays(a1b0, a0b1);
 
         // Construct the product
-        for (int i = 0; i <= degree; i++) {
+        for (int i = 0; i < degree; i++) {
             // Term from a0b0
             if (i < a0b0.length) {
                 product[i] += a0b0[i];
@@ -102,7 +103,7 @@ public class PolynomialMultiplication {
 
             // Term from a1b1
             int a1b1Index = (maxDegree % 2 == 1) ? (i + maxDegree - 1) : (i + maxDegree);
-            if (a1b1Index < product.length && i < a1b1.length && a1b1[i] != 0) {
+            if (a1b1Index < product.length && i < a1b1.length) {
                 product[a1b1Index] += a1b1[i];
             }
         }
@@ -112,20 +113,21 @@ public class PolynomialMultiplication {
     /**
      * Adds corresponding elements of two arrays element-wise and returns the result as a new array.
      *
-     * @param array1 The first input array.
-     * @param array2 The second input array.
+     * @param A The first input array.
+     * @param B The second input array.
      * @return A new array containing the element-wise sum of {@code array1} and {@code array2}.
      * @throws IllegalArgumentException If the input arrays have different lengths.
      */
-    private int[] addArrays(int[] array1, int[] array2) {
-        if (array1.length != array2.length) {
-            throw new IllegalArgumentException("Input arrays must have the same length.");
+    private static int[] addArrays(int[] A, int[] B) {
+        int[] result = new int[Math.max(A.length, B.length)];
+
+        for (int i = 0; i < A.length; i++) {
+            result[i] += A[i];
+        }
+        for (int i = 0; i < B.length; i++) {
+            result[i] += B[i];
         }
 
-        int[] result = new int[array1.length];
-        for (int i = 0; i < array1.length; i++) {
-            result[i] = array1[i] + array2[i];
-        }
         return result;
     }
 }
