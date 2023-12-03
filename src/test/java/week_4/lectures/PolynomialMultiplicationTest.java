@@ -102,4 +102,14 @@ public class PolynomialMultiplicationTest {
             assertEquals("Coefficients cannot be null.", e.getMessage());
         }
     }
+
+    @Test
+    public void can_multiply_two_polynomials_with_coefficients_of_equal_odd_lengths_using_karatsuba() {
+        int[] coefficientsA = {1, 2, 3};
+        int[] coefficientsB = {3, 2, 2};
+
+        int[] result = polynomialMultiplicationSolver.multiplyPolynomialsKaratsuba(coefficientsA, coefficientsB);
+        System.out.println(Arrays.toString(result));
+        assertArrayEquals(new int[]{3, 8, 15, 10, 6}, result);
+    }
 }
