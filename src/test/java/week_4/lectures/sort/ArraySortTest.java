@@ -38,4 +38,12 @@ public class ArraySortTest {
         quickSortSolver.quickSort(array, 0, array.length);
         assertArrayEquals(new int[]{1, 2, 3, 5, 23, 41}, array);
     }
+
+    @Test
+    public void can_sort_array_with_quick_sort_with_random_pivot() {
+        int[] array = {2, 5, 1, 3, 23, 41};
+
+        quickSortSolver.quickSortRandomPivot(array, 0, array.length);
+        assertArrayEquals(new int[]{1, 2, 3, 5, 23, 41}, array);
+    }
 }

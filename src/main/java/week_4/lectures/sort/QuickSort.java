@@ -17,6 +17,25 @@ public class QuickSort {
     }
 
     /**
+     * This method implements the QuickSort algorithm with a randomly chosen pivot element for sorting an integer array.
+     * The random pivot selection helps mitigate the worst-case scenario of QuickSort.
+     *
+     * @param array the array to be sorted
+     * @param low   the starting index of the array or subarray to be sorted
+     * @param high  the ending index of the array or subarray to be sorted
+     */
+    public void quickSortRandomPivot(int[] array, int low, int high) {
+        if (low < high) {
+            int random = generateRandomIntInRange(low, high);
+            swap(array, low, random);
+
+            int pivotIndex = partition(array, low, array.length);
+            quickSortRandomPivot(array, low, pivotIndex - 1);
+            quickSortRandomPivot(array, pivotIndex + 1, high);
+        }
+    }
+
+    /**
      * Partitions the array and returns the index of the pivot element.
      *
      * @param array the array to be partitioned
@@ -49,5 +68,21 @@ public class QuickSort {
         int temp = array[index1];
         array[index1] = array[index2];
         array[index2] = temp;
+    }
+
+    /**
+     * Generates a random integer within the specified range [min, max].
+     *
+     * @param min the inclusive lower bound of the random number
+     * @param max the inclusive upper bound of the random number
+     * @return a pseudo-random integer between min and max (inclusive)
+     * @throws IllegalArgumentException if min is greater than max
+     */
+    public int generateRandomIntInRange(int min, int max) {
+        if (min > max) {
+            throw new IllegalArgumentException("Invalid range. The minimum value must be less than or equal to the maximum value.");
+        }
+
+        return (int) ((Math.random() * (max - min)) + min);
     }
 }
