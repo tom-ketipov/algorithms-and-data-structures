@@ -7,12 +7,14 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class ArraySortTest {
     private SelectionSort selectionSortSolver;
+    private InsertionSort insertionSortSolver;
     private MergeSort mergeSortSolver;
     private QuickSort quickSortSolver;
 
     @BeforeEach
     public void setUp() {
         selectionSortSolver = new SelectionSort();
+        insertionSortSolver = new InsertionSort();
         mergeSortSolver = new MergeSort();
         quickSortSolver = new QuickSort();
     }
@@ -21,6 +23,14 @@ public class ArraySortTest {
     public void can_sort_array_with_selection_sort() {
         int[] array = {2, 5, 1, 3, 23, 41};
         assertArrayEquals(new int[]{1, 2, 3, 5, 23, 41}, selectionSortSolver.selectionSort(array));
+    }
+
+    @Test
+    public void can_sort_array_with_insertion_sort() {
+        int[] array = {2, 5, 1, 3, 23, 41};
+
+        insertionSortSolver.insertionSort(array);
+        assertArrayEquals(new int[]{1, 2, 3, 5, 23, 41}, array);
     }
 
     @Test
