@@ -2,11 +2,10 @@ package modules.algorithmic_toolbox.week_4.lectures;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import services.ValidationMessages;
 
 import java.util.Arrays;
 
-import static modules.algorithmic_toolbox.week_4.lectures.PolynomialMultiplication.NON_NULL_COEFFICIENT_A_EXCEPTION_MESSAGE;
-import static modules.algorithmic_toolbox.week_4.lectures.PolynomialMultiplication.NON_NULL_COEFFICIENT_B_EXCEPTION_MESSAGE;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -53,7 +52,7 @@ public class PolynomialMultiplicationTest {
         try {
             polynomialMultiplicationSolver.multiplyPolynomialsDivideAndConquer(coefficientsA, null);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_NULL_COEFFICIENT_B_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -101,7 +100,7 @@ public class PolynomialMultiplicationTest {
         try {
             polynomialMultiplicationSolver.multiplyPolynomialsDivideAndConquer(null, coefficientsB);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_NULL_COEFFICIENT_A_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 

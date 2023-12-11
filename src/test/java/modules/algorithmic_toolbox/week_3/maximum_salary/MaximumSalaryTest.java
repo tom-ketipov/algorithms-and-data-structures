@@ -1,8 +1,8 @@
 package modules.algorithmic_toolbox.week_3.maximum_salary;
 
 import org.junit.jupiter.api.Test;
+import services.ValidationMessages;
 
-import static modules.algorithmic_toolbox.week_3.maximum_salary.LargestNumber.NON_NULL_NUMBERS_EXCEPTION_MESSAGE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MaximumSalaryTest {
@@ -39,7 +39,7 @@ public class MaximumSalaryTest {
         try {
             largestNumberSolver.largestNumber(null);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_NULL_NUMBERS_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 }

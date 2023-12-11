@@ -1,11 +1,11 @@
 package modules.algorithmic_toolbox.week_4.lectures.sort;
 
+import services.ValidationMessages;
+
 import static services.ValidationService.validateInArrayBounds;
 import static services.ValidationService.validateNotNull;
 
 public class InsertionSort {
-    public final static String NON_NULL_ARRAY_EXCEPTION_MESSAGE = "The input array must not be null.";
-    public final static String NON_IN_BOUNDS_ARRAY_INDEX_EXCEPTION_MESSAGE = "The input array index is out of bounds.";
 
     /**
      * Sorts the given integer array using the insertion sort algorithm.
@@ -15,7 +15,7 @@ public class InsertionSort {
      *                                  Time Complexity O(n^2)
      */
     public void insertionSort(int[] arr) {
-        validateNotNull(arr, NON_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotNull(arr, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
 
         for (int i = 1; i < arr.length; i++) {
             insert(arr, i);
@@ -31,8 +31,8 @@ public class InsertionSort {
      * @throws IllegalArgumentException If the index is out of the array bounds.
      */
     private void insert(int[] arr, int index) {
-        validateNotNull(arr, NON_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateInArrayBounds(arr, index, NON_IN_BOUNDS_ARRAY_INDEX_EXCEPTION_MESSAGE);
+        validateNotNull(arr, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateInArrayBounds(arr, index, ValidationMessages.NON_IN_BOUNDS_OF_ARRAY_EXCEPTION_MESSAGE);
 
         int comparableValue = arr[index], i;
         for (i = index - 1; i >= 0 && arr[i] > comparableValue; i--) {

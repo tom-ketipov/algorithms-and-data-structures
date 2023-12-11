@@ -1,9 +1,8 @@
 package modules.algorithmic_toolbox.week_3.collecting_signatures;
 
 import org.junit.jupiter.api.Test;
+import services.ValidationMessages;
 
-import static modules.algorithmic_toolbox.week_3.collecting_signatures.CoveringSegments.NON_EMPTY_SEGMENTS_EXCEPTION_MESSAGE;
-import static modules.algorithmic_toolbox.week_3.collecting_signatures.CoveringSegments.NON_NULL_SEGMENTS_EXCEPTION_MESSAGE;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CollectingSignaturesTest {
@@ -52,7 +51,7 @@ public class CollectingSignaturesTest {
         try {
             coveringSegmentsSolver.optimalPoints(null);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_NULL_SEGMENTS_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -63,7 +62,7 @@ public class CollectingSignaturesTest {
         try {
             coveringSegmentsSolver.optimalPoints(new CoveringSegments.Segment[]{});
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_EMPTY_SEGMENTS_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 }

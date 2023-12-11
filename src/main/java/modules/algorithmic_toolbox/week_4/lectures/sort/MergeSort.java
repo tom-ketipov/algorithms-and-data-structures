@@ -1,11 +1,12 @@
 package modules.algorithmic_toolbox.week_4.lectures.sort;
 
+import services.ValidationMessages;
+
 import java.util.Arrays;
 
 import static services.ValidationService.validateNotNull;
 
 public class MergeSort {
-    public final static String NON_NULL_ARRAY_EXCEPTION_MESSAGE = "The input array must not be null.";
 
     /**
      * Sorts an array of integers in ascending order using the Merge Sort algorithm.
@@ -15,7 +16,7 @@ public class MergeSort {
      * @throws IllegalArgumentException for null input values
      */
     public void mergeSort(int[] array) {
-        validateNotNull(array, NON_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotNull(array, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
 
         if (array.length <= 1) return;
 

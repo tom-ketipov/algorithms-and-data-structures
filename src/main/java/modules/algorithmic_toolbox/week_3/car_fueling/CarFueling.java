@@ -1,14 +1,11 @@
 package modules.algorithmic_toolbox.week_3.car_fueling;
 
 
+import services.ValidationMessages;
+
 import static services.ValidationService.*;
 
 public class CarFueling {
-    public final static String NON_NULL_REFILL_STATIONS_EXCEPTION_MESSAGE = "The input array of refill stations must not be null.";
-    public final static String NON_EMPTY_REFILL_STATIONS_EXCEPTION_MESSAGE = "The input array of refill stations must not be empty.";
-    public final static String NON_NEGATIVE_DISTANCE_EXCEPTION_MESSAGE = "The input distance must be higher than 1.";
-    public final static String NON_NEGATIVE_CAPACITY_EXCEPTION_MESSAGE = "The input tank capacity must be higher than 1.";
-
     /*
             Car Fueling Problem
             Compute the minimum number of gas tank re-fills to get from one city to another.
@@ -18,10 +15,10 @@ public class CarFueling {
             Time complexity: 0(n)
      */
     public int computeMinRefills(int totalDistance, int tankCapacity, int[] refillStations) {
-        validateInRange(totalDistance, 1, Integer.MAX_VALUE, NON_NEGATIVE_DISTANCE_EXCEPTION_MESSAGE);
-        validateInRange(tankCapacity, 1, Integer.MAX_VALUE, NON_NEGATIVE_CAPACITY_EXCEPTION_MESSAGE);
-        validateNotNull(refillStations, NON_NULL_REFILL_STATIONS_EXCEPTION_MESSAGE);
-        validateNotEmpty(refillStations, NON_EMPTY_REFILL_STATIONS_EXCEPTION_MESSAGE);
+        validateInRange(totalDistance, 1, Integer.MAX_VALUE, ValidationMessages.NON_POSITIVE_NUMBER_EXCEPTION_MESSAGE);
+        validateInRange(tankCapacity, 1, Integer.MAX_VALUE, ValidationMessages.NON_POSITIVE_NUMBER_EXCEPTION_MESSAGE);
+        validateNotNull(refillStations, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotEmpty(refillStations, ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE);
 
         if (!validateRoute(totalDistance, tankCapacity, refillStations)) return -1;
 

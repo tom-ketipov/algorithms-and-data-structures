@@ -2,9 +2,9 @@ package modules.algorithmic_toolbox.week_4.lectures.recursion;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import services.ValidationMessages;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static modules.algorithmic_toolbox.week_4.lectures.recursion.Fibonacci.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE;
 
 class FibonacciTest {
     private Fibonacci fibonacciSolver;
@@ -38,7 +38,7 @@ class FibonacciTest {
         try {
             fibonacciSolver.linearFibonacci(index);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 

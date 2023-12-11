@@ -1,9 +1,10 @@
 package modules.algorithmic_toolbox.week_4.lectures.recursion;
 
+import services.ValidationMessages;
+
 import static services.ValidationService.validateNotNull;
 
 public class Palindrome {
-    public static final String NOT_NULL_STRING_EXCEPTION_MESSAGE = "The input String cannot be null.";
 
     /**
      * Checks if a given string is a palindrome using a recursive approach.
@@ -28,7 +29,7 @@ public class Palindrome {
      * @throws IllegalArgumentException if the input string is null.
      */
     public boolean recursivePalindrome(String word, int start, int end) {
-        validateNotNull(word, NOT_NULL_STRING_EXCEPTION_MESSAGE);
+        validateNotNull(word, ValidationMessages.NOT_NULL_STRING_EXCEPTION_MESSAGE);
 
         if (start >= end) return true;
 
@@ -48,7 +49,7 @@ public class Palindrome {
      *                                  Time Complexity: O(n)
      */
     public boolean linearPalindrome(String word) {
-        validateNotNull(word, NOT_NULL_STRING_EXCEPTION_MESSAGE);
+        validateNotNull(word, ValidationMessages.NOT_NULL_STRING_EXCEPTION_MESSAGE);
 
         for (int i = 0, j = word.length() - 1; i <= j; i++, j--) {
             if (word.charAt(i) != word.charAt(j)) return false;

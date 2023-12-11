@@ -1,15 +1,16 @@
 package modules.algorithmic_toolbox.week_3.maximum_salary;
 
+import services.ValidationMessages;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
 import static services.ValidationService.validateNotNull;
 
 public class LargestNumber {
-    public final static String NON_NULL_NUMBERS_EXCEPTION_MESSAGE = "The input array of numbers must not be null.";
 
     public String largestNumber(String[] numbers) {
-        validateNotNull(numbers, NON_NULL_NUMBERS_EXCEPTION_MESSAGE);
+        validateNotNull(numbers, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
 
         Arrays.sort(numbers, new LargerNumberComparator());
         return String.join("", numbers);

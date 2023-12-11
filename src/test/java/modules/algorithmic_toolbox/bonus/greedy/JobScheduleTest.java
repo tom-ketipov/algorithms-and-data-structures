@@ -1,8 +1,8 @@
 package modules.algorithmic_toolbox.bonus.greedy;
 
 import org.junit.jupiter.api.Test;
+import services.ValidationMessages;
 
-import static modules.algorithmic_toolbox.bonus.greedy.JobSchedule.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class JobScheduleTest {
@@ -14,7 +14,7 @@ public class JobScheduleTest {
         try {
             new JobSchedule.Job(-1, 2);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_NEGATIVE_DEADLINE_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -23,7 +23,7 @@ public class JobScheduleTest {
         try {
             new JobSchedule.Job(1, -32);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_NEGATIVE_PROFIT_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -106,7 +106,7 @@ public class JobScheduleTest {
         try {
             jobScheduleSolver.scheduleJobs(null);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_NULL_JOBS_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -117,7 +117,7 @@ public class JobScheduleTest {
         try {
             jobScheduleSolver.scheduleJobs(new JobSchedule.Job[0]);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_EMPTY_JOBS_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 }

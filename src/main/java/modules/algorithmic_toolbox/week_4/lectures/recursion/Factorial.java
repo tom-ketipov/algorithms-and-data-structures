@@ -1,10 +1,10 @@
 package modules.algorithmic_toolbox.week_4.lectures.recursion;
 
+import services.ValidationMessages;
+
 import static services.ValidationService.validateInRange;
 
 public class Factorial {
-    public static final String NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE = "The input number must be a non-negative value.";
-
     /**
      * Calculates the factorial of a non-negative integer using a recursive approach.
      * <p>
@@ -16,7 +16,7 @@ public class Factorial {
      * @throws IllegalArgumentException if 'n' is a negative number.
      */
     public int recursiveFactorial(int n) {
-        validateInRange(n, 0, Integer.MAX_VALUE, NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        validateInRange(n, 0, Integer.MAX_VALUE, ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
 
         if (n == 0) return 1;
         return n * recursiveFactorial(n - 1);
@@ -33,7 +33,7 @@ public class Factorial {
      * @throws IllegalArgumentException if 'n' is a negative number.
      */
     public int linearFactorial(int n) {
-        validateInRange(n, 0, Integer.MAX_VALUE, NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        validateInRange(n, 0, Integer.MAX_VALUE, ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
 
         int factorial = 1, i = n;
         while (i > 1) {

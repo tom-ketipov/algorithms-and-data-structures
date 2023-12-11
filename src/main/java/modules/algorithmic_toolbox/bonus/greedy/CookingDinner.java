@@ -1,25 +1,21 @@
 package modules.algorithmic_toolbox.bonus.greedy;
 
+import services.ValidationMessages;
+
 import java.util.Arrays;
 import java.util.Comparator;
 
 import static services.ValidationService.*;
 
 public class CookingDinner {
-    public final static String NON_NULL_COOKING_TIMES_EXCEPTION_MESSAGE = "The input array of cooking times must not be null.";
-    public final static String NON_NULL_DUE_TIMES_EXCEPTION_MESSAGE = "The input array of due times must not be null.";
-    public final static String NON_EMPTY_COOKING_TIMES_EXCEPTION_MESSAGE = "The input array of cooking times must not be empty.";
-    public final static String NON_EMPTY_DUE_TIMES_EXCEPTION_MESSAGE = "The input array of due times must not be empty.";
-    public final static String NON_NEGATIVE_COOKING_TIME_EXCEPTION_MESSAGE = "The cooking time must be a non-negative value.";
-    public final static String NON_NEGATIVE_DUE_TIME_EXCEPTION_MESSAGE = "The due time must be a non-negative value.";
 
     protected static class Meal {
         private int cookingTime;
         private int dueTime;
 
         public Meal(int cookingTime, int dueTime) {
-            validateInRange(cookingTime, 0, Integer.MAX_VALUE, NON_NEGATIVE_COOKING_TIME_EXCEPTION_MESSAGE);
-            validateInRange(dueTime, 0, Integer.MAX_VALUE, NON_NEGATIVE_DUE_TIME_EXCEPTION_MESSAGE);
+            validateInRange(cookingTime, 0, Integer.MAX_VALUE, ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+            validateInRange(dueTime, 0, Integer.MAX_VALUE, ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
 
             this.cookingTime = cookingTime;
             this.dueTime = dueTime;
@@ -35,10 +31,10 @@ public class CookingDinner {
     }
 
     public Meal[] generatePlan(int[] cookingTimes, int[] dueTimes) {
-        validateNotNull(cookingTimes, NON_NULL_COOKING_TIMES_EXCEPTION_MESSAGE);
-        validateNotNull(dueTimes, NON_NULL_DUE_TIMES_EXCEPTION_MESSAGE);
-        validateNotEmpty(cookingTimes, NON_EMPTY_COOKING_TIMES_EXCEPTION_MESSAGE);
-        validateNotEmpty(dueTimes, NON_EMPTY_DUE_TIMES_EXCEPTION_MESSAGE);
+        validateNotNull(cookingTimes, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotNull(dueTimes, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotEmpty(cookingTimes, ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE);
+        validateNotEmpty(dueTimes, ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE);
 
         Meal[] meals = generateMeals(cookingTimes, dueTimes);
         Arrays.sort(meals, Comparator.comparing(Meal::getDueTime, Comparator.reverseOrder()).thenComparing(Meal::getCookingTime, Comparator.reverseOrder()));

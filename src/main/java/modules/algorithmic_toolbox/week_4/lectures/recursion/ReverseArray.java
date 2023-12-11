@@ -1,10 +1,10 @@
 package modules.algorithmic_toolbox.week_4.lectures.recursion;
 
+import services.ValidationMessages;
+
 import static services.ValidationService.validateNotNull;
 
 public class ReverseArray {
-    public final static String NON_NULL_ARRAY_EXCEPTION_MESSAGE = "The input array must not be null.";
-
     /**
      * Reverses an array of integers using a recursive approach.
      *
@@ -28,7 +28,7 @@ public class ReverseArray {
      * @implNote Time Complexity: O(n)
      */
     public int[] recursiveArrayReverseInRange(int[] arr, int left, int right) {
-        validateNotNull(arr, NON_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotNull(arr, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
 
         if (left >= right) return arr;
 
@@ -47,7 +47,7 @@ public class ReverseArray {
      * @implNote Time Complexity: O(n)
      */
     public int[] linerArrayReverse(int[] arr) {
-        validateNotNull(arr, NON_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotNull(arr, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
 
         int left = 0, right = arr.length - 1;
         while (left <= right) {

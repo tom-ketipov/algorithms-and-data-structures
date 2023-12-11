@@ -1,5 +1,7 @@
 package modules.algorithmic_toolbox.bonus.greedy;
 
+import services.ValidationMessages;
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.LinkedList;
@@ -17,19 +19,13 @@ import static services.ValidationService.*;
  */
 
 public class JobSchedule {
-    public final static String NON_NULL_JOBS_EXCEPTION_MESSAGE = "The input array of jobs must not be null.";
-    public final static String NON_EMPTY_JOBS_EXCEPTION_MESSAGE = "The input array of jobs must not be empty.";
-    public final static String NON_NEGATIVE_DEADLINE_EXCEPTION_MESSAGE = "The deadline must be a non-negative value.";
-    public final static String NON_NEGATIVE_PROFIT_EXCEPTION_MESSAGE = "The profit must be a non-negative value.";
-
-
     public static class Job {
         private int profit;
         private int deadline;
 
         public Job(int deadline, int profit) {
-            validateInRange(deadline, 0, Integer.MAX_VALUE, NON_NEGATIVE_DEADLINE_EXCEPTION_MESSAGE);
-            validateInRange(profit, 0, Integer.MAX_VALUE, NON_NEGATIVE_PROFIT_EXCEPTION_MESSAGE);
+            validateInRange(deadline, 0, Integer.MAX_VALUE, ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+            validateInRange(profit, 0, Integer.MAX_VALUE, ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
 
             this.profit = profit;
             this.deadline = deadline;
@@ -45,8 +41,8 @@ public class JobSchedule {
     }
 
     public Job[] scheduleJobs(Job[] jobs) {
-        validateNotNull(jobs, NON_NULL_JOBS_EXCEPTION_MESSAGE);
-        validateNotEmpty(jobs, NON_EMPTY_JOBS_EXCEPTION_MESSAGE);
+        validateNotNull(jobs, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotEmpty(jobs, ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE);
 
         Arrays.sort(jobs, Comparator.comparing(Job::getDeadline).thenComparing((Job::getProfit), Comparator.reverseOrder()));
 

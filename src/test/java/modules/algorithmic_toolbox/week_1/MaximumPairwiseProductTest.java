@@ -1,9 +1,8 @@
 package modules.algorithmic_toolbox.week_1;
 
 import org.junit.jupiter.api.Test;
+import services.ValidationMessages;
 
-import static modules.algorithmic_toolbox.week_1.MaximumPairwiseProduct.NON_EMPTY_NUMBERS_EXCEPTION_MESSAGE;
-import static modules.algorithmic_toolbox.week_1.MaximumPairwiseProduct.NON_NULL_NUMBERS_EXCEPTION_MESSAGE;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MaximumPairwiseProductTest {
@@ -40,7 +39,7 @@ class MaximumPairwiseProductTest {
         try {
             maximumPairwiseProductSolver.maxPairwiseProduct(new long[0]);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_EMPTY_NUMBERS_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -51,7 +50,7 @@ class MaximumPairwiseProductTest {
         try {
             maximumPairwiseProductSolver.maxPairwiseProduct(null);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_NULL_NUMBERS_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 }

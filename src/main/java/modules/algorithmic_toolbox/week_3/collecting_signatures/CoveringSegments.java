@@ -1,5 +1,7 @@
 package modules.algorithmic_toolbox.week_3.collecting_signatures;
 
+import services.ValidationMessages;
+
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.LinkedList;
@@ -8,9 +10,6 @@ import static services.ValidationService.validateNotEmpty;
 import static services.ValidationService.validateNotNull;
 
 public class CoveringSegments {
-    public final static String NON_NULL_SEGMENTS_EXCEPTION_MESSAGE = "The input array of segments must not be null.";
-    public final static String NON_EMPTY_SEGMENTS_EXCEPTION_MESSAGE = "The input array of segments must not be empty.";
-
     /*
             Collecting Signatures problem
             You have to collect signatures from the tenants in the building.
@@ -33,8 +32,8 @@ public class CoveringSegments {
     }
 
     public int[] optimalPoints(Segment[] segments) {
-        validateNotNull(segments, NON_NULL_SEGMENTS_EXCEPTION_MESSAGE);
-        validateNotEmpty(segments, NON_EMPTY_SEGMENTS_EXCEPTION_MESSAGE);
+        validateNotNull(segments, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotEmpty(segments, ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE);
 
         Arrays.sort(segments, Comparator.comparing(segment -> segment.end));
 

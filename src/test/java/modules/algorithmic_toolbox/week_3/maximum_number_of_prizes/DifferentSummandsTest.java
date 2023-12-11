@@ -1,10 +1,10 @@
 package modules.algorithmic_toolbox.week_3.maximum_number_of_prizes;
 
 import org.junit.jupiter.api.Test;
+import services.ValidationMessages;
 
 import java.util.List;
 
-import static modules.algorithmic_toolbox.week_3.maximum_number_of_prizes.DifferentSummands.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DifferentSummandsTest {
@@ -45,7 +45,7 @@ public class DifferentSummandsTest {
         try {
             differentSummandsSolver.optimalSummands(max);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -58,7 +58,7 @@ public class DifferentSummandsTest {
         try {
             differentSummandsSolver.optimalSummands(max);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 }

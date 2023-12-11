@@ -1,19 +1,13 @@
 package modules.algorithmic_toolbox.week_4.lectures;
 
+import services.ValidationMessages;
+
 import java.util.Arrays;
 
 import static services.ValidationService.validateNotEmpty;
 import static services.ValidationService.validateNotNull;
 
 public class PolynomialMultiplication {
-    public final static String NON_NULL_COEFFICIENT_A_EXCEPTION_MESSAGE = "The input array of coefficientsA must not be null.";
-    public final static String NON_EMPTY_COEFFICIENT_A_EXCEPTION_MESSAGE = "The input array of coefficientsA must not be empty.";
-    public final static String NON_NULL_COEFFICIENT_B_EXCEPTION_MESSAGE = "The input array of coefficientsB must not be null.";
-    public final static String NON_EMPTY_COEFFICIENT_B_EXCEPTION_MESSAGE = "The input array of coefficientsB must not be empty.";
-    public final static String NON_NULL_A_EXCEPTION_MESSAGE = "The input array of a must not be null.";
-    public final static String NON_NULL_B_EXCEPTION_MESSAGE = "The input array of b must not be null.";
-
-
     /**
      * Multiplies two polynomials using the naive or brute-force approach.
      * The coefficients of the polynomials are represented as arrays, where the index
@@ -32,10 +26,10 @@ public class PolynomialMultiplication {
      *                                  Time complexity: O(n^2)
      */
     public int[] multiplyPolynomialsNaive(int[] coefficientsA, int[] coefficientsB) {
-        validateNotNull(coefficientsA, NON_NULL_COEFFICIENT_A_EXCEPTION_MESSAGE);
-        validateNotNull(coefficientsB, NON_NULL_COEFFICIENT_B_EXCEPTION_MESSAGE);
-        validateNotEmpty(coefficientsA, NON_EMPTY_COEFFICIENT_A_EXCEPTION_MESSAGE);
-        validateNotEmpty(coefficientsB, NON_EMPTY_COEFFICIENT_B_EXCEPTION_MESSAGE);
+        validateNotNull(coefficientsA, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotNull(coefficientsB, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotEmpty(coefficientsA, ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE);
+        validateNotEmpty(coefficientsB, ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE);
 
         int[] multipliedCoefficients = new int[coefficientsA.length + coefficientsB.length - 1];
 
@@ -62,10 +56,10 @@ public class PolynomialMultiplication {
      *                                  Time complexity: O(n^2)
      */
     public int[] multiplyPolynomialsDivideAndConquer(int[] coefficientsA, int[] coefficientsB) {
-        validateNotNull(coefficientsA, NON_NULL_COEFFICIENT_A_EXCEPTION_MESSAGE);
-        validateNotNull(coefficientsB, NON_NULL_COEFFICIENT_B_EXCEPTION_MESSAGE);
-        validateNotEmpty(coefficientsA, NON_EMPTY_COEFFICIENT_A_EXCEPTION_MESSAGE);
-        validateNotEmpty(coefficientsB, NON_EMPTY_COEFFICIENT_B_EXCEPTION_MESSAGE);
+        validateNotNull(coefficientsA, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotNull(coefficientsB, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotEmpty(coefficientsA, ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE);
+        validateNotEmpty(coefficientsB, ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE);
 
 
         int degree = coefficientsA.length + coefficientsB.length - 1;
@@ -134,10 +128,10 @@ public class PolynomialMultiplication {
      *                                  Time complexity: O(n^1.585)
      */
     public int[] multiplyPolynomialsKaratsuba(int[] coefficientsA, int[] coefficientsB) {
-        validateNotNull(coefficientsA, NON_NULL_COEFFICIENT_A_EXCEPTION_MESSAGE);
-        validateNotNull(coefficientsB, NON_NULL_COEFFICIENT_B_EXCEPTION_MESSAGE);
-        validateNotEmpty(coefficientsA, NON_EMPTY_COEFFICIENT_A_EXCEPTION_MESSAGE);
-        validateNotEmpty(coefficientsB, NON_EMPTY_COEFFICIENT_B_EXCEPTION_MESSAGE);
+        validateNotNull(coefficientsA, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotNull(coefficientsB, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotEmpty(coefficientsA, ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE);
+        validateNotEmpty(coefficientsB, ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE);
 
         int degree = coefficientsA.length + coefficientsB.length - 1;
         int[] product = new int[degree];
@@ -206,8 +200,8 @@ public class PolynomialMultiplication {
      * @throws IllegalArgumentException If the input arrays have different lengths.
      */
     private int[] addArrays(int[] A, int[] B) {
-        validateNotNull(A, NON_NULL_A_EXCEPTION_MESSAGE);
-        validateNotNull(B, NON_NULL_B_EXCEPTION_MESSAGE);
+        validateNotNull(A, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotNull(B, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
 
         int[] result = new int[Math.max(A.length, B.length)];
         for (int i = 0; i < A.length; i++) {
@@ -229,8 +223,8 @@ public class PolynomialMultiplication {
      * @throws IllegalArgumentException If either A or B is null.
      */
     private int[] subtractArrays(int[] A, int[] B) {
-        validateNotNull(A, NON_NULL_A_EXCEPTION_MESSAGE);
-        validateNotNull(B, NON_NULL_B_EXCEPTION_MESSAGE);
+        validateNotNull(A, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotNull(B, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
 
         int[] result = new int[Math.max(A.length, B.length)];
         for (int i = 0; i < A.length; i++) {

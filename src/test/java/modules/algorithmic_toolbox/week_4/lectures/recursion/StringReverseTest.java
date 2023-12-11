@@ -4,7 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static modules.algorithmic_toolbox.week_4.lectures.recursion.StringReverse.NOT_NULL_STRING_EXCEPTION_MESSAGE;
+import static services.ValidationMessages.NOT_NULL_STRING_EXCEPTION_MESSAGE;
 
 class StringReverseTest {
     private StringReverse stringReverseSolver;

@@ -1,8 +1,8 @@
 package modules.algorithmic_toolbox.bonus.greedy;
 
 import org.junit.jupiter.api.Test;
+import services.ValidationMessages;
 
-import static modules.algorithmic_toolbox.bonus.greedy.CookingDinner.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CookingDinnerTest {
@@ -105,7 +105,7 @@ public class CookingDinnerTest {
         try {
             new CookingDinner.Meal(cookingTime, dueTime);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_NEGATIVE_COOKING_TIME_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -117,7 +117,7 @@ public class CookingDinnerTest {
         try {
             new CookingDinner.Meal(cookingTime, dueTime);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_NEGATIVE_DUE_TIME_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -130,7 +130,7 @@ public class CookingDinnerTest {
         try {
             cookingDinnerSolver.generatePlan(null, dueTimes);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_NULL_COOKING_TIMES_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -143,7 +143,7 @@ public class CookingDinnerTest {
         try {
             cookingDinnerSolver.generatePlan(new int[0], dueTimes);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_EMPTY_COOKING_TIMES_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -156,7 +156,7 @@ public class CookingDinnerTest {
         try {
             cookingDinnerSolver.generatePlan(cookingTimes, null);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_NULL_DUE_TIMES_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -169,7 +169,7 @@ public class CookingDinnerTest {
         try {
             cookingDinnerSolver.generatePlan(cookingTimes, new int[0]);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_EMPTY_DUE_TIMES_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 }

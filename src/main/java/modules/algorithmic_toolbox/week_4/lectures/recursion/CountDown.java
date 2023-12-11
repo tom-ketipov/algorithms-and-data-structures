@@ -1,9 +1,10 @@
 package modules.algorithmic_toolbox.week_4.lectures.recursion;
 
+import services.ValidationMessages;
+
 import static services.ValidationService.validateInRange;
 
 public class CountDown {
-    private static final String NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE = "The input number must be a non-negative value.";
 
     /**
      * Recursively counts down from the specified maximum time, printing each countdown value.
@@ -13,7 +14,7 @@ public class CountDown {
      * @implNote Time Complexity: O(n)
      */
     private static void recursiveCountDown(int maxTime) {
-        validateInRange(maxTime, 0, Integer.MAX_VALUE, NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        validateInRange(maxTime, 0, Integer.MAX_VALUE, ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
 
         if (maxTime == 0) return;
 
@@ -30,7 +31,7 @@ public class CountDown {
      * @implNote Time Complexity: O(n)
      **/
     private static void linearCountDown(int maxTime) {
-        validateInRange(maxTime, 0, Integer.MAX_VALUE, NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        validateInRange(maxTime, 0, Integer.MAX_VALUE, ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
 
         while (maxTime > 0) {
             System.out.println(maxTime--);

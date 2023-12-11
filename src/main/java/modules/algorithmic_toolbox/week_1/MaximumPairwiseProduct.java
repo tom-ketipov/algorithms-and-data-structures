@@ -1,14 +1,13 @@
 package modules.algorithmic_toolbox.week_1;
 
+import services.ValidationMessages;
+
 import java.util.Arrays;
 
 import static services.ValidationService.validateNotEmpty;
 import static services.ValidationService.validateNotNull;
 
 public class MaximumPairwiseProduct {
-    public final static String NON_NULL_NUMBERS_EXCEPTION_MESSAGE = "The input array of numbers must not be null.";
-    public final static String NON_EMPTY_NUMBERS_EXCEPTION_MESSAGE = "The input array of numbers must not be empty.";
-
 
     /**
      * Calculates the maximum pairwise product of an array of long integers.
@@ -18,8 +17,8 @@ public class MaximumPairwiseProduct {
      * @throws IllegalArgumentException if the input array is null or empty.
      */
     public long maxPairwiseProduct(long[] numbersArray) {
-        validateNotNull(numbersArray, NON_NULL_NUMBERS_EXCEPTION_MESSAGE);
-        validateNotEmpty(numbersArray, NON_EMPTY_NUMBERS_EXCEPTION_MESSAGE);
+        validateNotNull(numbersArray, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotEmpty(numbersArray, ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE);
 
         // sort the array of numbers
         Arrays.sort(numbersArray);

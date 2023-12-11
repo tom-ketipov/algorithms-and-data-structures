@@ -1,8 +1,8 @@
 package modules.algorithmic_toolbox.week_3.money_change;
 
 import org.junit.jupiter.api.Test;
+import services.ValidationMessages;
 
-import static modules.algorithmic_toolbox.week_3.money_change.Change.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MoneyChangeTest {
@@ -40,7 +40,7 @@ public class MoneyChangeTest {
         try {
             changeSolver.getChange(m);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_POSITIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -52,7 +52,7 @@ public class MoneyChangeTest {
         try {
             changeSolver.getChange(m);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_POSITIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 }

@@ -2,9 +2,9 @@ package modules.algorithmic_toolbox.week_4.lectures.recursion;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import services.ValidationMessages;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static modules.algorithmic_toolbox.week_4.lectures.recursion.ReverseArray.NON_NULL_ARRAY_EXCEPTION_MESSAGE;
 
 class ReverseArrayTest {
     private ReverseArray reverseArraySolver;
@@ -31,7 +31,7 @@ class ReverseArrayTest {
         try {
             reverseArraySolver.linerArrayReverse(null);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 

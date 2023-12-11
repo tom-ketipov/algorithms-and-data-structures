@@ -1,8 +1,8 @@
 package modules.algorithmic_toolbox.week_3.maximum_value_of_the_loot;
 
 import org.junit.jupiter.api.Test;
+import services.ValidationMessages;
 
-import static modules.algorithmic_toolbox.week_3.maximum_value_of_the_loot.FractionalKnapsack.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FractionalKnapsackTest {
@@ -59,7 +59,7 @@ public class FractionalKnapsackTest {
         try {
             fractionalKnapsackSolver.getOptimalValue(capacity, values, weights);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_NEGATIVE_CAPACITY_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_POSITIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -73,7 +73,7 @@ public class FractionalKnapsackTest {
         try {
             fractionalKnapsackSolver.getOptimalValue(capacity, null, weights);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_NULL_VALUES_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -87,7 +87,7 @@ public class FractionalKnapsackTest {
         try {
             fractionalKnapsackSolver.getOptimalValue(capacity, values, null);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_NULL_WEIGHTS_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -102,7 +102,7 @@ public class FractionalKnapsackTest {
         try {
             fractionalKnapsackSolver.getOptimalValue(capacity, values, weights);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_EMPTY_VALUES_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -117,7 +117,7 @@ public class FractionalKnapsackTest {
         try {
             fractionalKnapsackSolver.getOptimalValue(capacity, values, weights);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_EMPTY_WEIGHTS_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 }

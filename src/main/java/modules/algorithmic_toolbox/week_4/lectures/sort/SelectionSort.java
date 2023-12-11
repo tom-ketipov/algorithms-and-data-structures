@@ -1,10 +1,11 @@
 package modules.algorithmic_toolbox.week_4.lectures.sort;
 
 
+import services.ValidationMessages;
+
 import static services.ValidationService.validateNotNull;
 
 public class SelectionSort {
-    public final static String NON_NULL_ARRAY_EXCEPTION_MESSAGE = "The input array must not be null.";
 
     /**
      * Sorts an array of integers using the Selection Sort algorithm.
@@ -22,7 +23,7 @@ public class SelectionSort {
      * Time complexity: O(n2)
      */
     public int[] selectionSort(int[] array) {
-        validateNotNull(array, NON_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotNull(array, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
 
         for (int i = 0; i < array.length; i++) {
             int minIndex = i;

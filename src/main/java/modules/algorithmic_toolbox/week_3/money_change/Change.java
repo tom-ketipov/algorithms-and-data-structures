@@ -1,10 +1,11 @@
 package modules.algorithmic_toolbox.week_3.money_change;
 
 
+import services.ValidationMessages;
+
 import static services.ValidationService.validateInRange;
 
 public class Change {
-    public final static String NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE = "The input of 'm' must be non-negative value.";
 
     /*
         Money Change Problem:
@@ -17,7 +18,7 @@ public class Change {
         Time Complexity: O(1)
      */
     public int getChange(int m) {
-        validateInRange(m, 0, Integer.MAX_VALUE, NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        validateInRange(m, 1, Integer.MAX_VALUE, ValidationMessages.NON_POSITIVE_NUMBER_EXCEPTION_MESSAGE);
 
         // Calculate the number of 10-coins and update m
         int count = m / 10;

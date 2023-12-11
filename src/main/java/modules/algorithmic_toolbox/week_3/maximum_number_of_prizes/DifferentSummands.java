@@ -1,5 +1,7 @@
 package modules.algorithmic_toolbox.week_3.maximum_number_of_prizes;
 
+import services.ValidationMessages;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,11 +17,9 @@ import static services.ValidationService.validateInRange;
  */
 
 public class DifferentSummands {
-    public final static String NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE = "The input of 'n' must be non-negative value.";
-
 
     public List<Integer> optimalSummands(int n) {
-        validateInRange(n, 0, Integer.MAX_VALUE, NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        validateInRange(n, 0, Integer.MAX_VALUE, ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
 
         List<Integer> summands = new ArrayList<>();
 

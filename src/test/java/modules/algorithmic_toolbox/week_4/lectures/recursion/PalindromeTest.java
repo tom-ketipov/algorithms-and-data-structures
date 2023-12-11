@@ -2,9 +2,9 @@ package modules.algorithmic_toolbox.week_4.lectures.recursion;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import services.ValidationMessages;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static modules.algorithmic_toolbox.week_4.lectures.recursion.Palindrome.NOT_NULL_STRING_EXCEPTION_MESSAGE;
 
 class PalindromeTest {
     private Palindrome palindromeSolver;
@@ -67,7 +67,7 @@ class PalindromeTest {
         try {
             palindromeSolver.linearPalindrome(null);
         } catch (IllegalArgumentException e) {
-            assertEquals(NOT_NULL_STRING_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_NULL_STRING_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 }

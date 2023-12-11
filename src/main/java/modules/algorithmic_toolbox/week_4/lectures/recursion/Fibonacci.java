@@ -1,10 +1,9 @@
 package modules.algorithmic_toolbox.week_4.lectures.recursion;
 
+import static services.ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE;
 import static services.ValidationService.validateInRange;
 
 public class Fibonacci {
-    public static final String NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE = "The input number must be non-negative value.";
-
     /**
      * Calculates the Fibonacci number at a given index using a recursive approach.
      *

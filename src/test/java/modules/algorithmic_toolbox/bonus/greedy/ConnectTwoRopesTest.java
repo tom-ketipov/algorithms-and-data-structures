@@ -1,6 +1,7 @@
 package modules.algorithmic_toolbox.bonus.greedy;
 
 import org.junit.jupiter.api.Test;
+import services.ValidationMessages;
 
 import static modules.algorithmic_toolbox.bonus.greedy.ConnectTwoRopes.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -15,7 +16,7 @@ public class ConnectTwoRopesTest {
         try {
             connectTwoRopesSolver.connectRopes(null);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_NULL_ROPES_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -26,7 +27,7 @@ public class ConnectTwoRopesTest {
         try {
             connectTwoRopesSolver.connectRopes(new int[0]);
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_EMPTY_ROPES_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -37,7 +38,7 @@ public class ConnectTwoRopesTest {
         try {
             connectTwoRopesSolver.connectRopes(new int[]{2, -4, 5});
         } catch (IllegalArgumentException e) {
-            assertEquals(NON_NEGATIVE_ROPE_INDEX_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
