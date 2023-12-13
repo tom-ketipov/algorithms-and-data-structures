@@ -51,7 +51,7 @@ public class CollectingSignaturesTest {
         try {
             coveringSegmentsSolver.optimalPoints(null);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -62,7 +62,7 @@ public class CollectingSignaturesTest {
         try {
             coveringSegmentsSolver.optimalPoints(new CoveringSegments.Segment[]{});
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 }

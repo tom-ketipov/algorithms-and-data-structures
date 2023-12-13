@@ -34,7 +34,7 @@ public class MaximumAdvertiserRevenueTest {
         try {
             dotProductsSolver.maxDotProduct(null, clicks);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -46,7 +46,7 @@ public class MaximumAdvertiserRevenueTest {
         try {
             dotProductsSolver.maxDotProduct(prices, null);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -59,7 +59,7 @@ public class MaximumAdvertiserRevenueTest {
         try {
             dotProductsSolver.maxDotProduct(prices, clicks);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -72,7 +72,7 @@ public class MaximumAdvertiserRevenueTest {
         try {
             dotProductsSolver.maxDotProduct(prices, clicks);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 }

@@ -15,9 +15,9 @@ public class ConnectTwoRopes {
      * @throws IllegalArgumentException If the input array is null or empty.
      */
     public int connectRopes(int[] ropes) {
-        validateNotNull(ropes, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(ropes, ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE);
-        validateArrayIndexesInRange(ropes, 0, Integer.MAX_VALUE, ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        validateNotNull(ropes, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotEmpty(ropes, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
+        validateArrayIndexesInRange(ropes, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
 
         Arrays.sort(ropes);
         int end = ropes.length - 1, start = 0, price = 0;

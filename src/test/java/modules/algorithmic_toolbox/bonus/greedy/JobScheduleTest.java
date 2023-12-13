@@ -14,7 +14,7 @@ public class JobScheduleTest {
         try {
             new JobSchedule.Job(-1, 2);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -23,7 +23,7 @@ public class JobScheduleTest {
         try {
             new JobSchedule.Job(1, -32);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -106,7 +106,7 @@ public class JobScheduleTest {
         try {
             jobScheduleSolver.scheduleJobs(null);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -117,7 +117,7 @@ public class JobScheduleTest {
         try {
             jobScheduleSolver.scheduleJobs(new JobSchedule.Job[0]);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 }

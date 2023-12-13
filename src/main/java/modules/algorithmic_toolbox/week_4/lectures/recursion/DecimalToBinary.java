@@ -59,7 +59,7 @@ public class DecimalToBinary {
      * @throws IllegalArgumentException If the decimal number is not within the valid range (0 to Integer.MAX_VALUE).
      */
     private String recursiveDecimalToBinary(int decimalNumber, int maxPower) {
-        validateInRange(decimalNumber, 0, Integer.MAX_VALUE, ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        validateInRange(decimalNumber, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
 
         if (decimalNumber == 0 && maxPower < 0) return "";
 
@@ -84,7 +84,7 @@ public class DecimalToBinary {
      * @implNote Time Complexity: O(log₂(decimalNumber))
      */
     public String linearDecimalToBinary(int decimalNumber) {
-        validateInRange(decimalNumber, 0, Integer.MAX_VALUE, ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        validateInRange(decimalNumber, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
 
         if (decimalNumber == 0) return "0";
 
@@ -105,7 +105,7 @@ public class DecimalToBinary {
     }
 
     private int maxPower(int decimalNumber) {
-        validateInRange(decimalNumber, 0, Integer.MAX_VALUE, ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        validateInRange(decimalNumber, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
         return (int) (Math.log(decimalNumber) / Math.log(2));
     }
 }

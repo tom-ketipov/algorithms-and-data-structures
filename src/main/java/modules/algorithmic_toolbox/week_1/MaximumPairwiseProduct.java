@@ -17,8 +17,8 @@ public class MaximumPairwiseProduct {
      * @throws IllegalArgumentException if the input array is null or empty.
      */
     public long maxPairwiseProduct(long[] numbersArray) {
-        validateNotNull(numbersArray, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(numbersArray, ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE);
+        validateNotNull(numbersArray, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotEmpty(numbersArray, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
 
         // sort the array of numbers
         Arrays.sort(numbersArray);

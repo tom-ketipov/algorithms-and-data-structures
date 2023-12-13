@@ -52,7 +52,7 @@ public class PolynomialMultiplicationTest {
         try {
             polynomialMultiplicationSolver.multiplyPolynomialsDivideAndConquer(coefficientsA, null);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -100,7 +100,7 @@ public class PolynomialMultiplicationTest {
         try {
             polynomialMultiplicationSolver.multiplyPolynomialsDivideAndConquer(null, coefficientsB);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 

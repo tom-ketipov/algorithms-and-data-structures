@@ -18,7 +18,7 @@ public class Change {
         Time Complexity: O(1)
      */
     public int getChange(int m) {
-        validateInRange(m, 1, Integer.MAX_VALUE, ValidationMessages.NON_POSITIVE_NUMBER_EXCEPTION_MESSAGE);
+        validateInRange(m, 1, Integer.MAX_VALUE, ValidationMessages.NOT_POSITIVE_NUMBER_EXCEPTION_MESSAGE);
 
         // Calculate the number of 10-coins and update m
         int count = m / 10;

@@ -16,7 +16,7 @@ public class Factorial {
      * @throws IllegalArgumentException if 'n' is a negative number.
      */
     public int recursiveFactorial(int n) {
-        validateInRange(n, 0, Integer.MAX_VALUE, ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        validateInRange(n, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
 
         if (n == 0) return 1;
         return n * recursiveFactorial(n - 1);
@@ -33,7 +33,7 @@ public class Factorial {
      * @throws IllegalArgumentException if 'n' is a negative number.
      */
     public int linearFactorial(int n) {
-        validateInRange(n, 0, Integer.MAX_VALUE, ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        validateInRange(n, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
 
         int factorial = 1, i = n;
         while (i > 1) {

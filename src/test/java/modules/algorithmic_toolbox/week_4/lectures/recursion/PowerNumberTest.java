@@ -32,7 +32,7 @@ class PowerNumberTest {
         try {
             powerNumberSolver.linearPower(number, power);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -54,7 +54,7 @@ class PowerNumberTest {
         try {
             powerNumberSolver.recursivePower(number, power);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 }

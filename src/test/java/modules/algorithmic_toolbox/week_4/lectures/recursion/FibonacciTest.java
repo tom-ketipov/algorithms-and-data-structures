@@ -38,7 +38,7 @@ class FibonacciTest {
         try {
             fibonacciSolver.linearFibonacci(index);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 

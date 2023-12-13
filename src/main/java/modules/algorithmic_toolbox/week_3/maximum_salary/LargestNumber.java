@@ -10,7 +10,7 @@ import static services.ValidationService.validateNotNull;
 public class LargestNumber {
 
     public String largestNumber(String[] numbers) {
-        validateNotNull(numbers, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotNull(numbers, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
 
         Arrays.sort(numbers, new LargerNumberComparator());
         return String.join("", numbers);

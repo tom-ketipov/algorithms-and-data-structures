@@ -45,7 +45,7 @@ public class DifferentSummandsTest {
         try {
             differentSummandsSolver.optimalSummands(max);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -58,7 +58,7 @@ public class DifferentSummandsTest {
         try {
             differentSummandsSolver.optimalSummands(max);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 }

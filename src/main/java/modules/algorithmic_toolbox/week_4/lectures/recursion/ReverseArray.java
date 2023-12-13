@@ -28,7 +28,7 @@ public class ReverseArray {
      * @implNote Time Complexity: O(n)
      */
     public int[] recursiveArrayReverseInRange(int[] arr, int left, int right) {
-        validateNotNull(arr, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotNull(arr, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
 
         if (left >= right) return arr;
 
@@ -47,7 +47,7 @@ public class ReverseArray {
      * @implNote Time Complexity: O(n)
      */
     public int[] linerArrayReverse(int[] arr) {
-        validateNotNull(arr, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotNull(arr, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
 
         int left = 0, right = arr.length - 1;
         while (left <= right) {

@@ -39,7 +39,7 @@ class MaximumPairwiseProductTest {
         try {
             maximumPairwiseProductSolver.maxPairwiseProduct(new long[0]);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -50,7 +50,7 @@ class MaximumPairwiseProductTest {
         try {
             maximumPairwiseProductSolver.maxPairwiseProduct(null);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 }

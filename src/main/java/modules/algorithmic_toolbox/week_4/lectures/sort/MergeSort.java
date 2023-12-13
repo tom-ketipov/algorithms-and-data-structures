@@ -16,7 +16,7 @@ public class MergeSort {
      * @throws IllegalArgumentException for null input values
      */
     public void mergeSort(int[] array) {
-        validateNotNull(array, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotNull(array, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
 
         if (array.length <= 1) return;
 

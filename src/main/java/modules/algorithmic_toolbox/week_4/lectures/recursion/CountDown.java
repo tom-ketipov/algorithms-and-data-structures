@@ -14,7 +14,7 @@ public class CountDown {
      * @implNote Time Complexity: O(n)
      */
     private static void recursiveCountDown(int maxTime) {
-        validateInRange(maxTime, 0, Integer.MAX_VALUE, ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        validateInRange(maxTime, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
 
         if (maxTime == 0) return;
 
@@ -31,7 +31,7 @@ public class CountDown {
      * @implNote Time Complexity: O(n)
      **/
     private static void linearCountDown(int maxTime) {
-        validateInRange(maxTime, 0, Integer.MAX_VALUE, ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        validateInRange(maxTime, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
 
         while (maxTime > 0) {
             System.out.println(maxTime--);

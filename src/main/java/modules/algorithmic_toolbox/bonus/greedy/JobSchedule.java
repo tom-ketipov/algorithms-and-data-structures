@@ -24,8 +24,8 @@ public class JobSchedule {
         private int deadline;
 
         public Job(int deadline, int profit) {
-            validateInRange(deadline, 0, Integer.MAX_VALUE, ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
-            validateInRange(profit, 0, Integer.MAX_VALUE, ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+            validateInRange(deadline, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+            validateInRange(profit, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
 
             this.profit = profit;
             this.deadline = deadline;
@@ -41,8 +41,8 @@ public class JobSchedule {
     }
 
     public Job[] scheduleJobs(Job[] jobs) {
-        validateNotNull(jobs, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(jobs, ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE);
+        validateNotNull(jobs, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotEmpty(jobs, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
 
         Arrays.sort(jobs, Comparator.comparing(Job::getDeadline).thenComparing((Job::getProfit), Comparator.reverseOrder()));
 

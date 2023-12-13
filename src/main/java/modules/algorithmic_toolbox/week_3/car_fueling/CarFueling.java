@@ -15,10 +15,10 @@ public class CarFueling {
             Time complexity: 0(n)
      */
     public int computeMinRefills(int totalDistance, int tankCapacity, int[] refillStations) {
-        validateInRange(totalDistance, 1, Integer.MAX_VALUE, ValidationMessages.NON_POSITIVE_NUMBER_EXCEPTION_MESSAGE);
-        validateInRange(tankCapacity, 1, Integer.MAX_VALUE, ValidationMessages.NON_POSITIVE_NUMBER_EXCEPTION_MESSAGE);
-        validateNotNull(refillStations, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(refillStations, ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE);
+        validateInRange(totalDistance, 1, Integer.MAX_VALUE, ValidationMessages.NOT_POSITIVE_NUMBER_EXCEPTION_MESSAGE);
+        validateInRange(tankCapacity, 1, Integer.MAX_VALUE, ValidationMessages.NOT_POSITIVE_NUMBER_EXCEPTION_MESSAGE);
+        validateNotNull(refillStations, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotEmpty(refillStations, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
 
         if (!validateRoute(totalDistance, tankCapacity, refillStations)) return -1;
 

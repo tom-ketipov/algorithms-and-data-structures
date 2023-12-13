@@ -32,11 +32,11 @@ public class FractionalKnapsack {
     }
 
     public double getOptimalValue(int capacity, int[] values, int[] weights) {
-        validateNotNull(values, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotNull(weights, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(values, ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(weights, ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE);
-        validateInRange(capacity, 1, Integer.MAX_VALUE, ValidationMessages.NON_POSITIVE_NUMBER_EXCEPTION_MESSAGE);
+        validateNotNull(values, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotNull(weights, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotEmpty(values, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
+        validateNotEmpty(weights, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
+        validateInRange(capacity, 1, Integer.MAX_VALUE, ValidationMessages.NOT_POSITIVE_NUMBER_EXCEPTION_MESSAGE);
 
         Item[] items = getItemRatios(values, weights);
 

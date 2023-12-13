@@ -21,10 +21,10 @@ public class DotProducts {
             Time complexity: O(n log n)
      */
     public long maxDotProduct(int[] prices, int[] clicks) {
-        validateNotNull(prices, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotNull(clicks, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(prices, ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(clicks, ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE);
+        validateNotNull(prices, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotNull(clicks, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotEmpty(prices, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
+        validateNotEmpty(clicks, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
 
         Arrays.sort(prices);
         Arrays.sort(clicks);

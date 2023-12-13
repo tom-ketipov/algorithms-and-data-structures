@@ -79,7 +79,7 @@ public class CarFuelingTest {
         try {
             carFuelingSolver.computeMinRefills(distance, tank, stops);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_POSITIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_POSITIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -94,7 +94,7 @@ public class CarFuelingTest {
         try {
             carFuelingSolver.computeMinRefills(distance, tank, stops);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_POSITIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_POSITIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -109,7 +109,7 @@ public class CarFuelingTest {
         try {
             carFuelingSolver.computeMinRefills(distance, tank, stops);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_POSITIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_POSITIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -124,7 +124,7 @@ public class CarFuelingTest {
         try {
             carFuelingSolver.computeMinRefills(distance, tank, stops);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_POSITIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_POSITIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -139,7 +139,7 @@ public class CarFuelingTest {
         try {
             carFuelingSolver.computeMinRefills(distance, tank, stops);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -153,7 +153,7 @@ public class CarFuelingTest {
         try {
             carFuelingSolver.computeMinRefills(distance, tank, null);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 }

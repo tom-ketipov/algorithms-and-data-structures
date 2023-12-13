@@ -32,8 +32,8 @@ public class CoveringSegments {
     }
 
     public int[] optimalPoints(Segment[] segments) {
-        validateNotNull(segments, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(segments, ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE);
+        validateNotNull(segments, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotEmpty(segments, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
 
         Arrays.sort(segments, Comparator.comparing(segment -> segment.end));
 

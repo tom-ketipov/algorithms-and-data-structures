@@ -40,7 +40,7 @@ public class MoneyChangeTest {
         try {
             changeSolver.getChange(m);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_POSITIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_POSITIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -52,7 +52,7 @@ public class MoneyChangeTest {
         try {
             changeSolver.getChange(m);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_POSITIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_POSITIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 }

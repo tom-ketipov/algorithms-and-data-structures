@@ -1,6 +1,6 @@
 package modules.algorithmic_toolbox.week_4.lectures.recursion;
 
-import static services.ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE;
+import static services.ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE;
 import static services.ValidationService.validateInRange;
 
 public class Fibonacci {
@@ -12,7 +12,7 @@ public class Fibonacci {
      * @throws IllegalArgumentException if the index is negative.
      */
     public long recursiveFibonacci(int index) {
-        validateInRange(index, 0, Integer.MAX_VALUE, NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        validateInRange(index, 0, Integer.MAX_VALUE, NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
 
         // Base cases
         if (index == 0) {
@@ -31,7 +31,7 @@ public class Fibonacci {
      * @throws IllegalArgumentException If the provided index is negative.
      */
     public long linearFibonacci(int index) {
-        validateInRange(index, 0, Integer.MAX_VALUE, NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        validateInRange(index, 0, Integer.MAX_VALUE, NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
 
         long current = 0, previous = 1;
         while (index-- > 0) {

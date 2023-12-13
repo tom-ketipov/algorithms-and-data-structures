@@ -23,7 +23,7 @@ public class SelectionSort {
      * Time complexity: O(n2)
      */
     public int[] selectionSort(int[] array) {
-        validateNotNull(array, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotNull(array, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
 
         for (int i = 0; i < array.length; i++) {
             int minIndex = i;

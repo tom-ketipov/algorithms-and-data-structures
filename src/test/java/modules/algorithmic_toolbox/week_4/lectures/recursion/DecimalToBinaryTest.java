@@ -25,7 +25,7 @@ class DecimalToBinaryTest {
         try {
             decimalToBinarySolver.linearDecimalToBinary(-1);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 
@@ -52,7 +52,7 @@ class DecimalToBinaryTest {
         try {
             decimalToBinarySolver.recursiveDecimalToBinary(-1);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals(ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
         }
     }
 }

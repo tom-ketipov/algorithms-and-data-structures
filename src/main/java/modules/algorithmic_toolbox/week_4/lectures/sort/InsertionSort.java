@@ -15,7 +15,7 @@ public class InsertionSort {
      *                                  Time Complexity O(n^2)
      */
     public void insertionSort(int[] arr) {
-        validateNotNull(arr, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotNull(arr, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
 
         for (int i = 1; i < arr.length; i++) {
             insert(arr, i);
@@ -31,8 +31,8 @@ public class InsertionSort {
      * @throws IllegalArgumentException If the index is out of the array bounds.
      */
     private void insert(int[] arr, int index) {
-        validateNotNull(arr, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateInArrayBounds(arr, index, ValidationMessages.NON_IN_BOUNDS_OF_ARRAY_EXCEPTION_MESSAGE);
+        validateNotNull(arr, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateInArrayBounds(arr, index, ValidationMessages.NOT_IN_BOUNDS_OF_ARRAY_EXCEPTION_MESSAGE);
 
         int comparableValue = arr[index], i;
         for (i = index - 1; i >= 0 && arr[i] > comparableValue; i--) {

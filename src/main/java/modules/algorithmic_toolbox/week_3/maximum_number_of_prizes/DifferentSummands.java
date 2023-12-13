@@ -19,7 +19,7 @@ import static services.ValidationService.validateInRange;
 public class DifferentSummands {
 
     public List<Integer> optimalSummands(int n) {
-        validateInRange(n, 0, Integer.MAX_VALUE, ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        validateInRange(n, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
 
         List<Integer> summands = new ArrayList<>();
 

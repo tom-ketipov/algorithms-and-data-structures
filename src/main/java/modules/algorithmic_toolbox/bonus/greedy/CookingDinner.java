@@ -14,8 +14,8 @@ public class CookingDinner {
         private int dueTime;
 
         public Meal(int cookingTime, int dueTime) {
-            validateInRange(cookingTime, 0, Integer.MAX_VALUE, ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
-            validateInRange(dueTime, 0, Integer.MAX_VALUE, ValidationMessages.NON_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+            validateInRange(cookingTime, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+            validateInRange(dueTime, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
 
             this.cookingTime = cookingTime;
             this.dueTime = dueTime;
@@ -31,10 +31,10 @@ public class CookingDinner {
     }
 
     public Meal[] generatePlan(int[] cookingTimes, int[] dueTimes) {
-        validateNotNull(cookingTimes, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotNull(dueTimes, ValidationMessages.NON_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(cookingTimes, ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(dueTimes, ValidationMessages.NON_EMPTY_ARRAY_EXCEPTION_MESSAGE);
+        validateNotNull(cookingTimes, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotNull(dueTimes, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
+        validateNotEmpty(cookingTimes, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
+        validateNotEmpty(dueTimes, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
 
         Meal[] meals = generateMeals(cookingTimes, dueTimes);
         Arrays.sort(meals, Comparator.comparing(Meal::getDueTime, Comparator.reverseOrder()).thenComparing(Meal::getCookingTime, Comparator.reverseOrder()));
