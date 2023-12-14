@@ -1,5 +1,7 @@
 package services;
 
+import java.util.LinkedList;
+
 public class ValidationService {
     public static void validateInRange(int value, int min, int max, String message) {
         if (value < min || value > max) {
@@ -81,6 +83,12 @@ public class ValidationService {
 
     public static void validateInArrayBounds(long[] array, int index, String message) {
         if (index < 0 || index >= array.length) {
+            throw new IllegalArgumentException(message);
+        }
+    }
+
+    public static void validateNotNull(LinkedList<Object> linkedList, String message) {
+        if (linkedList == null) {
             throw new IllegalArgumentException(message);
         }
     }
