@@ -20,9 +20,17 @@ public class ArraySortTest {
     }
 
     @Test
-    public void can_sort_array_with_selection_sort() {
+    public void can_sort_array_with_iterative_selection_sort() {
         int[] array = {2, 5, 1, 3, 23, 41};
         assertArrayEquals(new int[]{1, 2, 3, 5, 23, 41}, selectionSortSolver.selectionSort(array));
+    }
+
+    @Test
+    public void can_sort_array_with_recursive_selection_sort() {
+        int[] array = {2, 5, 1, 3, 23, 41};
+
+        selectionSortSolver.sort(array);
+        assertArrayEquals(new int[]{1, 2, 3, 5, 23, 41}, array);
     }
 
     @Test
