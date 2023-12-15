@@ -47,7 +47,7 @@ public class SelectionSort {
      * @param array      The array to be sorted. Must not be null.
      * @param startIndex The index indicating the leftmost element of the current unsorted portion.
      * @throws IllegalArgumentException  If the input array is null.
-     * @throws IndexOutOfBoundsException If startIndex is outside the bounds of the array.
+     * @throws IllegalArgumentException If startIndex is outside the bounds of the array.
      * @implNote Time Complexity: 0(n^2)
      */
     private void sort(int[] array, int startIndex) {
@@ -67,7 +67,7 @@ public class SelectionSort {
      * @param indexA The index of the first element to be swapped. Must be within the bounds of the array.
      * @param indexB The index of the second element to be swapped. Must be within the bounds of the array.
      * @throws IllegalArgumentException  If the input array is null.
-     * @throws IndexOutOfBoundsException If either indexA or indexB is outside the bounds of the array.
+     * @throws IllegalArgumentException If either indexA or indexB is outside the bounds of the array.
      */
     private void swap(int[] array, int indexA, int indexB) {
         validateNotNull(array, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
