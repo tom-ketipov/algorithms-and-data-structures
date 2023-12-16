@@ -3,6 +3,8 @@ package modules.algorithmic_toolbox.week_4.lectures.sort;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class ArraySortTest {
@@ -38,6 +40,14 @@ public class ArraySortTest {
         int[] array = {2, 5, 1, 3, 23, 41};
 
         insertionSortSolver.insertionSort(array);
+        assertArrayEquals(new int[]{1, 2, 3, 5, 23, 41}, array);
+    }
+
+    @Test
+    public void can_sort_array_with_recursive_insertion_sort() {
+        int[] array = {2, 5, 1, 3, 23, 41};
+
+        insertionSortSolver.sort(array);
         assertArrayEquals(new int[]{1, 2, 3, 5, 23, 41}, array);
     }
 
