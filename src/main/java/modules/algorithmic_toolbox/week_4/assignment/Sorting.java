@@ -1,46 +1,60 @@
 package modules.algorithmic_toolbox.week_4.assignment;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.util.Random;
-import java.util.StringTokenizer;
 
 public class Sorting {
     private static final Random RANDOM = new Random();
 
-    private static int[] partition3(int[] numbers, int low, int high) {
-        int pivot = numbers[low];
-
-        int lesserValuesMaxIndex = low + 1;
-        int greaterValuesMinIndex = high - 1;
-
-        // Iterate through the array elements from lesserValuesMaxIndex to greaterValuesMinIndex
-        for (int j = lesserValuesMaxIndex; j <= greaterValuesMinIndex; ) {
-            if (numbers[j] < pivot) {
-                swap(numbers, lesserValuesMaxIndex++, j++);
-            } else if (numbers[j] > pivot) {
-                swap(numbers, j, greaterValuesMinIndex--);
-            } else {
-                j++;
-            }
-        }
-        swap(numbers, low, lesserValuesMaxIndex - 1);
-        return new int[]{lesserValuesMaxIndex - 1, greaterValuesMinIndex + 1};
+    public void randomizedQuickSort(int[] numbers) {
+        randomizedQuickSort(numbers, 0, numbers.length - 1);
     }
 
-    public static void randomizedQuickSort(int[] numbers, int low, int high) {
-        if (low >= high) {
-            return;
-        }
+    /**
+     * Recursive helper method for randomized quicksort.
+     * Partitions the array and recursively applies quicksort to the sub-arrays.
+     *
+     * @param numbers The array of integers to be sorted.
+     * @param low     The starting index of the range to be sorted.
+     * @param high    The ending index of the range to be sorted.
+     */
+    private void randomizedQuickSort(int[] numbers, int low, int high) {
+        if (low >= high) return;
+
         int randomIndex = RANDOM.nextInt(high - low) + low;
         swap(numbers, low, randomIndex);
 
-        //use partition3
-        int[] pivotIndex = partition3(numbers, low, high);
+        int[] pivotIndex = partition(numbers, low, high);
         randomizedQuickSort(numbers, low, pivotIndex[0]);
-        randomizedQuickSort(numbers, pivotIndex[1] + 1, high);
+        randomizedQuickSort(numbers, pivotIndex[1], high);
+    }
+
+    /**
+     * Partitions the array into three segments: elements less than the pivot,
+     * elements equal to the pivot, and elements greater than the pivot.
+     *
+     * @param array The array of integers to be partitioned.
+     * @param low   The starting index of the range to be partitioned.
+     * @param high  The ending index of the range to be partitioned.
+     * @return An array of two integers representing the boundaries of the partitioned range.
+     * The first element is the index of the last element less than the pivot,
+     * and the second element is the index of the first element greater than the pivot.
+     */
+    private int[] partition(int[] array, int low, int high) {
+        int pivot = array[low];
+        int currentIndex = low;
+        int lessThanIndex = low;
+        int greaterThanIndex = high;
+
+        while (currentIndex <= greaterThanIndex) {
+            if (array[currentIndex] < pivot) {
+                swap(array, currentIndex++, lessThanIndex++);
+            } else if (array[currentIndex] > pivot) {
+                swap(array, currentIndex, greaterThanIndex--);
+            } else {
+                currentIndex++;
+            }
+        }
+        return new int[]{lessThanIndex - 1, greaterThanIndex + 1};
     }
 
     /**
@@ -50,50 +64,9 @@ public class Sorting {
      * @param index1 the index of the first element to be swapped
      * @param index2 the index of the second element to be swapped
      */
-    private static void swap(int[] array, int index1, int index2) {
+    private void swap(int[] array, int index1, int index2) {
         int temp = array[index1];
         array[index1] = array[index2];
         array[index2] = temp;
-    }
-
-    public static void main(String[] args) {
-        FastScanner scanner = new FastScanner(System.in);
-        int n = scanner.nextInt();
-        int[] a = new int[n];
-        for (int i = 0; i < n; i++) {
-            a[i] = scanner.nextInt();
-        }
-        randomizedQuickSort(a, 0, n - 1);
-        for (int i = 0; i < n; i++) {
-            System.out.print(a[i] + " ");
-        }
-    }
-
-    static class FastScanner {
-        BufferedReader br;
-        StringTokenizer st;
-
-        FastScanner(InputStream stream) {
-            try {
-                br = new BufferedReader(new InputStreamReader(stream));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-
-        String next() {
-            while (st == null || !st.hasMoreTokens()) {
-                try {
-                    st = new StringTokenizer(br.readLine());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            return st.nextToken();
-        }
-
-        int nextInt() {
-            return Integer.parseInt(next());
-        }
     }
 }
