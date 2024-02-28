@@ -1,7 +1,6 @@
 package modules.algorithmic_toolbox.bonus.greedy;
 
 import org.junit.jupiter.api.Test;
-import services.ValidationMessages;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -105,7 +104,7 @@ public class CookingDinnerTest {
         try {
             new CookingDinner.Meal(cookingTime, dueTime);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals("The value must be between 0 and 2,147,483,647.", e.getMessage());
         }
     }
 
@@ -117,7 +116,7 @@ public class CookingDinnerTest {
         try {
             new CookingDinner.Meal(cookingTime, dueTime);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals("The value must be between 0 and 2,147,483,647.", e.getMessage());
         }
     }
 
@@ -129,8 +128,8 @@ public class CookingDinnerTest {
 
         try {
             cookingDinnerSolver.generatePlan(null, dueTimes);
-        } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+        } catch (NullPointerException e) {
+            assertEquals("The array must not be null.", e.getMessage());
         }
     }
 
@@ -143,7 +142,7 @@ public class CookingDinnerTest {
         try {
             cookingDinnerSolver.generatePlan(new int[0], dueTimes);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals("The array must not be empty.", e.getMessage());
         }
     }
 
@@ -155,8 +154,8 @@ public class CookingDinnerTest {
 
         try {
             cookingDinnerSolver.generatePlan(cookingTimes, null);
-        } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+        } catch (NullPointerException e) {
+            assertEquals("The array must not be null.", e.getMessage());
         }
     }
 
@@ -169,7 +168,7 @@ public class CookingDinnerTest {
         try {
             cookingDinnerSolver.generatePlan(cookingTimes, new int[0]);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals("The array must not be empty.", e.getMessage());
         }
     }
 }

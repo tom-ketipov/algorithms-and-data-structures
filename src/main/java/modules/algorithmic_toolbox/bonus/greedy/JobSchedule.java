@@ -1,12 +1,11 @@
 package modules.algorithmic_toolbox.bonus.greedy;
 
-import services.ValidationMessages;
+import org.apache.commons.lang3.Validate;
+import utils.ValidationMessageUtility;
 
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.LinkedList;
-
-import static services.ValidationService.*;
 
 /*
     Job Scheduling Problem
@@ -24,8 +23,10 @@ public class JobSchedule {
         private int deadline;
 
         public Job(int deadline, int profit) {
-            validateInRange(deadline, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
-            validateInRange(profit, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+            int minValue = 0;
+            int maxValue = Integer.MAX_VALUE;
+            Validate.inclusiveBetween(minValue, maxValue, deadline, ValidationMessageUtility.getMessage("value_range_exception", minValue, maxValue));
+            Validate.inclusiveBetween(minValue, maxValue, profit, ValidationMessageUtility.getMessage("value_range_exception", minValue, maxValue));
 
             this.profit = profit;
             this.deadline = deadline;
@@ -41,8 +42,8 @@ public class JobSchedule {
     }
 
     public Job[] scheduleJobs(Job[] jobs) {
-        validateNotNull(jobs, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(jobs, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
+        Validate.notNull(jobs, ValidationMessageUtility.getMessage("not_null_array_exception"));
+        Validate.isTrue(jobs.length > 0, ValidationMessageUtility.getMessage("not_empty_array_exception"));
 
         Arrays.sort(jobs, Comparator.comparing(Job::getDeadline).thenComparing((Job::getProfit), Comparator.reverseOrder()));
 

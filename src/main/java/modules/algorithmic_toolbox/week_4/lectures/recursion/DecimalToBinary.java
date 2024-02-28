@@ -1,8 +1,7 @@
 package modules.algorithmic_toolbox.week_4.lectures.recursion;
 
-import services.ValidationMessages;
-
-import static services.ValidationService.validateInRange;
+import org.apache.commons.lang3.Validate;
+import utils.ValidationMessageUtility;
 
 public class DecimalToBinary {
     /**
@@ -59,7 +58,9 @@ public class DecimalToBinary {
      * @throws IllegalArgumentException If the decimal number is not within the valid range (0 to Integer.MAX_VALUE).
      */
     private String recursiveDecimalToBinary(int decimalNumber, int maxPower) {
-        validateInRange(decimalNumber, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        int minValue = 0;
+        int maxValue = Integer.MAX_VALUE;
+        Validate.inclusiveBetween(minValue, maxValue, decimalNumber, ValidationMessageUtility.getMessage("value_range_exception", minValue, maxValue));
 
         if (decimalNumber == 0 && maxPower < 0) return "";
 
@@ -84,7 +85,9 @@ public class DecimalToBinary {
      * @implNote Time Complexity: O(log₂(decimalNumber))
      */
     public String linearDecimalToBinary(int decimalNumber) {
-        validateInRange(decimalNumber, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        int minValue = 0;
+        int maxValue = Integer.MAX_VALUE;
+        Validate.inclusiveBetween(minValue, maxValue, decimalNumber, ValidationMessageUtility.getMessage("value_range_exception", minValue, maxValue));
 
         if (decimalNumber == 0) return "0";
 
@@ -105,7 +108,10 @@ public class DecimalToBinary {
     }
 
     private int maxPower(int decimalNumber) {
-        validateInRange(decimalNumber, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        int minValue = 0;
+        int maxValue = Integer.MAX_VALUE;
+        Validate.inclusiveBetween(minValue, maxValue, decimalNumber, ValidationMessageUtility.getMessage("value_range_exception", minValue, maxValue));
+
         return (int) (Math.log(decimalNumber) / Math.log(2));
     }
 }

@@ -1,10 +1,9 @@
 package modules.algorithmic_toolbox.week_4.lectures.recursion;
 
-import services.ValidationMessages;
+import org.apache.commons.lang3.Validate;
+import utils.ValidationMessageUtility;
 
 import java.util.LinkedList;
-
-import static services.ValidationService.validateNotNull;
 
 public class LinkedListRemoval {
     public LinkedList<Integer> recursiveLinkedListElementRemovalImproved(LinkedList<Integer> linkedList, int targetElement) {
@@ -20,10 +19,11 @@ public class LinkedListRemoval {
      * @param targetElement The element to be removed from the LinkedList.
      * @param index         The current index in the original LinkedList.
      * @return The new LinkedList without occurrences of the target element.
+     * @throws NullPointerException if the originalList is null
      * @implNote Time Complexity: O(n)
      */
     private LinkedList<Integer> recursiveLinkedListElementRemovalImproved(LinkedList<Integer> originalList, LinkedList<Integer> resultList, int targetElement, int index) {
-        validateNotNull(originalList, ValidationMessages.NOT_NULL_LINKED_LIST_EXCEPTION_MESSAGE);
+        Validate.notNull(originalList, ValidationMessageUtility.getMessage("not_null_array_exception"));
 
         if (index >= originalList.size()) return resultList;
 
@@ -45,10 +45,11 @@ public class LinkedListRemoval {
      * @param targetElement The element to be removed from the LinkedList.
      * @param index         The current index in the LinkedList.
      * @return The modified LinkedList after recursive removal.
+     * @throws NullPointerException if the originalList is null
      * @implNote Time Complexity: O(n^2)
      */
     private LinkedList<Integer> recursiveLinkedListElementRemoval(LinkedList<Integer> linkedList, int targetElement, int index) {
-        validateNotNull(linkedList, ValidationMessages.NOT_NULL_LINKED_LIST_EXCEPTION_MESSAGE);
+        Validate.notNull(linkedList, ValidationMessageUtility.getMessage("not_null_array_exception"));
 
         if (index >= linkedList.size()) return linkedList;
 
@@ -62,10 +63,11 @@ public class LinkedListRemoval {
      * @param linkedList    The input LinkedList of integers.
      * @param targetElement The element to be removed from the LinkedList.
      * @return The modified LinkedList after iterative removal.
+     * @throws NullPointerException if the originalList is null
      * @implNote Time Complexity: O(n)
      */
     public LinkedList<Integer> iterativeLinkedListElementRemoval(LinkedList<Integer> linkedList, int targetElement) {
-        validateNotNull(linkedList, ValidationMessages.NOT_NULL_LINKED_LIST_EXCEPTION_MESSAGE);
+        Validate.notNull(linkedList, ValidationMessageUtility.getMessage("not_null_array_exception"));
 
         linkedList.removeIf(integer -> integer == targetElement);
         return linkedList;

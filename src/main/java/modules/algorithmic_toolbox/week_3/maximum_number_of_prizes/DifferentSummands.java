@@ -1,11 +1,11 @@
 package modules.algorithmic_toolbox.week_3.maximum_number_of_prizes;
 
-import services.ValidationMessages;
+import org.apache.commons.lang3.Validate;
+import utils.ValidationMessageUtility;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static services.ValidationService.validateInRange;
 /*
     Distinct Summands Problem
     Represent a positive integer as the sum of the maximum number of pairwise distinct positive
@@ -19,7 +19,9 @@ import static services.ValidationService.validateInRange;
 public class DifferentSummands {
 
     public List<Integer> optimalSummands(int n) {
-        validateInRange(n, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        int minValue = 1;
+        int maxValue = Integer.MAX_VALUE;
+        Validate.inclusiveBetween(minValue, maxValue, n, ValidationMessageUtility.getMessage("value_range_exception", minValue, maxValue));
 
         List<Integer> summands = new ArrayList<>();
 

@@ -1,10 +1,9 @@
 package modules.algorithmic_toolbox.bonus.greedy;
 
-import services.ValidationMessages;
+import org.apache.commons.lang3.Validate;
+import utils.ValidationMessageUtility;
 
 import java.util.Arrays;
-
-import static services.ValidationService.*;
 
 public class ConnectTwoRopes {
     /**
@@ -12,12 +11,18 @@ public class ConnectTwoRopes {
      *
      * @param ropes The input array of ropes.
      * @return The total cost of connecting the ropes.
-     * @throws IllegalArgumentException If the input array is null or empty.
+     * @throws IllegalArgumentException if the input array is empty.
+     * @throws NullPointerException     if the input array is null.
      */
     public int connectRopes(int[] ropes) {
-        validateNotNull(ropes, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(ropes, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
-        validateArrayIndexesInRange(ropes, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        Validate.notNull(ropes, ValidationMessageUtility.getMessage("not_null_array_exception"));
+        Validate.isTrue(ropes.length > 0, ValidationMessageUtility.getMessage("not_empty_array_exception"));
+
+        int minValue = 1;
+        int maxValue = Integer.MAX_VALUE;
+        for (int rope : ropes) {
+            Validate.inclusiveBetween(minValue, maxValue, rope, ValidationMessageUtility.getMessage("value_range_exception", minValue, maxValue));
+        }
 
         Arrays.sort(ropes);
         int end = ropes.length - 1, start = 0, price = 0;

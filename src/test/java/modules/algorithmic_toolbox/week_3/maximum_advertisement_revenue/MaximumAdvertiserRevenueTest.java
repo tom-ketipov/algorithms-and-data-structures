@@ -1,7 +1,6 @@
 package modules.algorithmic_toolbox.week_3.maximum_advertisement_revenue;
 
 import org.junit.jupiter.api.Test;
-import services.ValidationMessages;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -33,8 +32,8 @@ public class MaximumAdvertiserRevenueTest {
         int[] clicks = {39};
         try {
             dotProductsSolver.maxDotProduct(null, clicks);
-        } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+        } catch (NullPointerException e) {
+            assertEquals("The array must not be null.", e.getMessage());
         }
     }
 
@@ -45,8 +44,8 @@ public class MaximumAdvertiserRevenueTest {
         int[] prices = {23};
         try {
             dotProductsSolver.maxDotProduct(prices, null);
-        } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+        } catch (NullPointerException e) {
+            assertEquals("The array must not be null.", e.getMessage());
         }
     }
 
@@ -59,7 +58,7 @@ public class MaximumAdvertiserRevenueTest {
         try {
             dotProductsSolver.maxDotProduct(prices, clicks);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals("The array must not be empty.", e.getMessage());
         }
     }
 
@@ -72,7 +71,7 @@ public class MaximumAdvertiserRevenueTest {
         try {
             dotProductsSolver.maxDotProduct(prices, clicks);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals("The array must not be empty.", e.getMessage());
         }
     }
 }

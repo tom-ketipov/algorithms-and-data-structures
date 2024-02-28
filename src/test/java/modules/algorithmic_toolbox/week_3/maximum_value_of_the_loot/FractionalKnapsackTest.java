@@ -1,7 +1,6 @@
 package modules.algorithmic_toolbox.week_3.maximum_value_of_the_loot;
 
 import org.junit.jupiter.api.Test;
-import services.ValidationMessages;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -59,7 +58,7 @@ public class FractionalKnapsackTest {
         try {
             fractionalKnapsackSolver.getOptimalValue(capacity, values, weights);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_POSITIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals("The value must be between 1 and 2,147,483,647.", e.getMessage());
         }
     }
 
@@ -72,8 +71,8 @@ public class FractionalKnapsackTest {
 
         try {
             fractionalKnapsackSolver.getOptimalValue(capacity, null, weights);
-        } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+        } catch (NullPointerException e) {
+            assertEquals("The array must not be null.", e.getMessage());
         }
     }
 
@@ -86,8 +85,8 @@ public class FractionalKnapsackTest {
 
         try {
             fractionalKnapsackSolver.getOptimalValue(capacity, values, null);
-        } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+        } catch (NullPointerException e) {
+            assertEquals("The array must not be null.", e.getMessage());
         }
     }
 
@@ -102,7 +101,7 @@ public class FractionalKnapsackTest {
         try {
             fractionalKnapsackSolver.getOptimalValue(capacity, values, weights);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals("The array must not be empty.", e.getMessage());
         }
     }
 
@@ -117,7 +116,7 @@ public class FractionalKnapsackTest {
         try {
             fractionalKnapsackSolver.getOptimalValue(capacity, values, weights);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals("The array must not be empty.", e.getMessage());
         }
     }
 }

@@ -1,11 +1,9 @@
 package modules.algorithmic_toolbox.week_3.maximum_advertisement_revenue;
 
-import services.ValidationMessages;
+import org.apache.commons.lang3.Validate;
+import utils.ValidationMessageUtility;
 
 import java.util.Arrays;
-
-import static services.ValidationService.validateNotEmpty;
-import static services.ValidationService.validateNotNull;
 
 public class DotProducts {
     /*
@@ -21,10 +19,11 @@ public class DotProducts {
             Time complexity: O(n log n)
      */
     public long maxDotProduct(int[] prices, int[] clicks) {
-        validateNotNull(prices, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotNull(clicks, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(prices, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(clicks, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
+        Validate.notNull(prices, ValidationMessageUtility.getMessage("not_null_array_exception"));
+        Validate.isTrue(prices.length > 0, ValidationMessageUtility.getMessage("not_empty_array_exception"));
+
+        Validate.notNull(clicks, ValidationMessageUtility.getMessage("not_null_array_exception"));
+        Validate.isTrue(clicks.length > 0, ValidationMessageUtility.getMessage("not_empty_array_exception"));
 
         Arrays.sort(prices);
         Arrays.sort(clicks);

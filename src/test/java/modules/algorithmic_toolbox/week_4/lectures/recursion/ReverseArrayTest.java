@@ -2,7 +2,6 @@ package modules.algorithmic_toolbox.week_4.lectures.recursion;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import services.ValidationMessages;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -30,8 +29,8 @@ class ReverseArrayTest {
     public void linear_function_throws_exception_for_null_input() {
         try {
             reverseArraySolver.linerArrayReverse(null);
-        } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+        } catch (NullPointerException e) {
+            assertEquals("The array must not be null.", e.getMessage());
         }
     }
 

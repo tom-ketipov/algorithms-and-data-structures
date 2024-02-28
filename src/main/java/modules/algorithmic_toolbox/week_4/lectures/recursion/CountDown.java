@@ -1,8 +1,7 @@
 package modules.algorithmic_toolbox.week_4.lectures.recursion;
 
-import services.ValidationMessages;
-
-import static services.ValidationService.validateInRange;
+import org.apache.commons.lang3.Validate;
+import utils.ValidationMessageUtility;
 
 public class CountDown {
 
@@ -14,7 +13,9 @@ public class CountDown {
      * @implNote Time Complexity: O(n)
      */
     private static void recursiveCountDown(int maxTime) {
-        validateInRange(maxTime, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        int minValue = 0;
+        int maxValue = Integer.MAX_VALUE;
+        Validate.inclusiveBetween(minValue, maxValue, maxTime, ValidationMessageUtility.getMessage("value_range_exception", minValue, maxValue));
 
         if (maxTime == 0) return;
 
@@ -31,7 +32,9 @@ public class CountDown {
      * @implNote Time Complexity: O(n)
      **/
     private static void linearCountDown(int maxTime) {
-        validateInRange(maxTime, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        int minValue = 0;
+        int maxValue = Integer.MAX_VALUE;
+        Validate.inclusiveBetween(minValue, maxValue, maxValue, ValidationMessageUtility.getMessage("value_range_exception", minValue, maxValue));
 
         while (maxTime > 0) {
             System.out.println(maxTime--);

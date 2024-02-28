@@ -2,7 +2,6 @@ package modules.algorithmic_toolbox.week_4.lectures.recursion;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import services.ValidationMessages;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -43,7 +42,7 @@ class FactorialTest {
         try {
             factorialSolver.linearFactorial(-1);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals("The value must be between 0 and 2,147,483,647.", e.getMessage());
         }
     }
 }

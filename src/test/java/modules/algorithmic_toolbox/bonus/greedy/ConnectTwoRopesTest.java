@@ -1,7 +1,6 @@
 package modules.algorithmic_toolbox.bonus.greedy;
 
 import org.junit.jupiter.api.Test;
-import services.ValidationMessages;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -14,8 +13,8 @@ public class ConnectTwoRopesTest {
 
         try {
             connectTwoRopesSolver.connectRopes(null);
-        } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+        } catch (NullPointerException e) {
+            assertEquals("The array must not be null.", e.getMessage());
         }
     }
 
@@ -26,7 +25,7 @@ public class ConnectTwoRopesTest {
         try {
             connectTwoRopesSolver.connectRopes(new int[0]);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals("The array must not be empty.", e.getMessage());
         }
     }
 
@@ -37,7 +36,7 @@ public class ConnectTwoRopesTest {
         try {
             connectTwoRopesSolver.connectRopes(new int[]{2, -4, 5});
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals("The value must be between 1 and 2,147,483,647.", e.getMessage());
         }
     }
 

@@ -2,7 +2,6 @@ package modules.algorithmic_toolbox.week_4.lectures.recursion;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import services.ValidationMessages;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -66,8 +65,8 @@ class PalindromeTest {
     public void throws_exception_for_null_input_strings() {
         try {
             palindromeSolver.linearPalindrome(null);
-        } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_NULL_STRING_EXCEPTION_MESSAGE, e.getMessage());
+        } catch (NullPointerException e) {
+            assertEquals("The input string must not be null.", e.getMessage());
         }
     }
 }

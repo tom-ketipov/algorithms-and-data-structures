@@ -1,10 +1,9 @@
 package modules.algorithmic_toolbox.week_4.lectures.recursion;
 
-import services.ValidationMessages;
+import org.apache.commons.lang3.Validate;
+import utils.ValidationMessageUtility;
 
 import java.util.LinkedList;
-
-import static services.ValidationService.validateNotNull;
 
 public class LinkedListMerger {
 
@@ -15,12 +14,12 @@ public class LinkedListMerger {
      * @param linkedListB The second sorted linked list to merge. Must not be null.
      * @return A new linked list containing all elements from both input lists, merged into
      * ascending order.
-     * @throws IllegalArgumentException If either of the input linked lists is null.
+     * @throws NullPointerException If either of the input linked lists is null.
      * @implNote Time Complexity: O(n) -> n = linkedListA.size() + linkedListB.size()
      */
     public LinkedList<Integer> recursiveMerge(LinkedList<Integer> linkedListA, LinkedList<Integer> linkedListB) {
-        validateNotNull(linkedListA, ValidationMessages.NOT_NULL_LINKED_LIST_EXCEPTION_MESSAGE);
-        validateNotNull(linkedListB, ValidationMessages.NOT_NULL_LINKED_LIST_EXCEPTION_MESSAGE);
+        Validate.notNull(linkedListA, ValidationMessageUtility.getMessage("not_null_array_exception"));
+        Validate.notNull(linkedListB, ValidationMessageUtility.getMessage("not_null_array_exception"));
 
         if (linkedListA.isEmpty()) {
             return linkedListB;
@@ -48,12 +47,12 @@ public class LinkedListMerger {
      * @param linkedListB The second sorted linked list to merge. Must not be null.
      * @return A new linked list containing all elements from both input lists, merged into
      * ascending order.
-     * @throws IllegalArgumentException If either of the input linked lists is null.
+     * @throws NullPointerException If either of the input linked lists is null.
      * @implNote Time Complexity: O(n) -> n = linkedListA.size() + linkedListB.size()
      */
     public LinkedList<Integer> iterativeMerge(LinkedList<Integer> linkedListA, LinkedList<Integer> linkedListB) {
-        validateNotNull(linkedListA, ValidationMessages.NOT_NULL_LINKED_LIST_EXCEPTION_MESSAGE);
-        validateNotNull(linkedListB, ValidationMessages.NOT_NULL_LINKED_LIST_EXCEPTION_MESSAGE);
+        Validate.notNull(linkedListA, ValidationMessageUtility.getMessage("not_null_array_exception"));
+        Validate.notNull(linkedListB, ValidationMessageUtility.getMessage("not_null_array_exception"));
 
         LinkedList<Integer> mergedLinkedList = new LinkedList<>();
         while (!linkedListA.isEmpty() && !linkedListB.isEmpty()) {

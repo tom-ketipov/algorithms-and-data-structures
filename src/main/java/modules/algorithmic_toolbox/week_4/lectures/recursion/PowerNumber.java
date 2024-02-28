@@ -1,8 +1,7 @@
 package modules.algorithmic_toolbox.week_4.lectures.recursion;
 
-import services.ValidationMessages;
-
-import static services.ValidationService.validateInRange;
+import org.apache.commons.lang3.Validate;
+import utils.ValidationMessageUtility;
 
 public class PowerNumber {
 
@@ -15,7 +14,9 @@ public class PowerNumber {
      * @throws IllegalArgumentException If the provided power is negative.
      */
     public int recursivePower(int number, int power) {
-        validateInRange(power, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        int minValue = 0;
+        int maxValue = Integer.MAX_VALUE;
+        Validate.inclusiveBetween(minValue, maxValue, power, ValidationMessageUtility.getMessage("value_range_exception", minValue, maxValue));
 
         if (power == 0) return 1;
         return number * recursivePower(number, power - 1);
@@ -30,7 +31,9 @@ public class PowerNumber {
      * @throws IllegalArgumentException If the provided power is negative.
      */
     public int linearPower(int number, int power) {
-        validateInRange(power, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        int minValue = 0;
+        int maxValue = Integer.MAX_VALUE;
+        Validate.inclusiveBetween(minValue, maxValue, power, ValidationMessageUtility.getMessage("value_range_exception", minValue, maxValue));
 
         int result = 1;
         while (power > 0) {

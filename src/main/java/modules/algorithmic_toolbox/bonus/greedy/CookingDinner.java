@@ -1,11 +1,10 @@
 package modules.algorithmic_toolbox.bonus.greedy;
 
-import services.ValidationMessages;
+import org.apache.commons.lang3.Validate;
+import utils.ValidationMessageUtility;
 
 import java.util.Arrays;
 import java.util.Comparator;
-
-import static services.ValidationService.*;
 
 public class CookingDinner {
 
@@ -14,8 +13,10 @@ public class CookingDinner {
         private int dueTime;
 
         public Meal(int cookingTime, int dueTime) {
-            validateInRange(cookingTime, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
-            validateInRange(dueTime, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+            int minValue = 0;
+            int maxValue = Integer.MAX_VALUE;
+            Validate.inclusiveBetween(minValue, maxValue, cookingTime, ValidationMessageUtility.getMessage("value_range_exception", minValue, maxValue));
+            Validate.inclusiveBetween(minValue, maxValue, dueTime, ValidationMessageUtility.getMessage("value_range_exception", minValue, maxValue));
 
             this.cookingTime = cookingTime;
             this.dueTime = dueTime;
@@ -31,10 +32,11 @@ public class CookingDinner {
     }
 
     public Meal[] generatePlan(int[] cookingTimes, int[] dueTimes) {
-        validateNotNull(cookingTimes, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotNull(dueTimes, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(cookingTimes, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(dueTimes, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
+        Validate.notNull(cookingTimes, ValidationMessageUtility.getMessage("not_null_array_exception"));
+        Validate.isTrue(cookingTimes.length > 0, ValidationMessageUtility.getMessage("not_empty_array_exception"));
+
+        Validate.notNull(dueTimes, ValidationMessageUtility.getMessage("not_null_array_exception"));
+        Validate.isTrue(dueTimes.length > 0, ValidationMessageUtility.getMessage("not_empty_array_exception"));
 
         Meal[] meals = generateMeals(cookingTimes, dueTimes);
         Arrays.sort(meals, Comparator.comparing(Meal::getDueTime, Comparator.reverseOrder()).thenComparing(Meal::getCookingTime, Comparator.reverseOrder()));

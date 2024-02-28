@@ -1,8 +1,7 @@
 package modules.algorithmic_toolbox.week_4.lectures.recursion;
 
-import services.ValidationMessages;
-
-import static services.ValidationService.validateNotNull;
+import org.apache.commons.lang3.Validate;
+import utils.ValidationMessageUtility;
 
 public class MeanOfArray {
 
@@ -12,11 +11,11 @@ public class MeanOfArray {
      * @param array The input array of integers.
      * @param index The current index during recursive calculation.
      * @return The mean of the array elements.
-     * @throws IllegalArgumentException If the input array is null.
+     * @throws NullPointerException If the input array is null.
      * @implNote Time Complexity: O(n)
      */
     public int recursiveMeanOfArray(int[] array, int index) {
-        validateNotNull(array, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
+        Validate.notNull(array, ValidationMessageUtility.getMessage("not_null_array_exception"));
 
         if (array.length == index) return 0;
 
@@ -32,11 +31,11 @@ public class MeanOfArray {
      *
      * @param array The input array of integers.
      * @return The mean of the array elements.
-     * @throws IllegalArgumentException If the input array is null.
+     * @throws NullPointerException If the input array is null.
      * @implNote Time Complexity: O(n)
      */
     public int linearMeanOfArray(int[] array) {
-        validateNotNull(array, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
+        Validate.notNull(array, ValidationMessageUtility.getMessage("not_null_array_exception"));
 
         int sum = 0;
         if (array.length == 0) return sum;

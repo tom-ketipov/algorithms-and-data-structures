@@ -2,7 +2,6 @@ package modules.algorithmic_toolbox.week_4.lectures.recursion;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import services.ValidationMessages;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -32,7 +31,7 @@ class PowerNumberTest {
         try {
             powerNumberSolver.linearPower(number, power);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals("The value must be between 0 and 2,147,483,647.", e.getMessage());
         }
     }
 
@@ -54,7 +53,7 @@ class PowerNumberTest {
         try {
             powerNumberSolver.recursivePower(number, power);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals("The value must be between 0 and 2,147,483,647.", e.getMessage());
         }
     }
 }

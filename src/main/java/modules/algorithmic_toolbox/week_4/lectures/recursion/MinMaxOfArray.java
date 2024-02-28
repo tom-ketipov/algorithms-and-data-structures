@@ -1,9 +1,7 @@
 package modules.algorithmic_toolbox.week_4.lectures.recursion;
 
-import services.ValidationMessages;
-
-import static services.ValidationService.validateInRange;
-import static services.ValidationService.validateNotNull;
+import org.apache.commons.lang3.Validate;
+import utils.ValidationMessageUtility;
 
 public class MinMaxOfArray {
 
@@ -17,11 +15,15 @@ public class MinMaxOfArray {
      * @param array The input integer array.
      * @param index The current index in the array.
      * @return The minimum value in the subarray.
+     * @throws NullPointerException if input array is null
      * @implNote Time Complexity: O(n)
      */
     private int recursiveMin(int[] array, int index) {
-        validateNotNull(array, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateInRange(index, 0, array.length - 1, ValidationMessages.NOT_IN_BOUNDS_OF_ARRAY_EXCEPTION_MESSAGE);
+        Validate.notNull(array, ValidationMessageUtility.getMessage("not_null_array_exception"));
+
+        int minValue = 0;
+        int maxValue = array.length - 1;
+        Validate.inclusiveBetween(minValue, maxValue, index, ValidationMessageUtility.getMessage("value_range_exception", minValue, maxValue));
 
         if (index == array.length - 1) return array[index];
         return Math.min(array[index], recursiveMin(array, index + 1));
@@ -37,11 +39,15 @@ public class MinMaxOfArray {
      * @param array The input integer array.
      * @param index The current index in the array.
      * @return The maximum value in the subarray.
+     * @throws NullPointerException if input array is null
      * @implNote Time Complexity: O(n)
      */
     private int recursiveMax(int[] array, int index) {
-        validateNotNull(array, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateInRange(index, 0, array.length - 1, ValidationMessages.NOT_IN_BOUNDS_OF_ARRAY_EXCEPTION_MESSAGE);
+        Validate.notNull(array, ValidationMessageUtility.getMessage("not_null_array_exception"));
+
+        int minValue = 0;
+        int maxValue = array.length - 1;
+        Validate.inclusiveBetween(minValue, maxValue, index, ValidationMessageUtility.getMessage("value_range_exception", minValue, maxValue));
 
         if (index == array.length - 1) return array[index];
         return Math.max(array[index], recursiveMax(array, index + 1));
@@ -54,7 +60,7 @@ public class MinMaxOfArray {
      * @return The minimum value in the array.
      */
     private int iterativeMin(int[] array) {
-        validateNotNull(array, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
+        Validate.notNull(array, ValidationMessageUtility.getMessage("not_null_array_exception"));
 
         int min = array[0];
         for (int i = 1; i < array.length; i++) {
@@ -69,9 +75,10 @@ public class MinMaxOfArray {
      *
      * @param array The input integer array.
      * @return The maximum value in the array.
+     * @throws NullPointerException if input array is null
      */
     private int iterativeMax(int[] array) {
-        validateNotNull(array, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
+        Validate.notNull(array, ValidationMessageUtility.getMessage("not_null_array_exception"));
 
         int max = array[0];
         for (int i = 1; i < array.length; i++) {

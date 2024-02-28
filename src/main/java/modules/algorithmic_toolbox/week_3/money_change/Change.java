@@ -1,9 +1,8 @@
 package modules.algorithmic_toolbox.week_3.money_change;
 
 
-import services.ValidationMessages;
-
-import static services.ValidationService.validateInRange;
+import org.apache.commons.lang3.Validate;
+import utils.ValidationMessageUtility;
 
 public class Change {
 
@@ -18,7 +17,9 @@ public class Change {
         Time Complexity: O(1)
      */
     public int getChange(int m) {
-        validateInRange(m, 1, Integer.MAX_VALUE, ValidationMessages.NOT_POSITIVE_NUMBER_EXCEPTION_MESSAGE);
+        int minValue = 1;
+        int maxValue = Integer.MAX_VALUE;
+        Validate.inclusiveBetween(minValue, maxValue, m, ValidationMessageUtility.getMessage("value_range_exception", minValue, maxValue));
 
         // Calculate the number of 10-coins and update m
         int count = m / 10;

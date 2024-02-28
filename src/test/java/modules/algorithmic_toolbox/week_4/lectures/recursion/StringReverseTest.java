@@ -4,7 +4,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static services.ValidationMessages.NOT_NULL_STRING_EXCEPTION_MESSAGE;
 
 class StringReverseTest {
     private StringReverse stringReverseSolver;
@@ -30,8 +29,8 @@ class StringReverseTest {
     public void linear_function_throws_exception_for_null_input() {
         try {
             stringReverseSolver.linearReverse(null);
-        } catch (IllegalArgumentException e) {
-            assertEquals(NOT_NULL_STRING_EXCEPTION_MESSAGE, e.getMessage());
+        } catch (NullPointerException e) {
+            assertEquals("The array must not be null.", e.getMessage());
         }
     }
 

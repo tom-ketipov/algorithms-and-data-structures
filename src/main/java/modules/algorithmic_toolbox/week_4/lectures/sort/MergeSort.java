@@ -1,10 +1,9 @@
 package modules.algorithmic_toolbox.week_4.lectures.sort;
 
-import services.ValidationMessages;
+import org.apache.commons.lang3.Validate;
+import utils.ValidationMessageUtility;
 
 import java.util.Arrays;
-
-import static services.ValidationService.validateNotNull;
 
 public class MergeSort {
 
@@ -13,10 +12,10 @@ public class MergeSort {
      * The array is recursively divided into halves, sorted individually, and then merged.
      *
      * @param array The array of integers to be sorted.
-     * @throws IllegalArgumentException for null input values
+     * @throws NullPointerException for null input values
      */
     public void mergeSort(int[] array) {
-        validateNotNull(array, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
+        Validate.notNull(array, ValidationMessageUtility.getMessage("not_null_array_exception"));
 
         if (array.length <= 1) return;
 
@@ -37,7 +36,7 @@ public class MergeSort {
      * @param left  The first sorted array to be merged.
      * @param right The second sorted array to be merged.
      */
-    public void merge(int[] array, int[] left, int[] right) {
+    private void merge(int[] array, int[] left, int[] right) {
         int leftIndex = 0, rightIndex = 0, i = 0;
         while (left.length > leftIndex && right.length > rightIndex) {
             if (left[leftIndex] <= right[rightIndex]) {

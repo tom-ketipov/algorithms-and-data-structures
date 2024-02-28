@@ -3,8 +3,6 @@ package modules.algorithmic_toolbox.week_4.lectures.sort;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class ArraySortTest {

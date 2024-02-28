@@ -1,8 +1,7 @@
 package modules.algorithmic_toolbox.week_4.lectures.recursion;
 
-import services.ValidationMessages;
-
-import static services.ValidationService.validateInRange;
+import org.apache.commons.lang3.Validate;
+import utils.ValidationMessageUtility;
 
 public class ArithmeticSeriesSum {
 
@@ -15,7 +14,9 @@ public class ArithmeticSeriesSum {
      * @implNote Time Complexity: o(n)
      */
     public int recursiveArithmeticSeriesSum(int n) {
-        validateInRange(n, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        int minValue = 0;
+        int maxValue = Integer.MAX_VALUE;
+        Validate.inclusiveBetween(minValue, maxValue, n, ValidationMessageUtility.getMessage("value_range_exception", minValue, maxValue));
 
         if (n == 0) return 0;
         return n + recursiveArithmeticSeriesSum(n - 1);
@@ -30,7 +31,9 @@ public class ArithmeticSeriesSum {
      * @implNote Time Complexity: o(n)
      */
     public int linearArithmeticSeriesSum(int n) {
-        validateInRange(n, 0, Integer.MAX_VALUE, ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE);
+        int minValue = 0;
+        int maxValue = Integer.MAX_VALUE;
+        Validate.inclusiveBetween(minValue, maxValue, n, ValidationMessageUtility.getMessage("value_range_exception", minValue, maxValue));
 
         int sum = 0;
         while (n > 0) {

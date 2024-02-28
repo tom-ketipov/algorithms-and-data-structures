@@ -2,7 +2,6 @@ package modules.algorithmic_toolbox.week_4.lectures;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import services.ValidationMessages;
 
 import java.util.Arrays;
 
@@ -51,8 +50,8 @@ public class PolynomialMultiplicationTest {
 
         try {
             polynomialMultiplicationSolver.multiplyPolynomialsDivideAndConquer(coefficientsA, null);
-        } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+        } catch (NullPointerException e) {
+            assertEquals("The array must not be null.", e.getMessage());
         }
     }
 
@@ -99,8 +98,8 @@ public class PolynomialMultiplicationTest {
 
         try {
             polynomialMultiplicationSolver.multiplyPolynomialsDivideAndConquer(null, coefficientsB);
-        } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+        } catch (NullPointerException e) {
+            assertEquals("The array must not be null.", e.getMessage());
         }
     }
 

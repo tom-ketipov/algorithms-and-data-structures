@@ -1,7 +1,6 @@
 package modules.algorithmic_toolbox.week_3.money_change;
 
 import org.junit.jupiter.api.Test;
-import services.ValidationMessages;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -40,7 +39,7 @@ public class MoneyChangeTest {
         try {
             changeSolver.getChange(m);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_POSITIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals("The value must be between 1 and 2,147,483,647.", e.getMessage());
         }
     }
 
@@ -52,7 +51,7 @@ public class MoneyChangeTest {
         try {
             changeSolver.getChange(m);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_POSITIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals("The value must be between 1 and 2,147,483,647.", e.getMessage());
         }
     }
 }

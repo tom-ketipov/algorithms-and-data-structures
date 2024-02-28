@@ -1,7 +1,6 @@
 package modules.algorithmic_toolbox.bonus.greedy;
 
 import org.junit.jupiter.api.Test;
-import services.ValidationMessages;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -14,7 +13,7 @@ public class JobScheduleTest {
         try {
             new JobSchedule.Job(-1, 2);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals("The value must be between 0 and 2,147,483,647.", e.getMessage());
         }
     }
 
@@ -23,7 +22,7 @@ public class JobScheduleTest {
         try {
             new JobSchedule.Job(1, -32);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals("The value must be between 0 and 2,147,483,647.", e.getMessage());
         }
     }
 
@@ -105,8 +104,8 @@ public class JobScheduleTest {
 
         try {
             jobScheduleSolver.scheduleJobs(null);
-        } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+        } catch (NullPointerException e) {
+            assertEquals("The array must not be null.", e.getMessage());
         }
     }
 
@@ -117,7 +116,7 @@ public class JobScheduleTest {
         try {
             jobScheduleSolver.scheduleJobs(new JobSchedule.Job[0]);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals("The array must not be empty.", e.getMessage());
         }
     }
 }

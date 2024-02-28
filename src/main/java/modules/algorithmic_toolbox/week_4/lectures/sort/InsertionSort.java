@@ -1,7 +1,7 @@
 package modules.algorithmic_toolbox.week_4.lectures.sort;
 
-import services.ValidationMessages;
-import services.ValidationService;
+import org.apache.commons.lang3.Validate;
+import utils.ValidationMessageUtility;
 
 public class InsertionSort {
 
@@ -9,11 +9,11 @@ public class InsertionSort {
      * Sorts the given integer array using the insertion sort algorithm.
      *
      * @param arr The integer array to be sorted. It must not be null.
-     * @throws IllegalArgumentException If the input array is null.
-     *                                  Time Complexity O(n^2)
+     * @throws NullPointerException If the input array is null.
+     *                              Time Complexity O(n^2)
      */
     public void insertionSort(int[] arr) {
-        ValidationService.validateNotNull(arr, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
+        Validate.notNull(arr, ValidationMessageUtility.getMessage("not_null_array_exception"));
 
         for (int i = 1; i < arr.length; i++) {
             insert(arr, i);
@@ -25,12 +25,15 @@ public class InsertionSort {
      *
      * @param arr   The integer array in which the insertion is performed. It must not be null.
      * @param index The index of the element to be inserted.
-     * @throws IllegalArgumentException If the input array is null.
+     * @throws NullPointerException     If the input array is null.
      * @throws IllegalArgumentException If the index is out of the array bounds.
      */
     private void insert(int[] arr, int index) {
-        ValidationService.validateNotNull(arr, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
-        ValidationService.validateInArrayBounds(arr, index, ValidationMessages.NOT_IN_BOUNDS_OF_ARRAY_EXCEPTION_MESSAGE);
+        Validate.notNull(arr, ValidationMessageUtility.getMessage("not_null_array_exception"));
+
+        int minValue = 0;
+        int maxValue = arr.length - 1;
+        Validate.inclusiveBetween(minValue, maxValue, index, ValidationMessageUtility.getMessage("value_range_exception", minValue, maxValue));
 
         int comparableValue = arr[index], i;
         for (i = index - 1; i >= 0 && arr[i] > comparableValue; i--) {
@@ -56,11 +59,15 @@ public class InsertionSort {
      *
      * @param array The array to be sorted.
      * @param index The current index being processed during the recursive sorting.
-     * @throws IllegalArgumentException if array is null or index is out of bounds
+     * @throws NullPointerException     if array is null
+     * @throws IllegalArgumentException if array index is out of bounds
      */
     private void sort(int[] array, int index) {
-        ValidationService.validateNotNull(array, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
-        ValidationService.validateInRange(index, 0, array.length, ValidationMessages.NOT_IN_BOUNDS_OF_ARRAY_EXCEPTION_MESSAGE);
+        Validate.notNull(array, ValidationMessageUtility.getMessage("not_null_array_exception"));
+
+        int minValue = 0;
+        int maxValue = array.length;
+        Validate.inclusiveBetween(minValue, maxValue, index, ValidationMessageUtility.getMessage("value_range_exception", minValue, maxValue));
 
         if (index == array.length) return;
 
@@ -76,11 +83,15 @@ public class InsertionSort {
      *
      * @param array The array to be sorted.
      * @param index The index of the current element to be inserted.
-     * @throws IllegalArgumentException if array is null or index is out of bounds
+     * @throws NullPointerException     if array is null
+     * @throws IllegalArgumentException if array index is out of bounds
      */
     private void insertIndex(int[] array, int index) {
-        ValidationService.validateNotNull(array, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
-        ValidationService.validateInRange(index, 0, array.length, ValidationMessages.NOT_IN_BOUNDS_OF_ARRAY_EXCEPTION_MESSAGE);
+        Validate.notNull(array, ValidationMessageUtility.getMessage("not_null_array_exception"));
+
+        int minValue = 0;
+        int maxValue = array.length - 1;
+        Validate.inclusiveBetween(minValue, maxValue, index, ValidationMessageUtility.getMessage("value_range_exception", minValue, maxValue));
 
         int currentElement = array[index], insertionIndex = binarySearchInsertionIndex(array, index);
         if (insertionIndex != index) {
@@ -96,11 +107,15 @@ public class InsertionSort {
      * @param array        The array to be sorted.
      * @param currentIndex The index of the current element to be inserted.
      * @return The insertion index for the current element.
-     * @throws IllegalArgumentException if array is null or index is out of bounds
+     * @throws NullPointerException if array is null
+     * @throws IllegalArgumentException if array index is out of bounds
      */
     private int binarySearchInsertionIndex(int[] array, int currentIndex) {
-        ValidationService.validateNotNull(array, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
-        ValidationService.validateInRange(currentIndex, 0, array.length, ValidationMessages.NOT_IN_BOUNDS_OF_ARRAY_EXCEPTION_MESSAGE);
+        Validate.notNull(array, ValidationMessageUtility.getMessage("not_null_array_exception"));
+
+        int minValue = 0;
+        int maxValue = array.length - 1;
+        Validate.inclusiveBetween(minValue, maxValue, currentIndex, ValidationMessageUtility.getMessage("value_range_exception", minValue, maxValue));
 
         int startIndex = 0, endIndex = currentIndex, currentElement = array[currentIndex];
         while (startIndex <= endIndex) {

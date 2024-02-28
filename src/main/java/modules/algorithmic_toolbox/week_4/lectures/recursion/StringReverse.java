@@ -1,8 +1,7 @@
 package modules.algorithmic_toolbox.week_4.lectures.recursion;
 
-import services.ValidationMessages;
-
-import static services.ValidationService.validateNotNull;
+import org.apache.commons.lang3.Validate;
+import utils.ValidationMessageUtility;
 
 public class StringReverse {
 
@@ -11,11 +10,11 @@ public class StringReverse {
      *
      * @param str The input string to be reversed. Must not be null.
      * @return The reversed string.
-     * @throws IllegalArgumentException if the input string is null.
+     * @throws NullPointerException if the input string is null.
      * @implNote Time Complexity: O(n)
      */
     public String recursiveReverse(String str) {
-        validateNotNull(str, ValidationMessages.NOT_NULL_STRING_EXCEPTION_MESSAGE);
+        Validate.notNull(str, ValidationMessageUtility.getMessage("not_null_array_exception"));
 
         // Base case
         if (str.length() <= 1) {
@@ -29,11 +28,11 @@ public class StringReverse {
      *
      * @param str The input string to be reversed. Must not be null.
      * @return The reversed string.
-     * @throws IllegalArgumentException if the input string is null.
+     * @throws NullPointerException if the input string is null.
      * @implNote Time complexity: O(n).
      */
     public String linearReverse(String str) {
-        validateNotNull(str, ValidationMessages.NOT_NULL_STRING_EXCEPTION_MESSAGE);
+        Validate.notNull(str, ValidationMessageUtility.getMessage("not_null_array_exception"));
 
         StringBuilder reversed = new StringBuilder();
         for (int i = str.length() - 1; i >= 0; i--) {

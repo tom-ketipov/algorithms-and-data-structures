@@ -1,8 +1,7 @@
 package modules.algorithmic_toolbox.week_4.lectures.recursion;
 
-import services.ValidationMessages;
-
-import static services.ValidationService.validateNotNull;
+import org.apache.commons.lang3.Validate;
+import utils.ValidationMessageUtility;
 
 public class ReverseArray {
     /**
@@ -24,11 +23,11 @@ public class ReverseArray {
      * @param left  The left index of the range to be reversed.
      * @param right The right index of the range to be reversed.
      * @return The integer array with the specified range reversed.
-     * @throws IllegalArgumentException if the input array is null.
+     * @throws NullPointerException if the input array is null.
      * @implNote Time Complexity: O(n)
      */
     public int[] recursiveArrayReverseInRange(int[] arr, int left, int right) {
-        validateNotNull(arr, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
+        Validate.notNull(arr, ValidationMessageUtility.getMessage("not_null_array_exception"));
 
         if (left >= right) return arr;
 
@@ -43,11 +42,11 @@ public class ReverseArray {
      *
      * @param arr The integer array to be reversed. Must not be null.
      * @return The reversed integer array.
-     * @throws IllegalArgumentException if the input array is null.
+     * @throws NullPointerException if the input array is null.
      * @implNote Time Complexity: O(n)
      */
     public int[] linerArrayReverse(int[] arr) {
-        validateNotNull(arr, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
+        Validate.notNull(arr, ValidationMessageUtility.getMessage("not_null_array_exception"));
 
         int left = 0, right = arr.length - 1;
         while (left <= right) {

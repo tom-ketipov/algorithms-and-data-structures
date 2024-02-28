@@ -2,7 +2,6 @@ package modules.algorithmic_toolbox.week_4.lectures.recursion;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import services.ValidationMessages;
 
 import java.util.LinkedList;
 
@@ -38,8 +37,8 @@ class LinkedListRemovalTest {
         int target = 5;
         try {
             linkedListRemovalSolver.iterativeLinkedListElementRemoval(null, target);
-        } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_NULL_LINKED_LIST_EXCEPTION_MESSAGE, e.getMessage());
+        } catch (NullPointerException e) {
+            assertEquals("The array must not be null.", e.getMessage());
         }
     }
 
@@ -65,8 +64,8 @@ class LinkedListRemovalTest {
         int target = 5;
         try {
             linkedListRemovalSolver.recursiveLinkedListElementRemoval(null, target);
-        } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_NULL_LINKED_LIST_EXCEPTION_MESSAGE, e.getMessage());
+        } catch (NullPointerException e) {
+            assertEquals("The array must not be null.", e.getMessage());
         }
     }
 
@@ -92,8 +91,8 @@ class LinkedListRemovalTest {
         int target = 5;
         try {
             linkedListRemovalSolver.recursiveLinkedListElementRemovalImproved(null, target);
-        } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_NULL_LINKED_LIST_EXCEPTION_MESSAGE, e.getMessage());
+        } catch (NullPointerException e) {
+            assertEquals("The array must not be null.", e.getMessage());
         }
     }
 }

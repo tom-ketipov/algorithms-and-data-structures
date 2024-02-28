@@ -1,11 +1,9 @@
 package modules.algorithmic_toolbox.week_4.lectures;
 
-import services.ValidationMessages;
+import org.apache.commons.lang3.Validate;
+import utils.ValidationMessageUtility;
 
 import java.util.Arrays;
-
-import static services.ValidationService.validateNotEmpty;
-import static services.ValidationService.validateNotNull;
 
 public class PolynomialMultiplication {
     /**
@@ -22,14 +20,16 @@ public class PolynomialMultiplication {
      * @param coefficientsA The coefficients of the first polynomial.
      * @param coefficientsB The coefficients of the second polynomial.
      * @return The coefficients of the product polynomial.
-     * @throws IllegalArgumentException if either coefficientsA or coefficientsB is null.
+     * @throws IllegalArgumentException if either coefficientsA or coefficientsB is empty.
+     * @throws NullPointerException if either coefficientsA or coefficientsB is null.
      *                                  Time complexity: O(n^2)
      */
     public int[] multiplyPolynomialsNaive(int[] coefficientsA, int[] coefficientsB) {
-        validateNotNull(coefficientsA, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotNull(coefficientsB, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(coefficientsA, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(coefficientsB, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
+        Validate.notNull(coefficientsA, ValidationMessageUtility.getMessage("not_null_array_exception"));
+        Validate.isTrue(coefficientsA.length > 0, ValidationMessageUtility.getMessage("not_empty_array_exception"));
+
+        Validate.notNull(coefficientsB, ValidationMessageUtility.getMessage("not_null_array_exception"));
+        Validate.isTrue(coefficientsB.length > 0, ValidationMessageUtility.getMessage("not_empty_array_exception"));
 
         int[] multipliedCoefficients = new int[coefficientsA.length + coefficientsB.length - 1];
 
@@ -51,16 +51,17 @@ public class PolynomialMultiplication {
      * @param coefficientsA The coefficients of the first polynomial.
      * @param coefficientsB The coefficients of the second polynomial.
      * @return The coefficients of the product polynomial.
-     * @throws IllegalArgumentException if either coefficientsA or coefficientsB is null.
+     * @throws IllegalArgumentException if either coefficientsA or coefficientsB is empty.
+     * @throws NullPointerException if either coefficientsA or coefficientsB is null.
      *                                  <p>
      *                                  Time complexity: O(n^2)
      */
     public int[] multiplyPolynomialsDivideAndConquer(int[] coefficientsA, int[] coefficientsB) {
-        validateNotNull(coefficientsA, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotNull(coefficientsB, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(coefficientsA, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(coefficientsB, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
+        Validate.notNull(coefficientsA, ValidationMessageUtility.getMessage("not_null_array_exception"));
+        Validate.isTrue(coefficientsA.length > 0, ValidationMessageUtility.getMessage("not_empty_array_exception"));
 
+        Validate.notNull(coefficientsB, ValidationMessageUtility.getMessage("not_null_array_exception"));
+        Validate.isTrue(coefficientsB.length > 0, ValidationMessageUtility.getMessage("not_empty_array_exception"));
 
         int degree = coefficientsA.length + coefficientsB.length - 1;
         int[] product = new int[degree];
@@ -124,14 +125,16 @@ public class PolynomialMultiplication {
      * @param coefficientsA The coefficients of the first polynomial.
      * @param coefficientsB The coefficients of the second polynomial.
      * @return The coefficients of the product polynomial.
-     * @throws IllegalArgumentException If either coefficientsA or coefficientsB is null.
+     * @throws IllegalArgumentException if either coefficientsA or coefficientsB is empty.
+     * @throws NullPointerException If either coefficientsA or coefficientsB is null.
      *                                  Time complexity: O(n^1.585)
      */
     public int[] multiplyPolynomialsKaratsuba(int[] coefficientsA, int[] coefficientsB) {
-        validateNotNull(coefficientsA, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotNull(coefficientsB, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(coefficientsA, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(coefficientsB, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
+        Validate.notNull(coefficientsA, ValidationMessageUtility.getMessage("not_null_array_exception"));
+        Validate.isTrue(coefficientsA.length > 0, ValidationMessageUtility.getMessage("not_empty_array_exception"));
+
+        Validate.notNull(coefficientsB, ValidationMessageUtility.getMessage("not_null_array_exception"));
+        Validate.isTrue(coefficientsB.length > 0, ValidationMessageUtility.getMessage("not_empty_array_exception"));
 
         int degree = coefficientsA.length + coefficientsB.length - 1;
         int[] product = new int[degree];
@@ -197,12 +200,8 @@ public class PolynomialMultiplication {
      * @param A The first input array.
      * @param B The second input array.
      * @return A new array containing the element-wise sum of {@code array1} and {@code array2}.
-     * @throws IllegalArgumentException If the input arrays have different lengths.
      */
     private int[] addArrays(int[] A, int[] B) {
-        validateNotNull(A, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotNull(B, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
-
         int[] result = new int[Math.max(A.length, B.length)];
         for (int i = 0; i < A.length; i++) {
             result[i] += A[i];
@@ -220,12 +219,8 @@ public class PolynomialMultiplication {
      * @param A The first array.
      * @param B The second array to subtract from the first array.
      * @return A new array containing the result of the subtraction.
-     * @throws IllegalArgumentException If either A or B is null.
      */
     private int[] subtractArrays(int[] A, int[] B) {
-        validateNotNull(A, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotNull(B, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
-
         int[] result = new int[Math.max(A.length, B.length)];
         for (int i = 0; i < A.length; i++) {
             result[i] += A[i];

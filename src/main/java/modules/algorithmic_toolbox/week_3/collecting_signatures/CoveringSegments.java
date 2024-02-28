@@ -1,13 +1,11 @@
 package modules.algorithmic_toolbox.week_3.collecting_signatures;
 
-import services.ValidationMessages;
+import org.apache.commons.lang3.Validate;
+import utils.ValidationMessageUtility;
 
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.LinkedList;
-
-import static services.ValidationService.validateNotEmpty;
-import static services.ValidationService.validateNotNull;
 
 public class CoveringSegments {
     /*
@@ -32,8 +30,8 @@ public class CoveringSegments {
     }
 
     public int[] optimalPoints(Segment[] segments) {
-        validateNotNull(segments, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(segments, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
+        Validate.notNull(segments, ValidationMessageUtility.getMessage("not_null_array_exception"));
+        Validate.isTrue(segments.length > 0, ValidationMessageUtility.getMessage("not_empty_array_exception"));
 
         Arrays.sort(segments, Comparator.comparing(segment -> segment.end));
 

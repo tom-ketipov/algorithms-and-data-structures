@@ -1,7 +1,6 @@
 package modules.algorithmic_toolbox.week_3.maximum_number_of_prizes;
 
 import org.junit.jupiter.api.Test;
-import services.ValidationMessages;
 
 import java.util.List;
 
@@ -45,7 +44,7 @@ public class DifferentSummandsTest {
         try {
             differentSummandsSolver.optimalSummands(max);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals("The value must be between 1 and 2,147,483,647.", e.getMessage());
         }
     }
 
@@ -58,7 +57,7 @@ public class DifferentSummandsTest {
         try {
             differentSummandsSolver.optimalSummands(max);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals("The value must be between 1 and 2,147,483,647.", e.getMessage());
         }
     }
 }

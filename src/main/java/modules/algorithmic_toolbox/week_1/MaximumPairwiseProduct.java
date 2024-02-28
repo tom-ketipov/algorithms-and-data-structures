@@ -1,11 +1,9 @@
 package modules.algorithmic_toolbox.week_1;
 
-import services.ValidationMessages;
+import org.apache.commons.lang3.Validate;
+import utils.ValidationMessageUtility;
 
 import java.util.Arrays;
-
-import static services.ValidationService.validateNotEmpty;
-import static services.ValidationService.validateNotNull;
 
 public class MaximumPairwiseProduct {
 
@@ -14,11 +12,12 @@ public class MaximumPairwiseProduct {
      *
      * @param numbersArray The array of long integers for which to find the maximum pairwise product.
      * @return The maximum pairwise product of the two largest integers in the array.
-     * @throws IllegalArgumentException if the input array is null or empty.
+     * @throws IllegalArgumentException if the input array is empty.
+     * @throws NullPointerException if the input array is null.
      */
     public long maxPairwiseProduct(long[] numbersArray) {
-        validateNotNull(numbersArray, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(numbersArray, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
+        Validate.notNull(numbersArray, ValidationMessageUtility.getMessage("not_null_array_exception"));
+        Validate.isTrue(numbersArray.length > 0, ValidationMessageUtility.getMessage("not_empty_array_exception"));
 
         // sort the array of numbers
         Arrays.sort(numbersArray);

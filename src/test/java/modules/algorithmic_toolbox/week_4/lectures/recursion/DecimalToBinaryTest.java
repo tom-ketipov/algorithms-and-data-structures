@@ -2,7 +2,6 @@ package modules.algorithmic_toolbox.week_4.lectures.recursion;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import services.ValidationMessages;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -25,7 +24,7 @@ class DecimalToBinaryTest {
         try {
             decimalToBinarySolver.linearDecimalToBinary(-1);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals("The value must be between 0 and 2,147,483,647.", e.getMessage());
         }
     }
 
@@ -36,23 +35,11 @@ class DecimalToBinaryTest {
     }
 
     @Test
-    public void a() {
-        int decimal = 13;
-        assertEquals("1101", decimalToBinarySolver.recursiveDecimalToBinary(decimal));
-    }
-
-    @Test
-    public void b() {
-        int decimal = 100;
-        assertEquals("1100100", decimalToBinarySolver.decimalToBinary(decimal));
-    }
-
-    @Test
     public void linear_function_throws_exception_for_recursive_input() {
         try {
             decimalToBinarySolver.recursiveDecimalToBinary(-1);
         } catch (IllegalArgumentException e) {
-            assertEquals(ValidationMessages.NOT_NEGATIVE_NUMBER_EXCEPTION_MESSAGE, e.getMessage());
+            assertEquals("The value must be between 0 and 2,147,483,647.", e.getMessage());
         }
     }
 }

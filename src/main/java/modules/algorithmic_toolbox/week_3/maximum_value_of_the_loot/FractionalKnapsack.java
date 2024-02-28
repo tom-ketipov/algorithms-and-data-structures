@@ -1,11 +1,10 @@
 package modules.algorithmic_toolbox.week_3.maximum_value_of_the_loot;
 
-import services.ValidationMessages;
+import org.apache.commons.lang3.Validate;
+import utils.ValidationMessageUtility;
 
 import java.util.Arrays;
 import java.util.Comparator;
-
-import static services.ValidationService.*;
 
 public class FractionalKnapsack {
     private static class Item {
@@ -32,11 +31,15 @@ public class FractionalKnapsack {
     }
 
     public double getOptimalValue(int capacity, int[] values, int[] weights) {
-        validateNotNull(values, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotNull(weights, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(values, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(weights, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
-        validateInRange(capacity, 1, Integer.MAX_VALUE, ValidationMessages.NOT_POSITIVE_NUMBER_EXCEPTION_MESSAGE);
+        int minValue = 1;
+        int maxValue = Integer.MAX_VALUE;
+        Validate.inclusiveBetween(minValue, maxValue, capacity, ValidationMessageUtility.getMessage("value_range_exception", minValue, maxValue));
+
+        Validate.notNull(weights, ValidationMessageUtility.getMessage("not_null_array_exception"));
+        Validate.isTrue(weights.length > 0, ValidationMessageUtility.getMessage("not_empty_array_exception"));
+
+        Validate.notNull(values, ValidationMessageUtility.getMessage("not_null_array_exception"));
+        Validate.isTrue(values.length > 0, ValidationMessageUtility.getMessage("not_empty_array_exception"));
 
         Item[] items = getItemRatios(values, weights);
 

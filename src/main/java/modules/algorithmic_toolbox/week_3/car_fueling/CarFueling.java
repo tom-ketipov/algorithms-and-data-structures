@@ -1,9 +1,8 @@
 package modules.algorithmic_toolbox.week_3.car_fueling;
 
 
-import services.ValidationMessages;
-
-import static services.ValidationService.*;
+import org.apache.commons.lang3.Validate;
+import utils.ValidationMessageUtility;
 
 public class CarFueling {
     /*
@@ -15,10 +14,13 @@ public class CarFueling {
             Time complexity: 0(n)
      */
     public int computeMinRefills(int totalDistance, int tankCapacity, int[] refillStations) {
-        validateInRange(totalDistance, 1, Integer.MAX_VALUE, ValidationMessages.NOT_POSITIVE_NUMBER_EXCEPTION_MESSAGE);
-        validateInRange(tankCapacity, 1, Integer.MAX_VALUE, ValidationMessages.NOT_POSITIVE_NUMBER_EXCEPTION_MESSAGE);
-        validateNotNull(refillStations, ValidationMessages.NOT_NULL_ARRAY_EXCEPTION_MESSAGE);
-        validateNotEmpty(refillStations, ValidationMessages.NOT_EMPTY_ARRAY_EXCEPTION_MESSAGE);
+        int minValue = 1;
+        int maxValue = Integer.MAX_VALUE;
+        Validate.inclusiveBetween(minValue, maxValue, totalDistance, ValidationMessageUtility.getMessage("value_range_exception", minValue, maxValue));
+        Validate.inclusiveBetween(minValue, maxValue, tankCapacity, ValidationMessageUtility.getMessage("value_range_exception", minValue, maxValue));
+
+        Validate.notNull(refillStations, ValidationMessageUtility.getMessage("not_null_array_exception"));
+        Validate.isTrue(refillStations.length > 0, ValidationMessageUtility.getMessage("not_empty_array_exception"));
 
         if (!validateRoute(totalDistance, tankCapacity, refillStations)) return -1;
 

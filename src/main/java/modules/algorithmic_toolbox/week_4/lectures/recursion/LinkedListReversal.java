@@ -1,11 +1,10 @@
 package modules.algorithmic_toolbox.week_4.lectures.recursion;
 
-import services.ValidationMessages;
+import org.apache.commons.lang3.Validate;
+import utils.ValidationMessageUtility;
 
 import java.util.Iterator;
 import java.util.LinkedList;
-
-import static services.ValidationService.validateNotNull;
 
 public class LinkedListReversal {
     public LinkedList<Integer> recursiveReversal(LinkedList<Integer> linkedList) {
@@ -17,11 +16,11 @@ public class LinkedListReversal {
      *
      * @param linkedList The original LinkedList of integers.
      * @return A new LinkedList with elements in reverse order.
-     * @throws IllegalArgumentException if input linkedList is null
+     * @throws NullPointerException if input linkedList is null
      * @implNote Time Complexity: O(n)
      */
     private LinkedList<Integer> recursiveReversal(LinkedList<Integer> linkedList, LinkedList<Integer> resultLinkedList, int index) {
-        validateNotNull(linkedList, ValidationMessages.NOT_NULL_LINKED_LIST_EXCEPTION_MESSAGE);
+        Validate.notNull(linkedList, ValidationMessageUtility.getMessage("not_null_array_exception"));
 
         if (index < 0) return resultLinkedList;
 
@@ -34,11 +33,11 @@ public class LinkedListReversal {
      *
      * @param linkedList The input LinkedList of integers.
      * @return A new LinkedList with elements in reverse order.
-     * @throws IllegalArgumentException if input linkedList is null
+     * @throws NullPointerException if input linkedList is null
      * @implNote Time Complexity: O(n)
      */
     public LinkedList<Integer> iterativeReversal(LinkedList<Integer> linkedList) {
-        validateNotNull(linkedList, ValidationMessages.NOT_NULL_LINKED_LIST_EXCEPTION_MESSAGE);
+        Validate.notNull(linkedList, ValidationMessageUtility.getMessage("not_null_array_exception"));
 
         LinkedList<Integer> reversedList = new LinkedList<>();
         Iterator<Integer> iterator = linkedList.descendingIterator();
