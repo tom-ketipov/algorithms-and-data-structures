@@ -2,7 +2,8 @@
 
  **Offered By:** [*UC San Diego, California* ](https://ucsd.edu/)  and [*Coursera*](https://www.coursera.org/)
 
-Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the **file explorer** on the left corner of the navigation bar.
+  
+In this specialization, I focus on understanding algorithms and data structures to improve my knowledge of computer science. 
 
 
 ## Courses
