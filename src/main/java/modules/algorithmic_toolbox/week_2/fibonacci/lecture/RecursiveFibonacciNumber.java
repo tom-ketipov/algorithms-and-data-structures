@@ -6,7 +6,14 @@ import java.math.BigInteger;
 
 public class RecursiveFibonacciNumber {
 
-    // Very, very slow algorithm. (Non-usable for even 100th index)
+    /**
+     * Computes the Fibonacci number at a given index using recursion.
+     *
+     * @param index the position in the sequence for which to compute the Fibonacci number, must be non-negative.
+     * @return the Fibonacci number at the specified index.
+     * @throws IllegalArgumentException if index is negative.
+     * @implNote Very, very slow algorithm. (Non-usable for even 100th index)
+     */
     public BigInteger recursiveFibonacciFinder(int index) {
         Validate.isTrue(index >= 0);
 
