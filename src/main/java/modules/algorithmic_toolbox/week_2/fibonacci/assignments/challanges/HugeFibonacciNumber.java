@@ -33,7 +33,7 @@ public class HugeFibonacciNumber {
      * @return The BigInteger representation of the nth Fibonacci number.
      * @implNote Time Complexity: O(log n)
      */
-    private BigInteger findFibonacciNumber(int index) {
+    public BigInteger findFibonacciNumber(int index) {
         BigInteger[][] baseMatrix = {{BigInteger.ONE, BigInteger.ONE}, {BigInteger.ONE, BigInteger.ZERO}};
         powerMatrix(baseMatrix, index - 1);
 
