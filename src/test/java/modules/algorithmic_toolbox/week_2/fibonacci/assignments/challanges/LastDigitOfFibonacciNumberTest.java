@@ -18,27 +18,27 @@ class LastDigitOfFibonacciNumberTest {
 
     @Test
     public void can_extract_last_digit_of_single_digit_fibonacci_number() {
-        Assertions.assertEquals(lastDigitOfFibonacciNumberSolver.getLastFibonacciNumberDigit(1), 1);
+        Assertions.assertEquals(1, lastDigitOfFibonacciNumberSolver.getLastFibonacciNumberDigit(1));
     }
 
     @Test
     public void can_extract_last_digit_of_double_digit_fibonacci_number() {
-        Assertions.assertEquals(lastDigitOfFibonacciNumberSolver.getLastFibonacciNumberDigit(10), 5);
+        Assertions.assertEquals(5, lastDigitOfFibonacciNumberSolver.getLastFibonacciNumberDigit(10));
     }
 
     @Test
     public void can_extract_last_digit_of_four_digit_fibonacci_number() {
-        Assertions.assertEquals(lastDigitOfFibonacciNumberSolver.getLastFibonacciNumberDigit(20), 5);
+        Assertions.assertEquals(5, lastDigitOfFibonacciNumberSolver.getLastFibonacciNumberDigit(20));
     }
 
     @Test
     public void can_extract_last_digit_of_twenty_one_digit_fibonacci_number() {
-        Assertions.assertEquals(lastDigitOfFibonacciNumberSolver.getLastFibonacciNumberDigit(100), 5);
+        Assertions.assertEquals(5, lastDigitOfFibonacciNumberSolver.getLastFibonacciNumberDigit(100));
     }
 
     @Test
     public void can_extract_last_digit_of_hundred_and_five_digit_fibonacci_number() {
-        Assertions.assertEquals(lastDigitOfFibonacciNumberSolver.getLastFibonacciNumberDigit(500), 5);
+        Assertions.assertEquals(5, lastDigitOfFibonacciNumberSolver.getLastFibonacciNumberDigit(500));
     }
 
     @Test
@@ -46,7 +46,7 @@ class LastDigitOfFibonacciNumberTest {
         try {
             lastDigitOfFibonacciNumberSolver.getLastFibonacciNumberDigit(-1);
         } catch (IllegalArgumentException e) {
-            Assertions.assertEquals(e.getMessage(), "The validated expression is false");
+            Assertions.assertEquals("The validated expression is false", e.getMessage());
         }
     }
 
