@@ -1,10 +1,9 @@
-package modules.algorithmic_toolbox.week_2.gcd.assignment.challanges;
+package modules.algorithmic_toolbox.week_2.gcd.assignments.challanges;
 
+import modules.algorithmic_toolbox.week_2.gcd.assignments.challanges.NaiveGreatestCommonDivisor;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class NaiveGreatestCommonDivisorTest {
 
