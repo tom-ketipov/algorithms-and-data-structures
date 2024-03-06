@@ -1,4 +1,4 @@
-package modules.algorithmic_toolbox.week_2.gcd.assignments.challanges;
+package modules.algorithmic_toolbox.week_2.greatest_common_divisor.assignments.challanges;
 
 import org.apache.commons.lang3.Validate;
 

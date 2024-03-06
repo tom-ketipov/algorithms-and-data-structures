@@ -1,12 +1,10 @@
-package modules.algorithmic_toolbox.week_2.gcd.assignments.challanges;
+package modules.algorithmic_toolbox.week_2.greatest_common_divisor.assignments.challanges;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigInteger;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class EuclideanGreatestCommonDivisorTest {
     private EuclideanGreatestCommonDivisor euclideanGreatestCommonDivisorSolver;
