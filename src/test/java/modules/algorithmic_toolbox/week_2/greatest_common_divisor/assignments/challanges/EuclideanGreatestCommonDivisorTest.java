@@ -1,7 +1,9 @@
 package modules.algorithmic_toolbox.week_2.greatest_common_divisor.assignments.challanges;
 
+import enums.ValidationMessageType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigInteger;
@@ -43,10 +45,15 @@ class EuclideanGreatestCommonDivisorTest {
     }
 
     @Test
-    public void can_find_gcd_with_euclidean_method_when_one_of_the_parameters_is_negative() {
+    public void can_handle_negative_input_parameters_in_gcd_with_euclidean_method() {
         BigInteger a = new BigInteger("-12");
-        BigInteger b = new BigInteger("4");
-        Assertions.assertEquals(new BigInteger("4"), euclideanGreatestCommonDivisorSolver.findEuclideanGCD(a, b));
+        BigInteger b = new BigInteger("-4");
+
+        try {
+            euclideanGreatestCommonDivisorSolver.findEuclideanGCD(a, b);
+        } catch (IllegalArgumentException e) {
+            Assertions.assertEquals(ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(0), e.getMessage());
+        }
     }
 
     @Test
@@ -68,7 +75,7 @@ class EuclideanGreatestCommonDivisorTest {
         try {
             euclideanGreatestCommonDivisorSolver.findEuclideanGCD(null, new BigInteger("332002"));
         } catch (NullPointerException e) {
-            Assertions.assertEquals("The input object must not be null.", e.getMessage());
+            Assertions.assertEquals(ValidationMessageType.NULL_VALUE_ERROR.getMessage(), e.getMessage());
         }
     }
 
@@ -77,7 +84,7 @@ class EuclideanGreatestCommonDivisorTest {
         try {
             euclideanGreatestCommonDivisorSolver.findEuclideanGCD(new BigInteger("56135521"), null);
         } catch (NullPointerException e) {
-            Assertions.assertEquals("The input object must not be null.", e.getMessage());
+            Assertions.assertEquals(ValidationMessageType.NULL_VALUE_ERROR.getMessage(), e.getMessage());
         }
     }
 }

@@ -1,5 +1,6 @@
 package modules.algorithmic_toolbox.week_1;
 
+import enums.ValidationMessageType;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -38,7 +39,7 @@ class MaximumPairwiseProductTest {
         try {
             maximumPairwiseProductSolver.maxPairwiseProduct(new long[0]);
         } catch (IllegalArgumentException e) {
-            assertEquals("The array must not be empty.", e.getMessage());
+            assertEquals(ValidationMessageType.EMPTY_ARRAY_ERROR.getMessage(), e.getMessage());
         }
     }
 
@@ -49,7 +50,7 @@ class MaximumPairwiseProductTest {
         try {
             maximumPairwiseProductSolver.maxPairwiseProduct(null);
         } catch (NullPointerException e) {
-            assertEquals("The array must not be null.", e.getMessage());
+            assertEquals(ValidationMessageType.NULL_VALUE_ERROR.getMessage(), e.getMessage());
         }
     }
 }

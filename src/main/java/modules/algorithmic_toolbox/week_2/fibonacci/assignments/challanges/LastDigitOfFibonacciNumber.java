@@ -1,5 +1,6 @@
 package modules.algorithmic_toolbox.week_2.fibonacci.assignments.challanges;
 
+import enums.ValidationMessageType;
 import org.apache.commons.lang3.Validate;
 
 import java.math.BigInteger;
@@ -14,7 +15,7 @@ public class LastDigitOfFibonacciNumber {
      * @throws IllegalArgumentException if index is negative.
      */
     public int getLastFibonacciNumberDigit(int index) {
-        Validate.isTrue(index >= 0);
+        Validate.isTrue(index >= 0, ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(0));
 
         return findFibonacci(index).mod(BigInteger.valueOf(10)).intValue();
     }

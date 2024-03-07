@@ -1,7 +1,7 @@
 package modules.algorithmic_toolbox.week_2.fibonacci.assignments.challanges;
 
+import enums.ValidationMessageType;
 import org.apache.commons.lang3.Validate;
-import utils.ValidationMessageUtility;
 
 import java.math.BigInteger;
 
@@ -17,11 +17,11 @@ public class HugeFibonacciNumber {
     public int getFibonacciNumberMod(int index, int modulo) {
         int minAllowed = 1;
         int maxAllowed = Integer.MAX_VALUE;
-        Validate.inclusiveBetween(minAllowed, maxAllowed, index, ValidationMessageUtility.getMessage("value_range_exception", minAllowed, maxAllowed));
+        Validate.inclusiveBetween(minAllowed, maxAllowed, index, ValidationMessageType.OUT_OF_RANGE_ERROR.getMessage(minAllowed, maxAllowed));
 
         minAllowed = 2;
         maxAllowed = 1000;
-        Validate.inclusiveBetween(minAllowed, maxAllowed, modulo, ValidationMessageUtility.getMessage("value_range_exception", minAllowed, maxAllowed));
+        Validate.inclusiveBetween(minAllowed, maxAllowed, modulo, ValidationMessageType.OUT_OF_RANGE_ERROR.getMessage(minAllowed, maxAllowed));
 
         return findFibonacciNumber(index).mod(BigInteger.valueOf(modulo)).intValue();
     }

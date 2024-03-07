@@ -1,5 +1,6 @@
 package modules.algorithmic_toolbox.week_2.fibonacci.assignments.challanges;
 
+import enums.ValidationMessageType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -27,6 +28,11 @@ class LastDigitOfFibonacciNumberTest {
     }
 
     @Test
+    public void can_extract_last_digit_of_zero_fibonacci_number() {
+        Assertions.assertEquals(0, lastDigitOfFibonacciNumberSolver.getLastFibonacciNumberDigit(0));
+    }
+
+    @Test
     public void can_extract_last_digit_of_four_digit_fibonacci_number() {
         Assertions.assertEquals(5, lastDigitOfFibonacciNumberSolver.getLastFibonacciNumberDigit(20));
     }
@@ -46,7 +52,7 @@ class LastDigitOfFibonacciNumberTest {
         try {
             lastDigitOfFibonacciNumberSolver.getLastFibonacciNumberDigit(-1);
         } catch (IllegalArgumentException e) {
-            Assertions.assertEquals("The validated expression is false", e.getMessage());
+            Assertions.assertEquals(ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(0), e.getMessage());
         }
     }
 

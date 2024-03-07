@@ -1,7 +1,7 @@
 package modules.algorithmic_toolbox.week_2.least_common_multiple.assignments.challanges;
 
+import enums.ValidationMessageType;
 import org.apache.commons.lang3.Validate;
-import utils.ValidationMessageUtility;
 
 import java.math.BigInteger;
 
@@ -16,16 +16,13 @@ public class ListingMultiplesLeastCommonMultiple {
      * @throws IllegalArgumentException if 'a' or 'b' is null.
      */
     public BigInteger findLCMWithListingMultiples(int a, int b) {
-        Validate.isTrue(a != 0, ValidationMessageUtility.getMessage("zero_value_exception"));
-        Validate.isTrue(b != 0, ValidationMessageUtility.getMessage("zero_value_exception"));
+        Validate.isTrue(a > 0, ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(1));
+        Validate.isTrue(b > 0, ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(1));
 
-        // Convert a and b to their absolute values to ensure positive multiples
-        BigInteger absA = BigInteger.valueOf(Math.abs(a));
-        BigInteger absB = BigInteger.valueOf(Math.abs(b));
-        BigInteger multipleA = absA;
+        BigInteger multipleA = BigInteger.valueOf(a);
 
-        while (!multipleA.mod(absB).equals(BigInteger.ZERO)) {
-            multipleA = multipleA.add(absA);
+        while (!multipleA.mod(BigInteger.valueOf(b)).equals(BigInteger.ZERO)) {
+            multipleA = multipleA.add(BigInteger.valueOf(a));
         }
         return multipleA;
     }

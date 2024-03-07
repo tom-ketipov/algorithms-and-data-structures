@@ -1,5 +1,6 @@
 package modules.algorithmic_toolbox.week_2.fibonacci.lecture;
 
+import enums.ValidationMessageType;
 import modules.algorithmic_toolbox.week_2.fibonacci.lecture.NaiveFibonacciNumber;
 import modules.algorithmic_toolbox.week_2.fibonacci.lecture.RecursiveFibonacciNumber;
 import org.junit.jupiter.api.Assertions;
@@ -21,11 +22,6 @@ class FibonacciNumberTest {
     @Test
     public void can_find_first_fibonacci_number_with_naive_function() {
         Assertions.assertEquals(BigInteger.valueOf(1), naiveFibonacciNumberSolver.naiveFibonacciFinder(1));
-    }
-
-    @Test
-    public void can_find_zero_fibonacci_number_with_naive_function() {
-        Assertions.assertEquals(BigInteger.valueOf(0), naiveFibonacciNumberSolver.naiveFibonacciFinder(0));
     }
 
     @Test
@@ -52,11 +48,16 @@ class FibonacciNumberTest {
     }
 
     @Test
+    public void can_find_zero_fibonacci_number_with_naive_function() {
+        Assertions.assertEquals(BigInteger.ZERO, naiveFibonacciNumberSolver.naiveFibonacciFinder(0));
+    }
+
+    @Test
     public void can_handle_negative_input_with_naive_function() {
         try {
-            naiveFibonacciNumberSolver.naiveFibonacciFinder(-1);
+            naiveFibonacciNumberSolver.naiveFibonacciFinder(0);
         } catch (IllegalArgumentException e) {
-            Assertions.assertEquals("The validated expression is false", e.getMessage());
+            Assertions.assertEquals(ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(1), e.getMessage());
         }
     }
 
@@ -80,7 +81,7 @@ class FibonacciNumberTest {
         try {
             recursiveFibonacciNumberSolver.recursiveFibonacciFinder(-1);
         } catch (IllegalArgumentException e) {
-            Assertions.assertEquals("The validated expression is false", e.getMessage());
+            Assertions.assertEquals(ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(0), e.getMessage());
         }
     }
 }

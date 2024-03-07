@@ -1,5 +1,6 @@
 package modules.algorithmic_toolbox.week_2.fibonacci.assignments.challanges;
 
+import enums.ValidationMessageType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -37,37 +38,49 @@ class HugeFibonacciNumberTest {
 
     @Test
     public void can_handle_invalid_lower_modulo_input_parameters() {
+        int minAllowed = 2;
+        int maxAllowed = 1000;
+
         try {
             hugeFibonacciNumberSolver.getFibonacciNumberMod(10, 1);
         } catch (IllegalArgumentException e) {
-            Assertions.assertEquals("The value must be between 2 and 1,000.", e.getMessage());
+            Assertions.assertEquals(ValidationMessageType.OUT_OF_RANGE_ERROR.getMessage(minAllowed, maxAllowed), e.getMessage());
         }
     }
 
     @Test
     public void can_handle_negative_modulo_input_parameters() {
+        int minAllowed = 2;
+        int maxAllowed = 1000;
+
         try {
             hugeFibonacciNumberSolver.getFibonacciNumberMod(10, -131);
         } catch (IllegalArgumentException e) {
-            Assertions.assertEquals("The value must be between 2 and 1,000.", e.getMessage());
+            Assertions.assertEquals(ValidationMessageType.OUT_OF_RANGE_ERROR.getMessage(minAllowed, maxAllowed), e.getMessage());
         }
     }
 
     @Test
     public void can_handle_invalid_higher_modulo_input_parameters() {
+        int minAllowed = 2;
+        int maxAllowed = 1000;
+
         try {
             hugeFibonacciNumberSolver.getFibonacciNumberMod(10, 1001);
         } catch (IllegalArgumentException e) {
-            Assertions.assertEquals("The value must be between 2 and 1,000.", e.getMessage());
+            Assertions.assertEquals(ValidationMessageType.OUT_OF_RANGE_ERROR.getMessage(minAllowed, maxAllowed), e.getMessage());
         }
     }
 
     @Test
     public void can_handle_invalid_index_input_parameters() {
+        int minAllowed = 1;
+        int maxAllowed = Integer.MAX_VALUE;
+
         try {
-            hugeFibonacciNumberSolver.getFibonacciNumberMod(-1, 1001);
+            hugeFibonacciNumberSolver.getFibonacciNumberMod(-1, 100);
         } catch (IllegalArgumentException e) {
-            Assertions.assertEquals("The value must be between 1 and 2,147,483,647.", e.getMessage());
+            Assertions.assertEquals(ValidationMessageType.OUT_OF_RANGE_ERROR.getMessage(minAllowed, maxAllowed), e.getMessage());
         }
     }
 }

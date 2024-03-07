@@ -1,7 +1,7 @@
 package modules.algorithmic_toolbox.week_2.greatest_common_divisor.assignments.challanges;
 
+import enums.ValidationMessageType;
 import org.apache.commons.lang3.Validate;
-import utils.ValidationMessageUtility;
 
 import java.math.BigInteger;
 import java.util.Objects;
@@ -18,8 +18,11 @@ public class EuclideanGreatestCommonDivisor {
      * @implNote Time complexity: Average O(log(min(a, b)))
      */
     public BigInteger findEuclideanGCD(BigInteger a, BigInteger b) {
-        Validate.notNull(a, ValidationMessageUtility.getMessage("not_null_object_exception"));
-        Validate.notNull(b, ValidationMessageUtility.getMessage("not_null_object_exception"));
+        Validate.notNull(a, ValidationMessageType.NULL_VALUE_ERROR.getMessage());
+        Validate.notNull(b, ValidationMessageType.NULL_VALUE_ERROR.getMessage());
+
+        Validate.isTrue(a.equals(BigInteger.ZERO) || a.compareTo(BigInteger.ZERO) > 0, ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(0));
+        Validate.isTrue(b.equals(BigInteger.ZERO) || b.compareTo(BigInteger.ZERO) > 0, ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(0));
 
         while (!Objects.equals(b, BigInteger.ZERO)) {
             BigInteger remainder = a.mod(b);

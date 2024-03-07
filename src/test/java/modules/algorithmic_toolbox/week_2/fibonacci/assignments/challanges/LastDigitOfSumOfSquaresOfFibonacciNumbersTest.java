@@ -1,5 +1,6 @@
 package modules.algorithmic_toolbox.week_2.fibonacci.assignments.challanges;
 
+import enums.ValidationMessageType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -30,7 +31,7 @@ class LastDigitOfSumOfSquaresOfFibonacciNumbersTest {
         try {
             lastDigitOfSumOfSquaresOfFibonacciNumbersSolver.findPartialSumOfFibonacciNumbersLastDigits(-1);
         } catch (IllegalArgumentException e) {
-            Assertions.assertEquals("The validated expression is false", e.getMessage());
+            Assertions.assertEquals(ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(0), e.getMessage());
         }
     }
 }

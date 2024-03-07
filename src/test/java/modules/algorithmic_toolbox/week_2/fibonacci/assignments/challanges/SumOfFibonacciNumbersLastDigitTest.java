@@ -1,5 +1,6 @@
 package modules.algorithmic_toolbox.week_2.fibonacci.assignments.challanges;
 
+import enums.ValidationMessageType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -24,20 +25,16 @@ class SumOfFibonacciNumbersLastDigitTest {
     }
 
     @Test
+    public void can_calculate_sum_of_last_digits_for_zero_number_in_fibonacci_sequence() {
+        Assertions.assertEquals(0, lastDigitOfFibonacciNumberSumSolver.findSumOfFibonacciNumbersLastDigit(0));
+    }
+
+    @Test
     public void can_handle_negative_index_input_parameters_with_last_digit_of_fibonacci_number_sum_method() {
         try {
             lastDigitOfFibonacciNumberSumSolver.findSumOfFibonacciNumbersLastDigit(-1);
         } catch (IllegalArgumentException e) {
-            Assertions.assertEquals("The validated expression is false", e.getMessage());
-        }
-    }
-
-    @Test
-    public void can_handle_zero_index_input_parameters_with_last_digit_of_fibonacci_number_sum_method() {
-        try {
-            lastDigitOfFibonacciNumberSumSolver.findSumOfFibonacciNumbersLastDigit(0);
-        } catch (IllegalArgumentException e) {
-            Assertions.assertEquals("The validated expression is false", e.getMessage());
+            Assertions.assertEquals(ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(0), e.getMessage());
         }
     }
 }

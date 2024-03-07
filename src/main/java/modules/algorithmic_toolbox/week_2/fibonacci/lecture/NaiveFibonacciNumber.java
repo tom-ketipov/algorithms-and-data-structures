@@ -1,5 +1,6 @@
 package modules.algorithmic_toolbox.week_2.fibonacci.lecture;
 
+import enums.ValidationMessageType;
 import org.apache.commons.lang3.Validate;
 
 import java.math.BigInteger;
@@ -14,7 +15,7 @@ public class NaiveFibonacciNumber {
      * @throws IllegalArgumentException if index is negative.
      */
     public BigInteger naiveFibonacciFinder(int index) {
-        Validate.isTrue(index >= 0);
+        Validate.isTrue(index >= 0, ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(0));
 
         BigInteger a = BigInteger.valueOf(0);
         BigInteger b = BigInteger.valueOf(1);
@@ -27,7 +28,6 @@ public class NaiveFibonacciNumber {
 
             currentIndex++;
         }
-
         return index >= 1 ? b : a;
     }
 }

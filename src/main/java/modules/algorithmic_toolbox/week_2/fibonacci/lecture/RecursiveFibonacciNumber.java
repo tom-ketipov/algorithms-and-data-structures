@@ -1,5 +1,6 @@
 package modules.algorithmic_toolbox.week_2.fibonacci.lecture;
 
+import enums.ValidationMessageType;
 import org.apache.commons.lang3.Validate;
 
 import java.math.BigInteger;
@@ -15,7 +16,7 @@ public class RecursiveFibonacciNumber {
      * @implNote Very, very slow algorithm. (Non-usable for even 100th index)
      */
     public BigInteger recursiveFibonacciFinder(int index) {
-        Validate.isTrue(index >= 0);
+        Validate.isTrue(index >= 0, ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(0));
 
         if (index <= 1) return BigInteger.valueOf(index);
 

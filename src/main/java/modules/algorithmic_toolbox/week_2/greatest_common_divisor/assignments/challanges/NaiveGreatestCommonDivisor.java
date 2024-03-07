@@ -1,5 +1,6 @@
 package modules.algorithmic_toolbox.week_2.greatest_common_divisor.assignments.challanges;
 
+import enums.ValidationMessageType;
 import org.apache.commons.lang3.Validate;
 
 public class NaiveGreatestCommonDivisor {
@@ -16,8 +17,8 @@ public class NaiveGreatestCommonDivisor {
      * @implNote Time complexity: O(n), where n is equal to the smaller number between a and b
      */
     public int naiveGCDFinder(int a, int b) {
-        Validate.isTrue(a >= 0);
-        Validate.isTrue(b >= 0);
+        Validate.isTrue(a >= 0, ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(0));
+        Validate.isTrue(b >= 0, ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(0));
 
         if (a == 0) return b;
         if (b == 0) return a;

@@ -1,5 +1,6 @@
 package modules.algorithmic_toolbox.week_2.fibonacci.assignments.challanges;
 
+import enums.ValidationMessageType;
 import org.apache.commons.lang3.Validate;
 
 public class PartialSumOfFibonacciNumbersLastDigit {
@@ -12,7 +13,7 @@ public class PartialSumOfFibonacciNumbersLastDigit {
      * @throws IllegalArgumentException if 'index' is less than or equal to 0.
      */
     public int findPartialSumOfFibonacciNumbersLastDigits(int index) {
-        Validate.isTrue(index > 0);
+        Validate.isTrue(index >= 0, ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(0));
 
         HugeFibonacciNumber hugeFibonacciNumberSolver = new HugeFibonacciNumber();
 

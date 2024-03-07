@@ -1,12 +1,13 @@
 package modules.algorithmic_toolbox.week_2.least_common_multiple.assignments.challanges;
 
+import enums.ValidationMessageType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigInteger;
 
-public class LeastCommonMultipleTest {
+public class ListingMultiplesLeastCommonMultipleTest {
     private ListingMultiplesLeastCommonMultiple listingMultiplesLeastCommonMultipleSolver;
 
     @BeforeEach
@@ -20,11 +21,6 @@ public class LeastCommonMultipleTest {
     }
 
     @Test
-    public void can_find_lcm_of_one_negative_and_one_positive_numbers_with_listing_multiples_method() {
-        Assertions.assertEquals(new BigInteger("768"), listingMultiplesLeastCommonMultipleSolver.findLCMWithListingMultiples(256, -12));
-    }
-
-    @Test
     public void can_find_lcm_when_on_of_the_numbers_is_one_with_listing_multiples_method() {
         Assertions.assertEquals(new BigInteger("55613212"), listingMultiplesLeastCommonMultipleSolver.findLCMWithListingMultiples(1, 55613212));
     }
@@ -35,11 +31,11 @@ public class LeastCommonMultipleTest {
     }
 
     @Test
-    public void can_handle_zero_input_for_single_parameter_in_lcm_listing_multiples_method() {
+    public void can_handle_negative_input_parameters_in_lcm_listing_multiples_method() {
         try {
-            listingMultiplesLeastCommonMultipleSolver.findLCMWithListingMultiples(0, 23);
+            listingMultiplesLeastCommonMultipleSolver.findLCMWithListingMultiples(-1, 256);
         } catch (IllegalArgumentException e) {
-            Assertions.assertEquals("The input value must not be 0.", e.getMessage());
+            Assertions.assertEquals(ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(1), e.getMessage());
         }
     }
 
@@ -48,7 +44,7 @@ public class LeastCommonMultipleTest {
         try {
             listingMultiplesLeastCommonMultipleSolver.findLCMWithListingMultiples(0, 0);
         } catch (IllegalArgumentException e) {
-            Assertions.assertEquals("The input value must not be 0.", e.getMessage());
+            Assertions.assertEquals(ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(1), e.getMessage());
         }
     }
 }
