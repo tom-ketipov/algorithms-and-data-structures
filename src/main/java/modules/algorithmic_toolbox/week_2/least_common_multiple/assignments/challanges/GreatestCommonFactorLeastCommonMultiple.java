@@ -8,6 +8,15 @@ import java.math.BigInteger;
 
 public class GreatestCommonFactorLeastCommonMultiple {
 
+    /**
+     * Calculates the least common multiple (LCM) of two BigInteger numbers using the greatest common divisor (GCD).
+     *
+     * @param a the first non-zero, non-negative BigInteger.
+     * @param b the second non-zero, non-negative BigInteger.
+     * @return the LCM of a and b.
+     * @throws NullPointerException     if a or b is null.
+     * @throws IllegalArgumentException if a or b is null, zero, or negative.
+     */
     public BigInteger findLCMWithGreatestCommonFactor(BigInteger a, BigInteger b) {
         Validate.notNull(a, ValidationMessageType.NULL_VALUE_ERROR.getMessage());
         Validate.notNull(b, ValidationMessageType.NULL_VALUE_ERROR.getMessage());
