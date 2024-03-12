@@ -15,33 +15,33 @@ class NaivePrimeNumberValidatorTest {
 
     @Test
     public void can_detect_two_as_a_prime_number() {
-        Assertions.assertTrue(naivePrimeNumberValidatorSolver.isPrimeNumber(2));
+        Assertions.assertTrue(naivePrimeNumberValidatorSolver.isPrime(2));
     }
 
     @Test
     public void can_detect_three_as_a_prime_number() {
-        Assertions.assertTrue(naivePrimeNumberValidatorSolver.isPrimeNumber(3));
+        Assertions.assertTrue(naivePrimeNumberValidatorSolver.isPrime(3));
     }
 
     @Test
     public void can_detect_ten_as_a_non_prime_number() {
-        Assertions.assertFalse(naivePrimeNumberValidatorSolver.isPrimeNumber(10));
+        Assertions.assertFalse(naivePrimeNumberValidatorSolver.isPrime(10));
     }
 
     @Test
     public void can_detect_larger_value_as_a_non_prime_number() {
-        Assertions.assertFalse(naivePrimeNumberValidatorSolver.isPrimeNumber(244646864));
+        Assertions.assertFalse(naivePrimeNumberValidatorSolver.isPrime(244646864));
     }
 
     @Test
     public void can_detect_larger_value_prime_number() {
-        Assertions.assertTrue(naivePrimeNumberValidatorSolver.isPrimeNumber(19999999));
+        Assertions.assertTrue(naivePrimeNumberValidatorSolver.isPrime(19999999));
     }
 
     @Test
     public void can_handle_one_as_input_parameter_in_naive_prime_number_validator_method() {
         try {
-            naivePrimeNumberValidatorSolver.isPrimeNumber(1);
+            naivePrimeNumberValidatorSolver.isPrime(1);
         } catch (IllegalArgumentException e) {
             Assertions.assertEquals(ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(2), e.getMessage());
         }
@@ -50,7 +50,7 @@ class NaivePrimeNumberValidatorTest {
     @Test
     public void can_handle_zero_as_input_parameter_in_naive_prime_number_validator_method() {
         try {
-            naivePrimeNumberValidatorSolver.isPrimeNumber(0);
+            naivePrimeNumberValidatorSolver.isPrime(0);
         } catch (IllegalArgumentException e) {
             Assertions.assertEquals(ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(2), e.getMessage());
         }
@@ -59,7 +59,7 @@ class NaivePrimeNumberValidatorTest {
     @Test
     public void can_handle_negative_input_parameter_in_naive_prime_number_validator_method() {
         try {
-            naivePrimeNumberValidatorSolver.isPrimeNumber(-230);
+            naivePrimeNumberValidatorSolver.isPrime(-230);
         } catch (IllegalArgumentException e) {
             Assertions.assertEquals(ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(2), e.getMessage());
         }

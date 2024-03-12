@@ -14,7 +14,7 @@ public class NaivePrimeNumberValidator {
      * @return if n is a prime number
      * @throws IllegalArgumentException if n is less than or equal to 1.
      */
-    public boolean isPrimeNumber(int n) {
+    public boolean isPrime(int n) {
         Validate.isTrue(n > 1, ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(2));
 
         for (int i = 2; i <= n / 2; i++) {
