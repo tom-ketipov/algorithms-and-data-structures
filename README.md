@@ -29,3 +29,20 @@ In this specialization, I focus on understanding algorithms and data structures 
  - Dynamic Programming 1
  - Dynamic Programming 2
 
+## Running Tests with Maven 🧪
+*This project uses JUnit Jupiter (JUnit 5) for unit testing. To run the tests, follow these steps:*
+
+1.**Prerequisites**:
+-   **JDK 19** installed.
+-   **Maven** installed.
+
+2.**Run Tests**:
+-   Navigate to the project root directory (where `pom.xml` is located).
+-   Execute `mvn clean test` in the terminal.
+
+***Note***: *The Maven Surefire Plugin is configured with a `maven-surefire-junit5-tree-reporter` to provide a tree structure execution representation. This format helps in understanding the hierarchy and outcome of the tests.*
+
+*Example output*
+![Screenshot from 2024-03-18 09-48-23.png](..%2F..%2F..%2F..%2FPictures%2FScreenshots%2FScreenshot%20from%202024-03-18%2009-48-23.png)
+
+For detailed HTML reports, run `mvn surefire-report:report`. The report is generated at `target/site/surefire-report.html`.

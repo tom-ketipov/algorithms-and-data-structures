@@ -31,11 +31,6 @@ class JosephusProblemTest {
     }
 
     @Test
-    public void asd() {
-        Assertions.assertEquals(3, josephusProblemSolver.josephus(5, 2));
-    }
-
-    @Test
     public void can_find_last_rebel_standing_when_the_elimination_step_is_bigger_than_the_number_of_rebels_for_more_than_one_total_rebels() {
         Assertions.assertEquals(2, josephusProblemSolver.josephus(2, 3));
     }
