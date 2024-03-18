@@ -43,6 +43,6 @@ In this specialization, I focus on understanding algorithms and data structures 
 ***Note***: *The Maven Surefire Plugin is configured with a `maven-surefire-junit5-tree-reporter` to provide a tree structure execution representation. This format helps in understanding the hierarchy and outcome of the tests.*
 
 *Example output*
-![Screenshot from 2024-03-18 09-48-23.png](..%2F..%2F..%2F..%2FPictures%2FScreenshots%2FScreenshot%20from%202024-03-18%2009-48-23.png)
+![Maven test execution (tree structure)](src/main/resources/maven-test-execution-tree.png)
 
 For detailed HTML reports, run `mvn surefire-report:report`. The report is generated at `target/site/surefire-report.html`.
