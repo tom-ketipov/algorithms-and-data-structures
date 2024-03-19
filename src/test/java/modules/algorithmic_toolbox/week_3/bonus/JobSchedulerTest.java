@@ -1,4 +1,4 @@
-package modules.algorithmic_toolbox.week_3.assignments;
+package modules.algorithmic_toolbox.week_3.bonus;
 
 import enums.ValidationMessageType;
 import modules.algorithmic_toolbox.week_3.bonus.JobScheduler;
