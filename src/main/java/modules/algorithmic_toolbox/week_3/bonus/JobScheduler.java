@@ -7,6 +7,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/*
+        3.3.1 Job Scheduling Problem
+        Given an array of jobs, where each job is associated with its profit and deadline, find an ordering of all jobs that maximizes the profit.
+        A job generates a profit only if it is completed before the deadline.
+*/
 public class JobScheduler {
     public static class Job {
         private final int deadline;

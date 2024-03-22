@@ -1,4 +1,4 @@
-package modules.algorithmic_toolbox.week_2.assignments.greatest_common_divisor.assignments.challanges;
+package modules.algorithmic_toolbox.week_2.assignments.greatest_common_divisor;
 
 import enums.ValidationMessageType;
 import org.apache.commons.lang3.Validate;

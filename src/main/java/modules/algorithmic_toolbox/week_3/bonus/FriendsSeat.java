@@ -7,7 +7,8 @@ import java.util.Arrays;
 
 /*
         3.3.8 Friends Seat Together Problem
-        Given positions of k friends in the first row of a theater, find the minimal number of moves to sit all friends together. In each move, a friend moves to a seat to the left or a seat to the right.
+        Given positions of k friends in the first row of a theater, find the minimal number of moves to sit all friends together.
+        In each move, a friend moves to a seat to the left or a seat to the right.
  */
 public class FriendsSeat {
 

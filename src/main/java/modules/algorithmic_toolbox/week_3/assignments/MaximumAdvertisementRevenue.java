@@ -6,7 +6,7 @@ import org.apache.commons.lang3.Validate;
 import java.util.Arrays;
 
 /*
-    Maximum Product of Two Sequences Problem
+    3.2.4 Maximum Product of Two Sequences Problem
     Find the maximum dot product of two sequences of numbers.
 
     Input: Two sequences of n positive integers: price1 , . . . , price n and clicks1 , . . . , clicks n .

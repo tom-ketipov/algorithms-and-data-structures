@@ -1,10 +1,14 @@
-package modules.algorithmic_toolbox.week_2.assignments.fibonacci.assignments.challanges;
+package modules.algorithmic_toolbox.week_2.assignments.fibonacci;
 
 import enums.ValidationMessageType;
 import org.apache.commons.lang3.Validate;
 
 import java.math.BigInteger;
 
+/*
+        2.1.6 Last Digit of the Sum of Squares of Fibonacci Numbers Problem
+        Compute the last digit of F02 + F12 + · · · + Fn2 .
+ */
 public class LastDigitOfSumOfSquaresOfFibonacciNumbers {
 
     /**

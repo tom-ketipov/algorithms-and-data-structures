@@ -1,7 +1,7 @@
 package modules.week_2.assignments.least_common_multiple.assignments.challanges;
 
 import enums.ValidationMessageType;
-import modules.algorithmic_toolbox.week_2.assignments.least_common_multiple.assignments.challanges.ListingMultiplesLeastCommonMultiple;
+import modules.algorithmic_toolbox.week_2.assignments.least_common_multiple.ListingMultiplesLeastCommonMultiple;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

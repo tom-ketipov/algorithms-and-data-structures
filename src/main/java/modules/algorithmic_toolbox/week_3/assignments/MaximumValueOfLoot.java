@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 /*
-      Maximizing the Value of the Loot Problem Find the maximal value of items that fit into the backpack.
+      3.2.2 Maximizing the Value of the Loot Problem Find the maximal value of items that fit into the backpack.
 
       Input: The capacity of a back-pack W as well as the weights (w1,. . . , wn ) and costs (c1 , . . . , cn ) of n different compounds.
       Output: The maximum total value of fractions of items that fit into the backpack of the given ca-pacity: i.e.,

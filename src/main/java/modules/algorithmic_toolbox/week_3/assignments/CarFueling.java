@@ -4,7 +4,7 @@ import enums.ValidationMessageType;
 import org.apache.commons.lang3.Validate;
 
 /*
-        Car Fueling Problem
+        3.2.3 Car Fueling Problem
         Compute the minimum number of gas tank re-fills to get from one city to another.
 
         Input: Integers d and m, as well as a sequence of integers stop1 < stop2 < · · · < stopn.

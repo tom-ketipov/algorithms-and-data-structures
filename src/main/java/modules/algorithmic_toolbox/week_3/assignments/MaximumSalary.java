@@ -6,6 +6,10 @@ import org.apache.commons.lang3.Validate;
 import java.math.BigInteger;
 import java.util.Arrays;
 
+/*
+        3.2.7 Largest Concatenate Problem
+        Compile the largest integer by concatenating the given integers.
+ */
 public class MaximumSalary {
     /**
      * Constructs the largest possible number by rearranging the given array of non-negative digits.

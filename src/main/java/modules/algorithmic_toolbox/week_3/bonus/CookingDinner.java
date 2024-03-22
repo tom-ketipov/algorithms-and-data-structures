@@ -6,6 +6,11 @@ import org.apache.commons.lang3.Validate;
 import java.util.Arrays;
 import java.util.Comparator;
 
+/*
+        3.3.4 Cooking a Dinner Problem
+        Given an array that describes time it takes to cook each of n dishes and an array that describes how long the dishes stay fresh,
+        is there an order of cooking these dishes that ensures that at some point all of them are fresh?
+ */
 public class CookingDinner {
 
     public static class Meal {

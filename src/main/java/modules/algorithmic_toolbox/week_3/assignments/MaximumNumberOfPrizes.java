@@ -6,6 +6,10 @@ import org.apache.commons.lang3.Validate;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+        3.2.6 Maximum Product of Two Sequences Problem
+        Find the maximum dot product of two sequences of numbers.
+ */
 public class MaximumNumberOfPrizes {
     /**
      * Calculates the maximum number of distinct positive prizes that sum up to the totalSum.

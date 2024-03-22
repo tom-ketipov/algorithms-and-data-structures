@@ -1,8 +1,8 @@
 package modules.week_2.assignments.fibonacci.lecture;
 
 import enums.ValidationMessageType;
-import modules.algorithmic_toolbox.week_2.assignments.fibonacci.lecture.NaiveFibonacciNumber;
-import modules.algorithmic_toolbox.week_2.assignments.fibonacci.lecture.RecursiveFibonacciNumber;
+import modules.algorithmic_toolbox.week_2.assignments.fibonacci.NaiveFibonacciNumber;
+import modules.algorithmic_toolbox.week_2.assignments.fibonacci.RecursiveFibonacciNumber;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

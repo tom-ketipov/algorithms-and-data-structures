@@ -1,7 +1,7 @@
 package modules.week_2.assignments.greatest_common_divisor.assignments.challanges;
 
 import enums.ValidationMessageType;
-import modules.algorithmic_toolbox.week_2.assignments.greatest_common_divisor.assignments.challanges.EuclideanGreatestCommonDivisor;
+import modules.algorithmic_toolbox.week_2.assignments.greatest_common_divisor.EuclideanGreatestCommonDivisor;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

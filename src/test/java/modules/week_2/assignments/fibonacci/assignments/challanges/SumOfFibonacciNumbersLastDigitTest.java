@@ -1,7 +1,7 @@
 package modules.week_2.assignments.fibonacci.assignments.challanges;
 
 import enums.ValidationMessageType;
-import modules.algorithmic_toolbox.week_2.assignments.fibonacci.assignments.challanges.SumOfFibonacciNumbersLastDigit;
+import modules.algorithmic_toolbox.week_2.assignments.fibonacci.SumOfFibonacciNumbersLastDigit;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

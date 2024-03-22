@@ -5,6 +5,10 @@ import org.apache.commons.lang3.Validate;
 
 import java.util.Arrays;
 
+/*
+        1.2 Maximum Pairwise Product Problem
+        Find the maximum product of two distinct numbers in a sequence of non-negative integers.
+ */
 public class MaximumPairwiseProduct {
 
     /**

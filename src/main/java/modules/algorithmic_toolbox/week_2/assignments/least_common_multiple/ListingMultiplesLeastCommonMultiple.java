@@ -1,4 +1,4 @@
-package modules.algorithmic_toolbox.week_2.assignments.least_common_multiple.assignments.challanges;
+package modules.algorithmic_toolbox.week_2.assignments.least_common_multiple;
 
 import enums.ValidationMessageType;
 import org.apache.commons.lang3.Validate;

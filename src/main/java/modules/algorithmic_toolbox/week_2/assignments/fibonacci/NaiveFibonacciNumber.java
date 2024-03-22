@@ -1,4 +1,4 @@
-package modules.algorithmic_toolbox.week_2.assignments.fibonacci.lecture;
+package modules.algorithmic_toolbox.week_2.assignments.fibonacci;
 
 import enums.ValidationMessageType;
 import org.apache.commons.lang3.Validate;

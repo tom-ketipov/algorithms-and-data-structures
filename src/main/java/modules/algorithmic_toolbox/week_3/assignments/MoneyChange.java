@@ -4,12 +4,13 @@ import enums.ValidationMessageType;
 import org.apache.commons.lang3.Validate;
 
 /*
-        Money Change Problem Compute the minimum number of coins needed to change the given value into coins with de-nominations 1, 5, and 10.
+        3.2.1 Money Change Problem Compute the minimum number of coins needed to change the given value into coins with de-nominations 1, 5, and 10.
+
         Input: An integer money.
         Output: The minimum number of coins with denominations 1, 5, and 10 that changes money.
  */
 public class MoneyChange {
-    
+
     /**
      * Calculates the minimum number of coins needed to make the specified total amount.
      *

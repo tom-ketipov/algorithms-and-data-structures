@@ -6,6 +6,10 @@ import org.apache.commons.lang3.Validate;
 import java.util.Arrays;
 import java.util.Comparator;
 
+/*
+        3.3.2 Mice and a Fox Problem
+        Given positions of n mice and n holes on a line, find an optimal hiding strategy for mice.
+ */
 public class MiceAndFox {
 
     public static class Mouse {

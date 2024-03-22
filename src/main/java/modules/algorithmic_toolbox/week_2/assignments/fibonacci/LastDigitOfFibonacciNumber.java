@@ -1,10 +1,14 @@
-package modules.algorithmic_toolbox.week_2.assignments.fibonacci.assignments.challanges;
+package modules.algorithmic_toolbox.week_2.assignments.fibonacci;
 
 import enums.ValidationMessageType;
 import org.apache.commons.lang3.Validate;
 
 import java.math.BigInteger;
 
+/*
+        2.1.2 Last Digit of Fibonacci Number Problem
+        Compute the last digit of the n-th Fibonacci number.
+ */
 public class LastDigitOfFibonacciNumber {
 
     /**

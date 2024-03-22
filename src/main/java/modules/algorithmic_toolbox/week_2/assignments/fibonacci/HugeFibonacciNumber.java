@@ -1,10 +1,14 @@
-package modules.algorithmic_toolbox.week_2.assignments.fibonacci.assignments.challanges;
+package modules.algorithmic_toolbox.week_2.assignments.fibonacci;
 
 import enums.ValidationMessageType;
 import org.apache.commons.lang3.Validate;
 
 import java.math.BigInteger;
 
+/*
+        2.1.3 Huge Fibonacci Number Problem
+        Compute the n-th Fibonacci number modulo m.
+ */
 public class HugeFibonacciNumber {
     /**
      * Calculates the nth Fibonacci number modulo a given value, ensuring both parameters are within specific bounds.

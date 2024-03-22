@@ -1,7 +1,7 @@
-package modules.algorithmic_toolbox.week_2.assignments.least_common_multiple.assignments.challanges;
+package modules.algorithmic_toolbox.week_2.assignments.least_common_multiple;
 
 import enums.ValidationMessageType;
-import modules.algorithmic_toolbox.week_2.assignments.greatest_common_divisor.assignments.challanges.EuclideanGreatestCommonDivisor;
+import modules.algorithmic_toolbox.week_2.assignments.greatest_common_divisor.EuclideanGreatestCommonDivisor;
 import org.apache.commons.lang3.Validate;
 
 import java.math.BigInteger;

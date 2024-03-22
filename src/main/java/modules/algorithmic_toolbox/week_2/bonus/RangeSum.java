@@ -3,6 +3,10 @@ package modules.algorithmic_toolbox.week_2.bonus;
 import enums.ValidationMessageType;
 import org.apache.commons.lang3.Validate;
 
+/*
+        2.3.2 Range Sum Queries Problem
+        Given an integer array and a set of ranges in it, compute the sum for each range.
+ */
 public class RangeSum {
 
     /**

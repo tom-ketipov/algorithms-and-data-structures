@@ -1,5 +1,10 @@
 package modules.algorithmic_toolbox.week_1;
 
+
+/*
+        1.1 Sum of Two Digits Problem
+        Compute the sum of two single digit numbers.
+ */
 public class APlusB {
 
     /**

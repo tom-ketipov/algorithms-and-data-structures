@@ -5,6 +5,10 @@ import org.apache.commons.lang3.Validate;
 
 import java.util.Arrays;
 
+/*
+        3.3.6 Connect Ropes with Minimal Cost Problem
+        Find the minimum cost of connecting n ropes into one where the cost of connecting two ropes is the sum of their lengths.
+ */
 public class ConnectRopes {
 
     /**
