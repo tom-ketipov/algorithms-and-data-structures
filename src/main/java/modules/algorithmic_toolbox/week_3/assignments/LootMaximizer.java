@@ -13,7 +13,7 @@ import java.util.Comparator;
       Output: The maximum total value of fractions of items that fit into the backpack of the given ca-pacity: i.e.,
       the maximum value of c1 · f1 + · · · + cn · fn such that w1 ·f1 +· · ·+wn ·fn ≤ W and 0 ≤ fi ≤ 1 for all i (fi is the fraction of the i-th item taken to the backpack).
  */
-public class MaximumValueOfLoot {
+public class LootMaximizer {
 
     /**
      * Represents a type of spice, characterized by its weight and cost.

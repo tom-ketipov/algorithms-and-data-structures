@@ -10,7 +10,7 @@ import java.util.Comparator;
         3.2.5 Covering Segments by Points Problem
         Find the minimum number of points needed to cover all given segments on a line.
  */
-public class CollectingSignatures {
+public class SegmentCoverageCalculator {
 
     public static class Segment {
         private final int start;  // The starting point of the segment

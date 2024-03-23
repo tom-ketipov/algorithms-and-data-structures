@@ -1,18 +1,18 @@
 package modules.week_3.assignments;
 
 import enums.ValidationMessageType;
-import modules.algorithmic_toolbox.week_3.assignments.MaximumAdvertisementRevenue;
+import modules.algorithmic_toolbox.week_3.assignments.AdvertisementRevenueMaximizer;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class MaximumAdvertisementRevenueTest {
+class AdvertisementRevenueMaximizerTest {
 
-    private MaximumAdvertisementRevenue maximumAdvertisementRevenueSolver;
+    private AdvertisementRevenueMaximizer advertisementRevenueMaximizerSolver;
 
     @BeforeEach
     void setUp() {
-        maximumAdvertisementRevenueSolver = new MaximumAdvertisementRevenue();
+        advertisementRevenueMaximizerSolver = new AdvertisementRevenueMaximizer();
     }
 
     @Test
@@ -21,7 +21,7 @@ class MaximumAdvertisementRevenueTest {
         int[] prices = {5, 3, 9};
         int[] clicks = {1, 4, 7};
 
-        Assertions.assertEquals(86, maximumAdvertisementRevenueSolver.calculateMaxAdvertisementRevenue(advertisementSlots, prices, clicks));
+        Assertions.assertEquals(86, advertisementRevenueMaximizerSolver.calculateMaxAdvertisementRevenue(advertisementSlots, prices, clicks));
     }
 
     @Test
@@ -30,7 +30,7 @@ class MaximumAdvertisementRevenueTest {
         int[] prices = {5, 3, 9};
         int[] clicks = {1, 4, 7};
 
-        Assertions.assertEquals(63, maximumAdvertisementRevenueSolver.calculateMaxAdvertisementRevenue(advertisementSlots, prices, clicks));
+        Assertions.assertEquals(63, advertisementRevenueMaximizerSolver.calculateMaxAdvertisementRevenue(advertisementSlots, prices, clicks));
     }
 
     @Test
@@ -40,7 +40,7 @@ class MaximumAdvertisementRevenueTest {
         int[] clicks = {1, 4, 7};
 
         try {
-            maximumAdvertisementRevenueSolver.calculateMaxAdvertisementRevenue(advertisementSlots, prices, clicks);
+            advertisementRevenueMaximizerSolver.calculateMaxAdvertisementRevenue(advertisementSlots, prices, clicks);
         } catch (IllegalArgumentException e) {
             Assertions.assertEquals(ValidationMessageType.OUT_OF_RANGE_ERROR.getMessage(1, 1000), e.getMessage());
         }
@@ -53,7 +53,7 @@ class MaximumAdvertisementRevenueTest {
         int[] clicks = {1, 4, 7};
 
         try {
-            maximumAdvertisementRevenueSolver.calculateMaxAdvertisementRevenue(advertisementSlots, prices, clicks);
+            advertisementRevenueMaximizerSolver.calculateMaxAdvertisementRevenue(advertisementSlots, prices, clicks);
         } catch (IllegalArgumentException e) {
             Assertions.assertEquals(ValidationMessageType.OUT_OF_RANGE_ERROR.getMessage(1, 1000), e.getMessage());
         }
@@ -66,7 +66,7 @@ class MaximumAdvertisementRevenueTest {
         int[] clicks = {1, 4, 7};
 
         try {
-            maximumAdvertisementRevenueSolver.calculateMaxAdvertisementRevenue(advertisementSlots, prices, clicks);
+            advertisementRevenueMaximizerSolver.calculateMaxAdvertisementRevenue(advertisementSlots, prices, clicks);
         } catch (IllegalArgumentException e) {
             Assertions.assertEquals(ValidationMessageType.OUT_OF_RANGE_ERROR.getMessage(1, 1000), e.getMessage());
         }
@@ -79,7 +79,7 @@ class MaximumAdvertisementRevenueTest {
         int[] clicks = {1, 4, 7};
 
         try {
-            maximumAdvertisementRevenueSolver.calculateMaxAdvertisementRevenue(advertisementSlots, prices, clicks);
+            advertisementRevenueMaximizerSolver.calculateMaxAdvertisementRevenue(advertisementSlots, prices, clicks);
         } catch (IllegalArgumentException e) {
             Assertions.assertEquals("The validated expression is false", e.getMessage());
         }
@@ -92,7 +92,7 @@ class MaximumAdvertisementRevenueTest {
         int[] clicks = {1, 4, 7};
 
         try {
-            maximumAdvertisementRevenueSolver.calculateMaxAdvertisementRevenue(advertisementSlots, prices, clicks);
+            advertisementRevenueMaximizerSolver.calculateMaxAdvertisementRevenue(advertisementSlots, prices, clicks);
         } catch (IllegalArgumentException e) {
             Assertions.assertEquals("The validated expression is false", e.getMessage());
         }
@@ -104,7 +104,7 @@ class MaximumAdvertisementRevenueTest {
         int[] clicks = {1, 4, 7};
 
         try {
-            maximumAdvertisementRevenueSolver.calculateMaxAdvertisementRevenue(advertisementSlots, null, clicks);
+            advertisementRevenueMaximizerSolver.calculateMaxAdvertisementRevenue(advertisementSlots, null, clicks);
         } catch (NullPointerException e) {
             Assertions.assertEquals(ValidationMessageType.NULL_VALUE_ERROR.getMessage(), e.getMessage());
         }
@@ -116,7 +116,7 @@ class MaximumAdvertisementRevenueTest {
         int[] prices = {5, 3, 9};
 
         try {
-            maximumAdvertisementRevenueSolver.calculateMaxAdvertisementRevenue(advertisementSlots, prices, null);
+            advertisementRevenueMaximizerSolver.calculateMaxAdvertisementRevenue(advertisementSlots, prices, null);
         } catch (NullPointerException e) {
             Assertions.assertEquals(ValidationMessageType.NULL_VALUE_ERROR.getMessage(), e.getMessage());
         }

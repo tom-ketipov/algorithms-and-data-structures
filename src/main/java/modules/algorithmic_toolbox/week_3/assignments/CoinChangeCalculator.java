@@ -9,7 +9,7 @@ import org.apache.commons.lang3.Validate;
         Input: An integer money.
         Output: The minimum number of coins with denominations 1, 5, and 10 that changes money.
  */
-public class MoneyChange {
+public class CoinChangeCalculator {
 
     /**
      * Calculates the minimum number of coins needed to make the specified total amount.

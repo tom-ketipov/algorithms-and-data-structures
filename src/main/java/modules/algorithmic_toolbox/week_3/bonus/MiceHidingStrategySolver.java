@@ -10,7 +10,7 @@ import java.util.Comparator;
         3.3.2 Mice and a Fox Problem
         Given positions of n mice and n holes on a line, find an optimal hiding strategy for mice.
  */
-public class MiceAndFox {
+public class MiceHidingStrategySolver {
 
     public static class Mouse {
         private final int id;
@@ -47,7 +47,7 @@ public class MiceAndFox {
      * @param mice          An array of Mouse objects representing the mice to be hidden.      * @throws IllegalArgumentException If 'holePositions' or 'mice' is null, or if the lengths of 'holePositions' and 'mice' are not equal.
      * @throws NullPointerException If any Mouse object within the 'mice' array is null.
      */
-    public void hide(int[] holePositions, Mouse[] mice) {
+    public void assignHolesToMice(int[] holePositions, Mouse[] mice) {
         Validate.notNull(holePositions, ValidationMessageType.NULL_VALUE_ERROR.getMessage());
         Validate.notNull(mice, ValidationMessageType.NULL_VALUE_ERROR.getMessage());
         Validate.isTrue(mice.length == holePositions.length);

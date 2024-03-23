@@ -11,7 +11,7 @@ import java.util.Comparator;
         Given an array that describes time it takes to cook each of n dishes and an array that describes how long the dishes stay fresh,
         is there an order of cooking these dishes that ensures that at some point all of them are fresh?
  */
-public class CookingDinner {
+public class MealFreshnessOptimizer {
 
     public static class Meal {
         private final int cookingTime;
@@ -45,7 +45,7 @@ public class CookingDinner {
      * @throws NullPointerException if the dishes array is null.
      * @implNote Time Complexity: O(n log n)
      */
-    public boolean isFreshnessAlignmentFeasible(Meal[] meals) {
+    public boolean canAllDishesBeFreshTogether(Meal[] meals) {
         Validate.notNull(meals, ValidationMessageType.NULL_VALUE_ERROR.getMessage());
 
         Arrays.sort(meals, Comparator.comparing(Meal::getDueTime).reversed());

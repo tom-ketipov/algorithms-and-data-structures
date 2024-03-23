@@ -10,7 +10,7 @@ import java.util.List;
         3.2.6 Maximum Product of Two Sequences Problem
         Find the maximum dot product of two sequences of numbers.
  */
-public class MaximumNumberOfPrizes {
+public class DistinctPrizeDistributor {
     /**
      * Calculates the maximum number of distinct positive prizes that sum up to the totalSum.
      *
@@ -19,7 +19,7 @@ public class MaximumNumberOfPrizes {
      * @throws IllegalArgumentException if the totalSum is outside the valid range.
      * @implNote Time complexity: O(√n) where n is the totalSum
      */
-    public int calculateMaximumNumberOfPrizes(int totalSum) {
+    public int calculateMaximumDistinctPrizes(int totalSum) {
         Validate.inclusiveBetween(1, 1000000000, totalSum, ValidationMessageType.OUT_OF_RANGE_ERROR.getMessage(1, 1000000000));
 
         int nextPrize = 1;
@@ -42,7 +42,7 @@ public class MaximumNumberOfPrizes {
      * @return A list representing the distribution of distinct prizes that can be given out.
      * @throws IllegalArgumentException if the totalSum is outside the specified range.
      */
-    public List<Integer> calculatePrizeDistribution(int totalSum) {
+    public List<Integer> distributePrizes(int totalSum) {
         Validate.inclusiveBetween(1, 1000000000, totalSum, ValidationMessageType.OUT_OF_RANGE_ERROR.getMessage(1, 1000000000));
 
         List<Integer> prizeDistribution = new ArrayList<>();

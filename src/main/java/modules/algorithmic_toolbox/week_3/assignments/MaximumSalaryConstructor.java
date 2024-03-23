@@ -10,7 +10,7 @@ import java.util.Arrays;
         3.2.7 Largest Concatenate Problem
         Compile the largest integer by concatenating the given integers.
  */
-public class MaximumSalary {
+public class MaximumSalaryConstructor {
     /**
      * Constructs the largest possible number by rearranging the given array of non-negative digits.
      *
@@ -19,7 +19,7 @@ public class MaximumSalary {
      * @throws NullPointerException     If the digits array is null.
      * @throws IllegalArgumentException If any digit in the array is negative.
      */
-    public BigInteger maximizeSalary(int[] digits) {
+    public BigInteger constructLargestNumber(int[] digits) {
         Validate.notNull(digits, ValidationMessageType.NULL_VALUE_ERROR.getMessage());
 
         // Ensure no negative digits

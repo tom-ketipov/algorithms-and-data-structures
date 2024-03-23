@@ -10,7 +10,7 @@ import java.util.Arrays;
         Given positions of k friends in the first row of a theater, find the minimal number of moves to sit all friends together.
         In each move, a friend moves to a seat to the left or a seat to the right.
  */
-public class FriendsSeat {
+public class FriendsSeatingOptimizer {
 
     /**
      * Calculates the minimal number of seat moves required for all friends to sit together.
@@ -20,7 +20,7 @@ public class FriendsSeat {
      * @throws NullPointerException if friendPositions is null.
      * @implNote Time Complexity: O(n log n)
      */
-    public int changeSeats(int[] friendPositions) {
+    public int minimizeSeatMovements(int[] friendPositions) {
         Validate.notNull(friendPositions, ValidationMessageType.NULL_VALUE_ERROR.getMessage());
 
         Arrays.sort(friendPositions);

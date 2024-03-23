@@ -1,17 +1,17 @@
 package modules.week_3.assignments;
 
 import enums.ValidationMessageType;
-import modules.algorithmic_toolbox.week_3.assignments.CarFueling;
+import modules.algorithmic_toolbox.week_3.assignments.OptimalRefuelingCalculator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class CarFuelingTest {
-    private CarFueling carFuelingSolver;
+public class OptimalRefuelingCalculatorTest {
+    private OptimalRefuelingCalculator optimalRefuelingCalculatorSolver;
 
     @BeforeEach
     public void setUp() {
-        carFuelingSolver = new CarFueling();
+        optimalRefuelingCalculatorSolver = new OptimalRefuelingCalculator();
     }
 
     @Test
@@ -20,7 +20,7 @@ public class CarFuelingTest {
         int tankRange = 3;
         int[] gasStations = {1, 2, 4, 5, 8, 9, 10, 11};
 
-        Assertions.assertEquals(4, carFuelingSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations));
+        Assertions.assertEquals(4, optimalRefuelingCalculatorSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations));
     }
 
     @Test
@@ -29,7 +29,7 @@ public class CarFuelingTest {
         int tankRange = 3;
         int[] gasStations = {1, 2, 6};
 
-        Assertions.assertEquals(-1, carFuelingSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations));
+        Assertions.assertEquals(-1, optimalRefuelingCalculatorSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations));
     }
 
     @Test
@@ -38,7 +38,7 @@ public class CarFuelingTest {
         int tankRange = 3;
         int[] gasStations = {4, 22, 36};
 
-        Assertions.assertEquals(-1, carFuelingSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations));
+        Assertions.assertEquals(-1, optimalRefuelingCalculatorSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations));
     }
 
     @Test
@@ -47,7 +47,7 @@ public class CarFuelingTest {
         int tankRange = 3;
         int[] gasStations = {2, 5, 6};
 
-        Assertions.assertEquals(-1, carFuelingSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations));
+        Assertions.assertEquals(-1, optimalRefuelingCalculatorSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations));
     }
 
     @Test
@@ -56,7 +56,7 @@ public class CarFuelingTest {
         int tankRange = 3;
         int[] gasStations = {2, 5, 6};
 
-        Assertions.assertEquals(3, carFuelingSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations));
+        Assertions.assertEquals(3, optimalRefuelingCalculatorSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations));
     }
 
     @Test
@@ -65,7 +65,7 @@ public class CarFuelingTest {
         int tankRange = 1;
         int[] gasStations = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21};
 
-        Assertions.assertEquals(20, carFuelingSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations));
+        Assertions.assertEquals(20, optimalRefuelingCalculatorSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations));
     }
 
     @Test
@@ -74,7 +74,7 @@ public class CarFuelingTest {
         int tankRange = 1;
 
         try {
-            carFuelingSolver.calculateMinRefillStops(totalDistance, tankRange, null);
+            optimalRefuelingCalculatorSolver.calculateMinRefillStops(totalDistance, tankRange, null);
         } catch (NullPointerException e) {
             Assertions.assertEquals(ValidationMessageType.NULL_VALUE_ERROR.getMessage(), e.getMessage());
         }
@@ -87,7 +87,7 @@ public class CarFuelingTest {
         int[] gasStations = {};
 
         try {
-            carFuelingSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations);
+            optimalRefuelingCalculatorSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations);
         } catch (IllegalArgumentException e) {
             Assertions.assertEquals(ValidationMessageType.OUT_OF_RANGE_ERROR.getMessage(1, 300), e.getMessage());
         }
@@ -100,7 +100,7 @@ public class CarFuelingTest {
         int[] gasStations = new int[301];
 
         try {
-            carFuelingSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations);
+            optimalRefuelingCalculatorSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations);
         } catch (IllegalArgumentException e) {
             Assertions.assertEquals(ValidationMessageType.OUT_OF_RANGE_ERROR.getMessage(1, 300), e.getMessage());
         }
@@ -113,7 +113,7 @@ public class CarFuelingTest {
         int[] gasStations = {2, 5, 6};
 
         try {
-            carFuelingSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations);
+            optimalRefuelingCalculatorSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations);
         } catch (IllegalArgumentException e) {
             Assertions.assertEquals(ValidationMessageType.OUT_OF_RANGE_ERROR.getMessage(1, 100000), e.getMessage());
         }
@@ -126,7 +126,7 @@ public class CarFuelingTest {
         int[] gasStations = {2, 5, 6};
 
         try {
-            carFuelingSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations);
+            optimalRefuelingCalculatorSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations);
         } catch (IllegalArgumentException e) {
             Assertions.assertEquals(ValidationMessageType.OUT_OF_RANGE_ERROR.getMessage(1, 100000), e.getMessage());
         }
@@ -139,7 +139,7 @@ public class CarFuelingTest {
         int[] gasStations = {2, 5, 6};
 
         try {
-            carFuelingSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations);
+            optimalRefuelingCalculatorSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations);
         } catch (IllegalArgumentException e) {
             Assertions.assertEquals(ValidationMessageType.OUT_OF_RANGE_ERROR.getMessage(1, 100000), e.getMessage());
         }
@@ -152,7 +152,7 @@ public class CarFuelingTest {
         int[] gasStations = {2, 5, 6};
 
         try {
-            carFuelingSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations);
+            optimalRefuelingCalculatorSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations);
         } catch (IllegalArgumentException e) {
             Assertions.assertEquals(ValidationMessageType.OUT_OF_RANGE_ERROR.getMessage(1, 400), e.getMessage());
         }
@@ -165,7 +165,7 @@ public class CarFuelingTest {
         int[] gasStations = {2, 5, 6};
 
         try {
-            carFuelingSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations);
+            optimalRefuelingCalculatorSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations);
         } catch (IllegalArgumentException e) {
             Assertions.assertEquals(ValidationMessageType.OUT_OF_RANGE_ERROR.getMessage(1, 400), e.getMessage());
         }
@@ -178,7 +178,7 @@ public class CarFuelingTest {
         int[] gasStations = {2, 5, 6};
 
         try {
-            carFuelingSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations);
+            optimalRefuelingCalculatorSolver.calculateMinRefillStops(totalDistance, tankRange, gasStations);
         } catch (IllegalArgumentException e) {
             Assertions.assertEquals(ValidationMessageType.OUT_OF_RANGE_ERROR.getMessage(1, 400), e.getMessage());
         }

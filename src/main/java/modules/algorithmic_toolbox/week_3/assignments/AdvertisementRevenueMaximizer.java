@@ -12,7 +12,7 @@ import java.util.Arrays;
     Input: Two sequences of n positive integers: price1 , . . . , price n and clicks1 , . . . , clicks n .
     Output: The maximum value of price1 · c1 + · · · + price n · cn , where c1 , . . . , cn is a permutation of clicks1 , . . . , clicks n .
  */
-public class MaximumAdvertisementRevenue {
+public class AdvertisementRevenueMaximizer {
 
     /**
      * Calculates the maximum advertisement revenue based on the number of available slots, bid prices, and click rates.

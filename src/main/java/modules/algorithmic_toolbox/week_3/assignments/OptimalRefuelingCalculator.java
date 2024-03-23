@@ -13,7 +13,7 @@ import org.apache.commons.lang3.Validate;
 
         Constraints. 1 ≤ d ≤ 10^5 . 1 ≤ m ≤ 400. 1 ≤ n ≤ 300. 0 < stop1 < stop2 <· · · < stopn < d.
  */
-public class CarFueling {
+public class OptimalRefuelingCalculator {
 
     /**
      * Calculates the minimum number of refills needed to travel from one city to another.
