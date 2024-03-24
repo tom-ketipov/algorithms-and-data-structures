@@ -1,6 +1,7 @@
 package modules.algorithmic_toolbox.week_3.bonus;
 
 import enums.ValidationMessageType;
+import modules.algorithmic_toolbox.week_3.bonus.MinimumUnchangeableAmountSolver;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
