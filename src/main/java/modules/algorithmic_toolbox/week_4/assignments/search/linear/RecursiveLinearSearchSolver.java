@@ -1,4 +1,4 @@
-package modules.algorithmic_toolbox.week_4.assignments.search;
+package modules.algorithmic_toolbox.week_4.assignments.search.linear;
 
 import enums.ValidationMessageType;
 import org.apache.commons.lang3.Validate;
@@ -6,7 +6,7 @@ import org.apache.commons.lang3.Validate;
 public class RecursiveLinearSearchSolver {
 
     /**
-     * Searches for a target integer in an array using linear search algorithm.
+     * Recursively searches for a target integer in an array using linear search algorithm.
      *
      * @param target The integer to search for in the array.
      * @param array  The array in which to perform the search.

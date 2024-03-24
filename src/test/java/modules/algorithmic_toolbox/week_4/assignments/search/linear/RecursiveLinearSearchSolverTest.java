@@ -1,4 +1,4 @@
-package modules.algorithmic_toolbox.week_4.assignments.search;
+package modules.algorithmic_toolbox.week_4.assignments.search.linear;
 
 import enums.ValidationMessageType;
 import org.junit.jupiter.api.Assertions;
@@ -14,7 +14,7 @@ public class RecursiveLinearSearchSolverTest {
     }
 
     @Test
-    public void should_return_correct_index_for_existing_target_in_array_with_multiple_elements() {
+    public void should_return_correct_index_for_existing_target_in_array_with_multiple_elements_using_a_recursive_approach() {
         int[] arr = {1, 3, 8, 5, 34};
         int target = 34;
 
@@ -22,7 +22,15 @@ public class RecursiveLinearSearchSolverTest {
     }
 
     @Test
-    public void should_return_zero_for_existing_target_in_array_with_single_element() {
+    public void should_return_the_first_occurrence_index_for_existing_target_in_array_that_contains_multiple_target_elements_using_a_recursive_approach() {
+        int[] arr = {1, 3, 3, 3, 3};
+        int target = 3;
+
+        Assertions.assertEquals(1, recursiveLinearSearchSolver.search(target, arr));
+    }
+
+    @Test
+    public void should_return_zero_for_existing_target_in_array_with_single_element_using_a_recursive_approach() {
         int[] arr = {1};
         int target = 1;
 
@@ -30,7 +38,7 @@ public class RecursiveLinearSearchSolverTest {
     }
 
     @Test
-    public void should_return_minus_one_if_the_target_is_not_found() {
+    public void should_return_minus_one_if_the_target_is_not_found_using_a_recursive_approach() {
         int[] arr = {1, 3, 8, 5, 34};
         int target = 4;
 
@@ -38,7 +46,7 @@ public class RecursiveLinearSearchSolverTest {
     }
 
     @Test
-    public void should_return_minus_one_for_empty_array_input() {
+    public void should_return_minus_one_for_empty_array_input_using_a_recursive_approach() {
         int[] arr = {};
         int target = 4;
 
@@ -46,7 +54,7 @@ public class RecursiveLinearSearchSolverTest {
     }
 
     @Test
-    public void throws_null_pointer_exception_for_null_input_array() {
+    public void throws_null_pointer_exception_for_null_input_array_in_the_recursive_linear_search_method_implementation() {
         try {
             recursiveLinearSearchSolver.search(4, null);
         } catch (NullPointerException e) {
