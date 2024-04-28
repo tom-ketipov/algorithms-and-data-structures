@@ -5,14 +5,12 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
-public class NaivePolynomialMultiplicationSolverTest {
-    private NaivePolynomialMultiplicationSolver naivePolynomialMultiplicationSolver;
+public class NaiveIterativePolynomialMultiplicationSolverTest {
+    private NaiveIterativePolynomialMultiplicationSolver naiveIterativePolynomialMultiplicationSolver;
 
     @BeforeEach
     public void setUp() {
-        naivePolynomialMultiplicationSolver = new NaivePolynomialMultiplicationSolver();
+        naiveIterativePolynomialMultiplicationSolver = new NaiveIterativePolynomialMultiplicationSolver();
     }
 
     @Test
@@ -21,7 +19,7 @@ public class NaivePolynomialMultiplicationSolverTest {
         int[] polynomialB = {5, 0, 3};
         int degree = 3;
 
-        int[] productPolynomial = naivePolynomialMultiplicationSolver.multiply(degree, polynomialA, polynomialB);
+        int[] productPolynomial = naiveIterativePolynomialMultiplicationSolver.multiply(degree, polynomialA, polynomialB);
         Assertions.assertArrayEquals(new int[]{20, 15, 42, 9, 18}, productPolynomial);
     }
 
@@ -31,7 +29,7 @@ public class NaivePolynomialMultiplicationSolverTest {
         int[] polynomialB = {0, 0, 3};
         int degree = 3;
 
-        int[] productPolynomial = naivePolynomialMultiplicationSolver.multiply(degree, polynomialA, polynomialB);
+        int[] productPolynomial = naiveIterativePolynomialMultiplicationSolver.multiply(degree, polynomialA, polynomialB);
         Assertions.assertArrayEquals(new int[]{12, 9, 18}, productPolynomial);
     }
 
@@ -41,7 +39,7 @@ public class NaivePolynomialMultiplicationSolverTest {
         int[] polynomialB = {2};
         int degree = 1;
 
-        int[] productPolynomial = naivePolynomialMultiplicationSolver.multiply(degree, polynomialA, polynomialB);
+        int[] productPolynomial = naiveIterativePolynomialMultiplicationSolver.multiply(degree, polynomialA, polynomialB);
         Assertions.assertArrayEquals(new int[]{72}, productPolynomial);
     }
 
@@ -52,7 +50,7 @@ public class NaivePolynomialMultiplicationSolverTest {
         int degree = 0;
 
         try {
-            naivePolynomialMultiplicationSolver.multiply(degree, polynomialA, polynomialB);
+            naiveIterativePolynomialMultiplicationSolver.multiply(degree, polynomialA, polynomialB);
         } catch (IllegalArgumentException e) {
             Assertions.assertEquals(ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(1), e.getMessage());
         }
@@ -64,7 +62,7 @@ public class NaivePolynomialMultiplicationSolverTest {
         int degree = 3;
 
         try {
-            naivePolynomialMultiplicationSolver.multiply(degree, null, polynomialB);
+            naiveIterativePolynomialMultiplicationSolver.multiply(degree, null, polynomialB);
         } catch (NullPointerException e) {
             Assertions.assertEquals(ValidationMessageType.NULL_VALUE_ERROR.getMessage(), e.getMessage());
         }
@@ -76,7 +74,7 @@ public class NaivePolynomialMultiplicationSolverTest {
         int degree = 3;
 
         try {
-            naivePolynomialMultiplicationSolver.multiply(degree, polynomialA, null);
+            naiveIterativePolynomialMultiplicationSolver.multiply(degree, polynomialA, null);
         } catch (NullPointerException e) {
             Assertions.assertEquals(ValidationMessageType.NULL_VALUE_ERROR.getMessage(), e.getMessage());
         }

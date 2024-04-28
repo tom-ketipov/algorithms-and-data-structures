@@ -3,7 +3,7 @@ package modules.algorithmic_toolbox.week_4.assignments.polynomial_multiplication
 import enums.ValidationMessageType;
 import org.apache.commons.lang3.Validate;
 
-public class NaivePolynomialMultiplicationSolver {
+public class NaiveIterativePolynomialMultiplicationSolver {
 
     /**
      * Multiplies two polynomials represented as arrays of coefficients.
