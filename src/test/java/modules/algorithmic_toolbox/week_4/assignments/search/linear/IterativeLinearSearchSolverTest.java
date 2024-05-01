@@ -59,6 +59,7 @@ public class IterativeLinearSearchSolverTest {
             iterativeLinearSearchSolver.search(90, null);
         } catch (NullPointerException e) {
             Assertions.assertEquals(ValidationMessageType.NULL_VALUE_ERROR.getMessage(), e.getMessage());
+
         }
     }
 }

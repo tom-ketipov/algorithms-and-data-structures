@@ -35,7 +35,7 @@ public class SumCalculatorTest {
         try {
             sumCalculator.calculateSum(upperLimit);
         } catch (IllegalArgumentException e) {
-            Assertions.assertEquals(e.getMessage(), ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(1));
+            Assertions.assertEquals(ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(1), e.getMessage());
         }
     }
 }
