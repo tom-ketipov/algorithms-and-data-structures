@@ -4,7 +4,7 @@ package modules.algorithmic_toolbox.week_4.bonus.recursion;
         Print 1 to n without using loops
         You are given an integer N. Print numbers from 1 to N without the help of loops.
  */
-public class RangePrinterSolver {
+public class RangePrinter {
 
     /**
      * Prints integers within a specified range.
