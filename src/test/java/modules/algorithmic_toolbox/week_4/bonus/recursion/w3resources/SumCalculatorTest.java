@@ -1,4 +1,4 @@
-package modules.algorithmic_toolbox.week_4.bonus.recursion;
+package modules.algorithmic_toolbox.week_4.bonus.recursion.w3resources;
 
 import enums.ValidationMessageType;
 import org.junit.jupiter.api.Assertions;

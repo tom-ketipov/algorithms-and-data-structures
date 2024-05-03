@@ -1,10 +1,8 @@
-package modules.algorithmic_toolbox.week_4.bonus.recursion;
+package modules.algorithmic_toolbox.week_4.bonus.recursion.w3resources;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class DigitCounterTest {
 

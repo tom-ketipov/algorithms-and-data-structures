@@ -1,4 +1,4 @@
-package modules.algorithmic_toolbox.week_4.bonus.recursion;
+package modules.algorithmic_toolbox.week_4.bonus.recursion.w3resources;
 
 /*
         Print 1 to n without using loops
