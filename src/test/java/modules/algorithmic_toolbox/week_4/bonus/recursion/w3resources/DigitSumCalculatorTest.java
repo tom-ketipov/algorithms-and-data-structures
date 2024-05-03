@@ -13,22 +13,22 @@ class DigitSumCalculatorTest {
     }
 
     @Test
-    public void should_return_seven_for_twenty_five() {
+    public void should_return_seven_for_the_sum_of_digits_in_twenty_five() {
         Assertions.assertEquals(7, digitSumCalculator.findDigitSum(25));
     }
 
     @Test
-    public void should_return_seven_for_minus_twenty_five() {
+    public void should_return_seven_for_the_sum_of_digits_in_minus_twenty_five() {
         Assertions.assertEquals(7, digitSumCalculator.findDigitSum(-25));
     }
 
     @Test
-    public void should_return_input_for_single_digit_numbers() {
+    public void should_return_input_number_for_single_digit_inputs() {
         Assertions.assertEquals(5, digitSumCalculator.findDigitSum(5));
     }
 
     @Test
-    public void should_return_one_for_ten() {
+    public void should_return_one_for_the_sum_of_digits_in_ten() {
         Assertions.assertEquals(1, digitSumCalculator.findDigitSum(10));
     }
 }
