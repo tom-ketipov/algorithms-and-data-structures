@@ -1,9 +1,10 @@
 package modules.algorithmic_toolbox.week_4.assignments.sorting;
 
 import enums.ValidationMessageType;
+import modules.core.BaseSolver;
 import org.apache.commons.lang3.Validate;
 
-public class SelectionSortSolver {
+public class SelectionSortSolver extends BaseSolver {
 
     /**
      * Sorts the given integer array in ascending order using selection sort algorithm.
@@ -28,18 +29,5 @@ public class SelectionSortSolver {
                 if (index != i) swap(array, i, index);
             }
         }
-    }
-
-    /**
-     * Swaps the elements at the specified indices in the given array.
-     *
-     * @param array  the array in which to swap elements
-     * @param indexA the index of the first element to be swapped
-     * @param indexB the index of the second element to be swapped
-     */
-    private void swap(int[] array, int indexA, int indexB) {
-        int temp = array[indexA];
-        array[indexA] = array[indexB];
-        array[indexB] = temp;
     }
 }
