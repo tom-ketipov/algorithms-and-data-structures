@@ -5,7 +5,7 @@ import org.apache.commons.lang3.Validate;
 
 import java.math.BigInteger;
 
-public class ListingMultiplesLeastCommonMultiple {
+public class LeastCommonMultipleListingMultiplesSolver {
 
     /**
      * Computes the least common multiple (LCM) of two values using listing multiples approach.
@@ -13,7 +13,7 @@ public class ListingMultiplesLeastCommonMultiple {
      * @param a the first number
      * @param b the second number
      * @return the LCM of 'a' and 'b'.
-     * @throws IllegalArgumentException if 'a' or 'b' is null.
+     * @throws IllegalArgumentException if 'a' or 'b' is 0.
      */
     public BigInteger findLCMWithListingMultiples(int a, int b) {
         Validate.isTrue(a > 0, ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(1));

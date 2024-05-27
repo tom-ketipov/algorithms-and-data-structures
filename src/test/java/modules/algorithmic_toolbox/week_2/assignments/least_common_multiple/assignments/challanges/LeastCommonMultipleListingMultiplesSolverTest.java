@@ -32,7 +32,7 @@ public class ListingMultiplesLeastCommonMultipleTest {
     }
 
     @Test
-    public void can_handle_negative_input_parameters_in_lcm_listing_multiples_method() {
+    public void throws_illegal_argument_exception_for_negative_input() {
         try {
             listingMultiplesLeastCommonMultipleSolver.findLCMWithListingMultiples(-1, 256);
         } catch (IllegalArgumentException e) {
@@ -41,9 +41,9 @@ public class ListingMultiplesLeastCommonMultipleTest {
     }
 
     @Test
-    public void can_handle_zero_input_for_both_parameters_in_lcm_listing_multiples_method() {
+    public void throws_illegal_argument_exception_for_zero_input() {
         try {
-            listingMultiplesLeastCommonMultipleSolver.findLCMWithListingMultiples(0, 0);
+            listingMultiplesLeastCommonMultipleSolver.findLCMWithListingMultiples(14, 0);
         } catch (IllegalArgumentException e) {
             Assertions.assertEquals(ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(1), e.getMessage());
         }
