@@ -1,6 +1,8 @@
 package modules.algorithmic_toolbox.week_4.assignments.sorting;
 
 import enums.ValidationMessageType;
+import modules.algorithmic_toolbox.week_4.assignments.sorting.quick_sort.LeftMostPivotQuickSortSolver;
+import modules.algorithmic_toolbox.week_4.assignments.sorting.quick_sort.RightMostPivotQuickSortSolver;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,6 +16,9 @@ class SortSolverTest {
     private InsertionSortSolver insertionSortSolver;
     private BubbleSortSolver bubbleSortSolver;
     private MergeSortSolver mergeSortSolver;
+    private LeftMostPivotQuickSortSolver leftMostPivotQuickSortSolver;
+    private RightMostPivotQuickSortSolver rightMostPivotQuickSortSolver;
+
 
     @BeforeEach
     void setUp() {
@@ -21,6 +26,8 @@ class SortSolverTest {
         insertionSortSolver = new InsertionSortSolver();
         bubbleSortSolver = new BubbleSortSolver();
         mergeSortSolver = new MergeSortSolver();
+        leftMostPivotQuickSortSolver = new LeftMostPivotQuickSortSolver();
+        rightMostPivotQuickSortSolver = new RightMostPivotQuickSortSolver();
     }
 
 
@@ -134,6 +141,76 @@ class SortSolverTest {
     public void should_throw_null_pointer_exception_for_null_input_in_merge_sort() {
         try {
             mergeSortSolver.sort(null);
+        } catch (NullPointerException e) {
+            Assertions.assertEquals(ValidationMessageType.NULL_VALUE_ERROR.getMessage(), e.getMessage());
+        }
+    }
+
+
+    // Quick sort - Leftmost pivot
+    @Test
+    public void multiple_elements_array_is_sorted_correctly_using_leftmost_pivot_quick_sort_solver() {
+        int[] array = {6, 7, 8, 2, 13, -22, 2, 1, 6, -1, 0, 0, 6, 0};
+
+        leftMostPivotQuickSortSolver.sort(array);
+        Assertions.assertArrayEquals(new int[]{-22, -1, 0, 0, 0, 1, 2, 2, 6, 6, 6, 7, 8, 13}, array);
+    }
+
+    @Test
+    public void single_element_array_is_sorted_correctly_using_leftmost_pivot_quick_sort_solver() {
+        int[] array = {6};
+
+        leftMostPivotQuickSortSolver.sort(array);
+        Assertions.assertArrayEquals(new int[]{6}, array);
+    }
+
+    @Test
+    public void empty_array_is_handled_correctly_using_leftmost_pivot_quick_sort_solver() {
+        int[] array = {};
+
+        leftMostPivotQuickSortSolver.sort(array);
+        Assertions.assertArrayEquals(new int[]{}, array);
+    }
+
+    @Test
+    public void leftmost_pivot_quick_sort_method_throws_null_pointer_exception_for_null_input() {
+        try {
+            leftMostPivotQuickSortSolver.sort(null);
+        } catch (NullPointerException e) {
+            Assertions.assertEquals(ValidationMessageType.NULL_VALUE_ERROR.getMessage(), e.getMessage());
+        }
+    }
+
+
+    // Quick sort - Rightmost pivot
+    @Test
+    public void multiple_elements_array_is_sorted_correctly_using_rightmost_pivot_quick_sort_solver() {
+        int[] array = {6, 7, 8, 2, 13, -22, 2, 1, 6, -1, 0, 0, 6, 0};
+
+        rightMostPivotQuickSortSolver.sort(array);
+        Assertions.assertArrayEquals(new int[]{-22, -1, 0, 0, 0, 1, 2, 2, 6, 6, 6, 7, 8, 13}, array);
+    }
+
+    @Test
+    public void single_element_array_is_sorted_correctly_using_rightmost_pivot_quick_sort_solver() {
+        int[] array = {6};
+
+        rightMostPivotQuickSortSolver.sort(array);
+        Assertions.assertArrayEquals(new int[]{6}, array);
+    }
+
+    @Test
+    public void empty_array_is_handled_correctly_using_rightmost_pivot_quick_sort_solver() {
+        int[] array = {};
+
+        rightMostPivotQuickSortSolver.sort(array);
+        Assertions.assertArrayEquals(new int[]{}, array);
+    }
+
+    @Test
+    public void rightmost_pivot_quick_sort_method_throws_null_pointer_exception_for_null_input() {
+        try {
+            rightMostPivotQuickSortSolver.sort(null);
         } catch (NullPointerException e) {
             Assertions.assertEquals(ValidationMessageType.NULL_VALUE_ERROR.getMessage(), e.getMessage());
         }

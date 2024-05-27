@@ -9,6 +9,8 @@ public class InsertionSortSolver {
      * Sorts an integer array in non-decreasing order using the Insertion Sort algorithm.
      *
      * @param arr the array to be sorted
+     * @throws NullPointerException if the input array is null
+     * @implNote time complexity: O(n^2)
      */
     public void sort(int[] arr) {
         Validate.notNull(arr, ValidationMessageType.NULL_VALUE_ERROR.getMessage());
