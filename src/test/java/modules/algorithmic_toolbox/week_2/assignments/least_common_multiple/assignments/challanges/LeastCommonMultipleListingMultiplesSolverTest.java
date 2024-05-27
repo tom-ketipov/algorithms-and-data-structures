@@ -1,49 +1,49 @@
 package modules.algorithmic_toolbox.week_2.assignments.least_common_multiple.assignments.challanges;
 
 import enums.ValidationMessageType;
-import modules.algorithmic_toolbox.week_2.assignments.least_common_multiple.ListingMultiplesLeastCommonMultiple;
+import modules.algorithmic_toolbox.week_2.assignments.least_common_multiple.LeastCommonMultipleListingMultiplesSolver;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigInteger;
 
-public class ListingMultiplesLeastCommonMultipleTest {
-    private ListingMultiplesLeastCommonMultiple listingMultiplesLeastCommonMultipleSolver;
+public class LeastCommonMultipleListingMultiplesSolverTest {
+    private LeastCommonMultipleListingMultiplesSolver leastCommonMultipleListingMultiplesSolverSolver;
 
     @BeforeEach
     public void setUp() {
-        listingMultiplesLeastCommonMultipleSolver = new ListingMultiplesLeastCommonMultiple();
+        leastCommonMultipleListingMultiplesSolverSolver = new LeastCommonMultipleListingMultiplesSolver();
     }
 
     @Test
     public void can_find_lcm_of_two_positive_equal_numbers_with_listing_multiples_method() {
-        Assertions.assertEquals(new BigInteger("256"), listingMultiplesLeastCommonMultipleSolver.findLCMWithListingMultiples(256, 256));
+        Assertions.assertEquals(new BigInteger("256"), leastCommonMultipleListingMultiplesSolverSolver.findLCMWithListingMultiples(256, 256));
     }
 
     @Test
     public void can_find_lcm_when_on_of_the_numbers_is_one_with_listing_multiples_method() {
-        Assertions.assertEquals(new BigInteger("55613212"), listingMultiplesLeastCommonMultipleSolver.findLCMWithListingMultiples(1, 55613212));
+        Assertions.assertEquals(new BigInteger("55613212"), leastCommonMultipleListingMultiplesSolverSolver.findLCMWithListingMultiples(1, 55613212));
     }
 
     @Test
     public void can_find_lcm_with_two_larger_numbers_with_listing_multiples_method() {
-        Assertions.assertEquals(new BigInteger("974085160802488"), listingMultiplesLeastCommonMultipleSolver.findLCMWithListingMultiples(12345623, 78901256));
+        Assertions.assertEquals(new BigInteger("974085160802488"), leastCommonMultipleListingMultiplesSolverSolver.findLCMWithListingMultiples(12345623, 78901256));
     }
 
     @Test
-    public void throws_illegal_argument_exception_for_negative_input() {
+    public void findLCMWithListingMultiples_throws_illegal_argument_exception_for_negative_input() {
         try {
-            listingMultiplesLeastCommonMultipleSolver.findLCMWithListingMultiples(-1, 256);
+            leastCommonMultipleListingMultiplesSolverSolver.findLCMWithListingMultiples(-1, 256);
         } catch (IllegalArgumentException e) {
             Assertions.assertEquals(ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(1), e.getMessage());
         }
     }
 
     @Test
-    public void throws_illegal_argument_exception_for_zero_input() {
+    public void findLCMWithListingMultiples_throws_illegal_argument_exception_for_zero_input() {
         try {
-            listingMultiplesLeastCommonMultipleSolver.findLCMWithListingMultiples(14, 0);
+            leastCommonMultipleListingMultiplesSolverSolver.findLCMWithListingMultiples(14, 0);
         } catch (IllegalArgumentException e) {
             Assertions.assertEquals(ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(1), e.getMessage());
         }

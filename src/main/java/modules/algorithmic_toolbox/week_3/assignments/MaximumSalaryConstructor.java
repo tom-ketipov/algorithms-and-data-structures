@@ -22,9 +22,10 @@ public class MaximumSalaryConstructor {
     public BigInteger constructLargestNumber(int[] digits) {
         Validate.notNull(digits, ValidationMessageType.NULL_VALUE_ERROR.getMessage());
 
-        // Ensure no negative digits
+        // Ensure no negative numbers
         boolean hasNoNegativeDigits = Arrays.stream(digits)
                 .allMatch(digit -> digit >= 0);
+
         Validate.isTrue(hasNoNegativeDigits, ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(0));
 
         String[] asStrings = Arrays.stream(digits)
