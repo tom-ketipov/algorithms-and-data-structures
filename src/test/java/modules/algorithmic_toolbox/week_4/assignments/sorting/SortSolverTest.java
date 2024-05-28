@@ -2,6 +2,7 @@ package modules.algorithmic_toolbox.week_4.assignments.sorting;
 
 import enums.ValidationMessageType;
 import modules.algorithmic_toolbox.week_4.assignments.sorting.quick_sort.LeftMostPivotQuickSortSolver;
+import modules.algorithmic_toolbox.week_4.assignments.sorting.quick_sort.RandomPivotQuickSortSolver;
 import modules.algorithmic_toolbox.week_4.assignments.sorting.quick_sort.RightMostPivotQuickSortSolver;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -18,6 +19,7 @@ class SortSolverTest {
     private MergeSortSolver mergeSortSolver;
     private LeftMostPivotQuickSortSolver leftMostPivotQuickSortSolver;
     private RightMostPivotQuickSortSolver rightMostPivotQuickSortSolver;
+    private RandomPivotQuickSortSolver randomPivotQuickSortSolver;
 
 
     @BeforeEach
@@ -28,6 +30,7 @@ class SortSolverTest {
         mergeSortSolver = new MergeSortSolver();
         leftMostPivotQuickSortSolver = new LeftMostPivotQuickSortSolver();
         rightMostPivotQuickSortSolver = new RightMostPivotQuickSortSolver();
+        randomPivotQuickSortSolver = new RandomPivotQuickSortSolver();
     }
 
 
@@ -211,6 +214,42 @@ class SortSolverTest {
     public void rightmost_pivot_quick_sort_method_throws_null_pointer_exception_for_null_input() {
         try {
             rightMostPivotQuickSortSolver.sort(null);
+        } catch (NullPointerException e) {
+            Assertions.assertEquals(ValidationMessageType.NULL_VALUE_ERROR.getMessage(), e.getMessage());
+        }
+    }
+
+
+    // Quick sort - Random pivot
+    @Test
+    public void multiple_elements_array_is_sorted_correctly_using_random_pivot_quick_sort_solver() {
+        int[] array = {6, 7, 8, 2, 13, -22, 2, 1, 6, -1, 0, 0, 6, 0};
+
+        randomPivotQuickSortSolver.sort(array);
+        System.out.println(Arrays.toString(array));
+        Assertions.assertArrayEquals(new int[]{-22, -1, 0, 0, 0, 1, 2, 2, 6, 6, 6, 7, 8, 13}, array);
+    }
+
+    @Test
+    public void single_element_array_is_sorted_correctly_using_random_pivot_quick_sort_solver() {
+        int[] array = {6};
+
+        randomPivotQuickSortSolver.sort(array);
+        Assertions.assertArrayEquals(new int[]{6}, array);
+    }
+
+    @Test
+    public void empty_array_is_handled_correctly_using_random_pivot_quick_sort_solver() {
+        int[] array = {};
+
+        randomPivotQuickSortSolver.sort(array);
+        Assertions.assertArrayEquals(new int[]{}, array);
+    }
+
+    @Test
+    public void random_pivot_quick_sort_method_throws_null_pointer_exception_for_null_input() {
+        try {
+            randomPivotQuickSortSolver.sort(null);
         } catch (NullPointerException e) {
             Assertions.assertEquals(ValidationMessageType.NULL_VALUE_ERROR.getMessage(), e.getMessage());
         }

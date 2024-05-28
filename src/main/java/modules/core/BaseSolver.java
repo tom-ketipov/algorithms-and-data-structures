@@ -14,4 +14,8 @@ public class BaseSolver {
         array[indexA] = array[indexB];
         array[indexB] = temp;
     }
+
+    protected int generateNumberInRange(int min, int max) {
+        return (int) ((Math.random() * (max - min)) + min);
+    }
 }
