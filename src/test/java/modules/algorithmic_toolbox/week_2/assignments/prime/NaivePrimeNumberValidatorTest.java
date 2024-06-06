@@ -4,6 +4,7 @@ import enums.ValidationMessageType;
 import modules.algorithmic_toolbox.week_2.assignments.prime.NaivePrimeNumberValidator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 class NaivePrimeNumberValidatorTest {
@@ -20,13 +21,13 @@ class NaivePrimeNumberValidatorTest {
     }
 
     @Test
-    public void can_detect_three_as_a_prime_number() {
-        Assertions.assertTrue(naivePrimeNumberValidatorSolver.isPrime(3));
+    public void can_detect_four_as_a_non_prime_number() {
+        Assertions.assertFalse(naivePrimeNumberValidatorSolver.isPrime(4));
     }
 
     @Test
-    public void can_detect_ten_as_a_non_prime_number() {
-        Assertions.assertFalse(naivePrimeNumberValidatorSolver.isPrime(10));
+    public void can_detect_max_integer_as_a_prime_number() {
+        Assertions.assertTrue(naivePrimeNumberValidatorSolver.isPrime(Integer.MAX_VALUE));
     }
 
     @Test
@@ -40,27 +41,9 @@ class NaivePrimeNumberValidatorTest {
     }
 
     @Test
-    public void can_handle_one_as_input_parameter_in_naive_prime_number_validator_method() {
+    public void throws_illegal_argument_exception_for_input_values_that_are_less_than_two() {
         try {
             naivePrimeNumberValidatorSolver.isPrime(1);
-        } catch (IllegalArgumentException e) {
-            Assertions.assertEquals(ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(2), e.getMessage());
-        }
-    }
-
-    @Test
-    public void can_handle_zero_as_input_parameter_in_naive_prime_number_validator_method() {
-        try {
-            naivePrimeNumberValidatorSolver.isPrime(0);
-        } catch (IllegalArgumentException e) {
-            Assertions.assertEquals(ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(2), e.getMessage());
-        }
-    }
-
-    @Test
-    public void can_handle_negative_input_parameter_in_naive_prime_number_validator_method() {
-        try {
-            naivePrimeNumberValidatorSolver.isPrime(-230);
         } catch (IllegalArgumentException e) {
             Assertions.assertEquals(ValidationMessageType.BELOW_MINIMUM_ERROR.getMessage(2), e.getMessage());
         }

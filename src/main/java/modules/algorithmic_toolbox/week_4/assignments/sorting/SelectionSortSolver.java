@@ -8,10 +8,10 @@ public class SelectionSortSolver extends BaseSolver {
 
     /**
      * Sorts the given integer array in ascending order using selection sort algorithm.
-     * This method modifies the original array.
      *
      * @param array the array to be sorted
-     * @throws IllegalArgumentException if the input array is null
+     * @throws NullPointerException if the input array is null
+     * @implNote time complexity: O(n^2)
      */
     public void sort(int[] array) {
         Validate.notNull(array, ValidationMessageType.NULL_VALUE_ERROR.getMessage());
